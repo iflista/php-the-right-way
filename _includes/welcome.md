@@ -12,7 +12,7 @@ _PHP: The Right Way_ є, або скоро буде, перекладено на
 * Portuguese (Найближчим часом)
 * Russian (Найближчим часом)
 * Spanish (Найближчим часом)
-* Ukrainian (Найближчим часом)
+* [Ukrainian](http://wulijun.github.com/php-the-right-way)
 
 ## Письмова відмова від відовідальності
 

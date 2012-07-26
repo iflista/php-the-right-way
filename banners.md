@@ -10,7 +10,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
 
 ## Button 1 (120x90)
 
-<p><img src="/images/banners/btn1-120x90.png" alt="PHP: The Right Way"/></p>
+<p><img src="images/banners/btn1-120x90.png" alt="PHP: The Right Way"/></p>
 
     <a href="http://www.phptherightway.com">
         <img src="http://www.phptherightway.com/images/banners/btn1-120x90.png" alt="PHP: The Right Way"/>

@@ -57,10 +57,13 @@ There's been a lot of discussion lately about how the PHP community lacks suffic
 
 My name is [Josh Lockhart](http://twitter.com/codeguy). I'm the author of the [Slim Framework](http://www.slimframework.com/), and I work for [New Media Campaigns](http://www.newmediacampaigns.com/).
 
-### Collaborators
+### Співавтори
 
 * [Kris Jordan](http://krisjordan.com/)
 * [Phil Sturgeon](http://philsturgeon.co.uk/)
+
+### Переклад
+* [Igor Flista](https://twitter.com/iflista) ініціатор українського перекладу
 
 ## License
 

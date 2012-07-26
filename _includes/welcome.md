@@ -1,37 +1,32 @@
-# Welcome
+# Ласкаво просимо
 
-There's a lot of outdated information on the Web that leads new PHP users astray, propagating bad practices and bad
-code. This must stop. _PHP: The Right Way_ is an easy-to-read, quick reference for PHP best practices, accepted coding
-standards, and links to authoritative tutorials around the Web.
+В інтернеті міститься багато застарілої інформації, що призводить до розгублення нових PHP користувачів, пропагуючи погані практики та поганий код. Це потрібно зупинити. _PHP: The Right Way_ це легка для читання, швидка довідка кращих практик PHP, прийнятих стандартів кодування та посилань на авторитетні туторіали зі всього інтернету.
 
-## Translations
+## Переклади
 
-_PHP: The Right Way_ is (or soon will be) translated into many different languages:
+_PHP: The Right Way_ є, або скоро буде, перекладено на багато різних мов:
 
 * [English](http://www.phptherightway.com)
 * [Chinese](http://wulijun.github.com/php-the-right-way)
-* Japanese (Coming Soon)
-* Portuguese (Coming Soon)
-* Russian (Coming Soon)
-* Spanish (Coming Soon)
+* Japanese (Найближчим часом)
+* Portuguese (Найближчим часом)
+* Russian (Найближчим часом)
+* Spanish (Найближчим часом)
+* Ukrainian (Найближчим часом)
 
-## Disclaimer
+## Письмова відмова від відовідальності
 
-_There is no canonical way to use PHP_. However, this website is a humble display of best practices,
-available options, and good information. It aims to introduce new PHP developers and to rethink seasoned pros with fresh
-ideas.
+_Немає канонічного способу використання PHP_. Тим не менше, цей веб-сайт містить скромну збірку кращих практик, доступних варіантів та хорошої інформації. Його мета познайомити нових PHP девелоперів та досвідчених професіоналів з новими ідеями.
 
-This is a living document and will continue to be updated with more helpful information and examples as they become
-available.
+Це живий документ, котрий буде продовжувати оновлюватись корисною інформацією та прикладами, як тільки вони стануть доступними.
 
-## How to Contribute
+## Як взяти участь
 
-Help make this website the best resource for new PHP programmers! [Contribute on GitHub][1]
+Допоможіть зробити цей веб-сайт найкращим ресурсом для нових PHP програмістів! [Contribute on GitHub][1]
 
-## Spread the Word!
+## Розкажи!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP developers
-know where to find good information!
+_PHP: The Right Way_ містить веб банери, зображення, котрі ви можете використати на вашому сайті. Продемонструйте свою підтримку та дозвольте новим PHP девелоперам дізнатися де знайти хорошу інформацію!
 
 [See Banner Images][2]
 

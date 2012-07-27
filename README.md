@@ -1,6 +1,5 @@
 # PHP: The Right Way
 
-<<<<<<< HEAD
 ## Overview
 
 This is the GitHub Pages repository for the _PHP: The Right Way_ project.
@@ -30,14 +29,14 @@ developers know where to find good information!
 3. Wrap all text to 120 characters.
 4. Code samples should adhere to PSR-1 or higher.
 
-## Де
+## Where
 
 <http://www.phptherightway.com>
 
 * [English](http://www.phptherightway.com)
 * [Chinese](http://wulijun.github.com/php-the-right-way)
 
-### Переклад
+### Translations
 
 If you are interested in translating _PHP: The Right Way_, fork this repo on GitHub and publish your localized fork to your own GitHub Pages account. We'll link to your translation from the primary document.
 
@@ -50,48 +49,19 @@ If you use a subdomain, enter the subdomain into the `CNAME` file, and ask us to
 
 When your translation is ready, open an issue on the Issue Tracker to let us know.
 
-## Чому
-
-
-There's been a lot of discussion lately about how the PHP community lacks sufficient, credible information for programmers new to PHP. This repository aims to solve this problem.
-
-## Хто
-
-Моє ім'я [Josh Lockhart](http://twitter.com/codeguy). Я автор [Slim Framework](http://www.slimframework.com/) і працюю на [New Media Campaigns](http://www.newmediacampaigns.com/).
-
-### Співавтори
-
-* [Kris Jordan](http://krisjordan.com/)
-* [Phil Sturgeon](http://philsturgeon.co.uk/)
-
-### Переклад
-* [Igor Flista](https://twitter.com/iflista) ініціатор українського перекладу
-
-## Ліцензія
-
-[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
-=======
-## What?
-
-There's a lot of bad information on the Web (I'm looking at you, W3Schools) that leads new PHP users astray, propagating bad practices and bad code. This must stop. _PHP: The Right Way_ provides an easy-to-read, quick reference for PHP best practices, accepted coding standards, and links to authoritative tutorials around the Web.
-
-## How to Contribute
-
-_PHP: The Right Way_ is hosted on GitHub Pages. It is a Jekyll project available in the [gh-pages](https://github.com/codeguy/php-the-right-way/tree/gh-pages) branch. Fork and edit the [gh-pages](https://github.com/codeguy/php-the-right-way/tree/gh-pages) branch, add some examples or helpful links, and send me a pull request. Let's make this the best resource available for new PHP programmers!
-
-## Where
-
-<http://www.phptherightway.com>
-
 ## Why
 
 There's been a lot of discussion lately about how the PHP community lacks sufficient, credible information for programmers new to PHP. This repository aims to solve this problem.
 
 ## Who
 
-My name is [Josh Lockhart](http://twitter.com/codeguy). I'm the author of the [Slim Framework](http://www.slimframework.com), and I work for [New Media Campaigns](http://www.newmediacampaigns.com).
+My name is [Josh Lockhart](http://twitter.com/codeguy). I'm the author of the [Slim Framework](http://www.slimframework.com/), and I work for [New Media Campaigns](http://www.newmediacampaigns.com/).
 
-## Copyright
+### Collaborators
 
-[MIT](http://opensource.org/licenses/MIT)
->>>>>>> upstream/master
+* [Kris Jordan](http://krisjordan.com/)
+* [Phil Sturgeon](http://philsturgeon.co.uk/)
+
+## License
+
+[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)

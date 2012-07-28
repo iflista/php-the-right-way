@@ -55,14 +55,14 @@ _PHP: Вірний шлях_ має банерні зображення, кот�
 
 ## Хто
 
-Моє ім’я [Josh Lockhart](http://twitter.com/codeguy). Я автор [Slim Framework](http://www.slimframework.com/), і працюю на [New Media Campaigns](http://www.newmediacampaigns.com/).
+Моє ім’я [Josh Lockhart](http://twitter.com/codeguy). Я автор [Slim Framework](http://www.slimframework.com/) і працюю на [New Media Campaigns](http://www.newmediacampaigns.com/).
 
 ### Співавтори
 
 * [Kris Jordan](http://krisjordan.com/)
 * [Phil Sturgeon](http://philsturgeon.co.uk/)
 
-### Переклад
+### Переклад на українську
 
 * [Igor Flista](http://twitter.com/iflista)
 

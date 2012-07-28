@@ -1,67 +1,71 @@
-# PHP: The Right Way
+# PHP: Вірний шлях
 
-## Overview
+## Огляд
 
-This is the GitHub Pages repository for the _PHP: The Right Way_ project.
+Це репозиторій GitHub Pages для проекту _PHP: Вірний шлях_.
 
-* This website is a Jekyll project.
-* Each section and sub-section are a Markdown file in `_posts/`.
-* Sub-sections have `isChild: true` in their front matter.
-* The navigation and page structure are automatically generated.
+* Цей вебсайт працює з допомогою Jekyll.
+* Кожна секція та підсекція, це Markdown файл в директорії `_posts/`.
+* Підсекції мають тег `isChild: true` в їх шапці.
+* Навігація та структура сторінок генеруються автоматично.
 
-## Spread the Word!
+## Розкажіть!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP
-developers know where to find good information!
+_PHP: Вірний шлях_ має банерні зображення, котрі ви можете використовувати на вашому сайті. Викажіть свою підтримку і дайте можливіть новим PHP розробникам дізнатися де знайти хорошу інформацію.
 
-[See Banner Images](http://www.phptherightway.com/banners.html)
+[Подивитися банери](http://www.phptherightway.com/banners.html)
 
-## How to Contribute
+## Як допомогти
 
-1. Fork and edit
-2. Optionally install [Ruby](https://rvm.io/rvm/install/) with [Jekyll](https://github.com/mojombo/jekyll/) gem to preview locally
-3. Submit pull request for consideration
+1. Зробіть fork та відредагуйте.
+2. При бажанні встановіть [Ruby](https://rvm.io/rvm/install/) з [Jekyll](https://github.com/mojombo/jekyll/) gem для перегляду локально
+3. Відправте pull request для розгляду.
 
-### Contributor Style Guide
+### Керівництво з написання коду
 
-1. Use American English spelling (*primary English repo only*)
-2. Use four (4) spaces to indent text; do not use tabs.
-3. Wrap all text to 120 characters.
-4. Code samples should adhere to PSR-1 or higher.
+1. Використовуйте американську англійску мову (*лише для основного репозиторію на Англійській*)
+2. Використовуйте (4) пробіли для виділення тексту; не використовуйте табуляцію.
+3. Зверніть весь текст до 120 символів.
+4. Приклади коду повинні притримуватися PSR-1 або вище.
 
-## Where
+## Де
 
 <http://www.phptherightway.com>
 
 * [English](http://www.phptherightway.com)
 * [Chinese](http://wulijun.github.com/php-the-right-way)
+* [Українська](http://iflista.github.com/php-the-right-way)
 
-### Translations
+### Переклади
 
-If you are interested in translating _PHP: The Right Way_, fork this repo on GitHub and publish your localized fork to your own GitHub Pages account. We'll link to your translation from the primary document.
+Якщо ви зацікавлені в перекладі _PHP: Вірний шлях_, зробіть fork основного репозиторію на GitHub і опублікуйте перекладений fork на вашому власному акаунті GitHub Pages. Ми будемо посилатися на ваш переклад з основного документу.
 
-To avoid fragmentation and reader confusion, please choose one of these options:
+Щоб уникнути фрагментації та спантеличення читача, будь ласка, виберіть один з наступних варіантів:
 
-1. We link to your GitHub Pages fork with `[username].github.com/php-the-right-way`
-2. We link to your GitHub Pages fork with a subdomain (e.g. "ru.phptherightway.com")
+1. Ми будемо посилатися на ваш форк GitHub Pages `[username].github.com/php-the-right-way`
+2. Ми будемо посилатися на ваш форк GitHub Pages з субдоменом (e.g. "ru.phptherightway.com")
 
-If you use a subdomain, enter the subdomain into the `CNAME` file, and ask us to setup DNS for you. If you do not use a subdomain, remove the `CNAME` file entirely else your fork will not build when pushed.
+Якщо ви використовуєте субдомен, введіть його в файл `CNAME` і попросіть нас встановити DNS для вас. Якщо ви не використовуєте субдомен, видаліть файл `CNAME`, інакше ваш форк не буде зібраний коли ви зробите push.
 
-When your translation is ready, open an issue on the Issue Tracker to let us know.
+Коли ваш переклад буде готовим, відкрийте issue (інцидент) в Issue Tracker (Трекері Інцидентів), щоб дати нам знати.
 
-## Why
+## Чому
 
-There's been a lot of discussion lately about how the PHP community lacks sufficient, credible information for programmers new to PHP. This repository aims to solve this problem.
+Останнім часом було багато дискусій про те, як спільноті PHP бракує достатньої та достовірної інформації для нових PHP програмістів. Мета цього репозиторію - вирішити цю проблему.
 
-## Who
+## Хто
 
-My name is [Josh Lockhart](http://twitter.com/codeguy). I'm the author of the [Slim Framework](http://www.slimframework.com/), and I work for [New Media Campaigns](http://www.newmediacampaigns.com/).
+Моє ім’я [Josh Lockhart](http://twitter.com/codeguy). Я автор [Slim Framework](http://www.slimframework.com/), і працюю на [New Media Campaigns](http://www.newmediacampaigns.com/).
 
-### Collaborators
+### Співавтори
 
 * [Kris Jordan](http://krisjordan.com/)
 * [Phil Sturgeon](http://philsturgeon.co.uk/)
 
-## License
+### Переклад
+
+* [Igor Flista](http://twitter.com/iflista)
+
+## Ліцензія
 
 [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)

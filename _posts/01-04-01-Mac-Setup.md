@@ -1,4 +1,5 @@
 ---
+title: Встановлення на Mac
 isChild: true
 ---
 

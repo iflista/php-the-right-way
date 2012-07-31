@@ -1,4 +1,5 @@
 ---
+title: Встановлення у Windows
 isChild: true
 ---
 

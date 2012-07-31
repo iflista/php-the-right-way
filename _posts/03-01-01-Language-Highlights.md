@@ -1,1 +1,1 @@
-# Language Highlights
+# Особливості мови

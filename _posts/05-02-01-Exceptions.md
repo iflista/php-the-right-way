@@ -1,23 +1,15 @@
 ---
+title: Винятки
 isChild: true
 ---
 
-## Exceptions
+## Винятки
 
-Exceptions are a standard part of most popular programming languages, but they are often overlooked by PHP programmers. 
-Languages like Ruby are extremely Exception heavy, so whenever something goes wrong such as a HTTP request failing, or 
-a DB query goes wrong, or even if an image asset could not be found, Ruby (or the gems being used) will throw an 
-exception to the screen meaning you instantly know there is a mistake. 
+Винятки являються стандартною частиною найбільш популярних мов програмування, та вони є часто обділені увагою розробниками PHP. Мови, такі як Ruby, надзвичайно детально обробляють Винятки, тому коли щось йде не так, наприклад HTTP запит не вдається, або запит до бази даних відбувається неправильно, або навіть якщо зображення не може знайтися, Ruby (або gems, котрі використовуються) видадуть виняток на екран, що зразу дозволить зрозуміти, де помилка.
 
-PHP itself is fairly lax with this, and a call to `file_get_contents()` will usually just get you a `FALSE` and a warning.
-Many older PHP frameworks like CodeIgniter will just return a false, log a message to their proprietary logs and maybe 
-let you use a method like `$this->upload->get_error()` to see what went wrong. The problem here is that you have to go 
-looking for a mistake and check the docs to see what the error method is for this class, instead of having it made extremely 
-obvious.
+PHP сам по собі, досить слабкий в цьому і виклик `file_get_contents()` зазвичай видасть вам тільки `FALSE` та попередження. Багато старіших PHP фреймворків, як CodeIgniter, просто повернуть false, добавлять повідомлення у їх власний журнал та можливо дадуть вам можливість використовувати метод `$this->upload->get_error()`, щоб глянути, що пішло не так. Проблема в тому, що ви повинні шукати помилку і перевіряти документацію, щоб зрозуміти, який помилковий метод може бути в цьому класі, замість того, щоб зробити все це очевидним.
 
-Another problem is when classes automatically throw an error to the screen and exit the process. When you do this you 
-stop another developer from being able to dynamically handle that error. Exceptions should be thrown to make a developer aware 
-of an error, then they can choose how to handle this. E.g:
+Ще одна проблема, коли класи автоматично видають помилку на екран і закривають процес. Коли ви робите подібне, ви не даєте можливості другому розробнику динамічно обробити цю помилку. Винятки повинні бути викинуті, щоб дати розробнику знати про помилку, щоб він міг вибрати як її вирішити. Наприклад:
 
 {% highlight php %}
 <?php
@@ -32,34 +24,31 @@ try
 }
 catch(Fuel\Email\ValidationFailedException $e)
 {
-    // The validation failed
+    // Валідація не вдалася
 }
 catch(Fuel\Email\SendingFailedException $e)
 {
-    // The driver could not send the email
+    // Драйвер не може відправити повідомлення
 }
 {% endhighlight %}
 
-### SPL Exceptions
+### SPL Винятки
 
-An Exception by default has no meaning and the most common to give it meaning is by setting its name:
+Виняток за замовчуванням не має значення і найбільш поширено надавати значення встановлюючи його назву:
 
 {% highlight php %}
 <?php
 class ValidationException extends Exception {}
 {% endhighlight %}
 
-This means you can add multiple catch blocks and handle different Exceptions differently. This can lead to 
-the creation of a <em>lot</em> of custom Exceptions, some of which could have been avoided using the SPL Exceptions 
-provided in the [SPL extension][splext]. 
+Це означає, що ви можете добавити кілька блоків відлову і обробки різних винятків по різному. Це може призвести до створення <em>багатьох</em> визначених винятків, деякі з котрих можна було б уникнути, використовуючи винятки SPL, що надаються [розшиненням SPL][splext]. 
 
-If for example you use the `__call()` Magic Method and an invalid method is requested then instead of throwing a standard 
-Exception which is vague, or creating a custom Exception just for that, you could just `throw new BadFunctionCallException;`.
+Якщо наприклад ви використовуєте магічний метод `__call()` та був запит на невірний метод, тоді замість видачі стандартного невизначеного винятку, чи створення окремого винятку для цього ви можете просто `throw new BadFunctionCallException;`
 
-* [Read about Exceptions][exceptions]
-* [Read about SPL Exceptions][splexe]
-* [Nesting Exceptions In PHP][nesting-exceptions-in-php]
-* [Exception Best Practices in PHP 5.3][exception-best-practices53]
+* [Читати про винятки Exceptions][exceptions]
+* [Читати про SPL Exceptions][splexe]
+* [Вкладені винятки в PHP][nesting-exceptions-in-php]
+* [Кращі практики винятків в PHP 5.3][exception-best-practices53]
 
 [exceptions]: http://php.net/manual/en/language.exceptions.php
 [splexe]: http://php.net/manual/en/spl.exceptions.php

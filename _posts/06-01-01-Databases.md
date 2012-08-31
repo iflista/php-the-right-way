@@ -1,34 +1,24 @@
 ---
-title: Databases
+title: Бази даних
 ---
 
-# Databases
+# Бази даних
 
-Many times your PHP code will use a database to persist information. You have a few options to connect and interact
-with your database. The recommended option _until PHP 5.1.0_ was to use native drivers such as [mysql][mysql], [mysqli][mysqli], [pgsql][pgsql], etc.
+Часто ваш PHP код буде використовувати базу даних для збереження інформації. У вас є кілька варіантів для підєднання та взаємодії з базою даних. Рекомендованим варіантом _до PHP 5.1.0_ було використання рідних драйверів, таких як [mysql][mysql], [mysqli][mysqli], [pgsql][pgsql], тощо.
 
-Native drivers are great if you are only using ONE database in your application, but if, for example, you are using MySQL and a little bit of MSSQL,
-or you need to connect to an Oracle database, then you will not be able to use the same drivers. You'll need to learn a brand new API for each
-database &mdash; and that can get silly.
+Рідні драйвери чудові, якщо ви використовуєте ОДНУ базу даних в вашому додатку, та якщо, для прикладу, ви використовуєте MySQL та трошки MSSQL, або вам потрібно підключитися до бази даних Oracle, тоді ви не зможете використовувати ті ж драйвери. Вам буде потрібно вивчити нове API для кожної бази даних &mdash; і це може бути нерозумно.
 
-As an extra note on native drivers, the mysql extension for PHP is no longer in active development, and the official status since PHP 5.4.0 is
-"Long term deprecation". This means it will be removed within the next few releases, so by PHP 5.6 (or whatever comes after 5.5) it may well be gone. If you are using `mysql_connect()` and `mysql_query()` in your applications then you will be faced with a rewrite at some point down the
-line, so the best option is to replace mysql usage with mysqli or PDO in your applications within your own development shedules so you won't
-be rushed later on. _If you are starting from scratch then absolutely do not use the mysql extension: use the [MySQLi extension][mysqli], or use PDO._
+В якості додаткової замітки про рідні драйвери, розширення MySQL для PHP більше не знаходиться в активній розробці і його офіційним статусом від PHP 5.4.0 являється "Застаріло через довгий час використання". Це означає він буде видалений на протязі наступних кількох релізів, отож в PHP 5.6 (або у всьому, що вийде після PHP 5.5) воно може пропасти. Якщо ви використовуєте `mysql_connect()` та `mysql_query()` у свому додатку, тоді вам прийдеться зіткнутися з переписуванням коду, отож найкращим варіантом буде замінити mysql використанням mysqli або PDO у своїх додатках під час вашого процесу розробки, отож би не стикнетеся з неробочим додатком потім. _Якщо ви починаєте з нуля тоді відмовтеся повністю від використання розширення mysql: використовуйте [Розширення MySQLi][mysqli], або PDO._
 
-* [PHP: Choosing an API for MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
+* [PHP: Вибір API для MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
 
 ## PDO
 
-PDO is a database connection abstraction library &mdash;  built into PHP since 5.1.0 &mdash; that provides a common interface to talk with
-many different databases. PDO will not translate your SQL queries or emulate missing features; it is purely for connecting to multiple types
-of database with the same API.
+PDO це абстрактна бібліотека для підключення до бази даних &mdash; вбудована в PHP з версії 5.1.0 &mdash; вона забезпечує спільний інтерфейс для спілкування з великою кількістю різних баз даних. PDO не буде перекладати ваші SQL запити чи емулювати відсутні можливості; він чисто для підключення до різноманітних типів баз даних через одне і те ж API.
 
-More importantly, `PDO` allows you to safely inject foreign input (e.g. IDs) into your SQL queries without worrying about database SQL injection attacks.
-This is possible using PDO statements and bound parameters.
+Більш важливо, що `PDO` дозволяє вам безпечно вводити дані користувача (напр. IDs) в ваші SQL запити без хвилювання щодо атак на SQL введення. Це можливо, завдяки використанню PDO виразів і звязування параметрів.
 
-Let's assume a PHP script receives a numeric ID as a query parameter. This ID should be used to fetch a user record from a database. This is the `wrong`
-way to do this:
+Припустиму, що PHP отримує числовий ID в якості параметру запиту. Цей ID повинен бути використаний для отримання запису користувача з бази даних. Ось `неправильний` шлях це зробити:
 
 {% highlight php %}
 <?php
@@ -36,8 +26,7 @@ $pdo = new PDO('sqlite:users.db');
 $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NO!
 {% endhighlight %}
 
-This is terrible code. You are inserting a raw query parameter into a SQL query. This will get you hacked in a heartbeat. Instead,
-you should sanitize the ID input using PDO bound parameters.
+Це жахливий код. Ви вставляєте сирі параметри в SQL запит. Це приведе до взламу вашого коду в секунди. Замість цього ви повинні очистити ввід ID використовуючи звязування параметрів PDO.
 
 {% highlight php %}
 <?php
@@ -47,19 +36,15 @@ $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); //<-- Automatically saniti
 $stmt->execute();
 {% endhighlight %}
 
-This is correct code. It uses a bound parameter on a PDO statement. This escapes the foreign input ID before it is introduced to the
-database preventing potential SQL injection attacks.
+Ось правильний код. Він використовує звязаний параметр в виразі PDO. Це дозволяє уникнути некоректного користувацького вводу ID перед тим як передати запит в базу даних, запобігаючи потенційні атаки типу SQL ін'єкцій.
 
-* [Learn about PDO][1]
+* [Детальніше про PDO][1]
 
-## Abstraction Layers
+## Рівні абстракції
 
-Many frameworks provide their own abstraction layer which may or may not sit on top of PDO.  These will often emulate features for
-one database system that another is missing form another by wrapping your queries in PHP methods, giving you actual database abstraction.
-This will of course add a little overhead, but if you are building a portable application that needs to work with MySQL, PostgreSQL and
-SQLite then a little overhead will be worth it the sake of code cleanliness.
+Багато фреймворків надають свій власний рівень абстракції, котрий може або не може сидіти поверх PDO. Вони часто будуть емулювати можливості для одної системи бази даних, котрі не має інша, повертаючи ваші запити в PHP методи, даючи вам фактичну абстракцію бази даних. Це звісно, добавить деякі накладні витрати, та якщо ви будуєте портативний додаток, якому потрібно працювати з MySQL, PostgreSQL та SQLite тоді мінімальними накладними витратами можна знехтувати задля чистоти коду.
 
-Some abstraction layers have been built using the PSR-0 namespace standard so can be installed in any application you like:
+Деякі рівні абстракції були побудовані з використанням PSR-0 стандарту простору імен, отож можуть бути встановлені в будь який додаток:
 
 * [Doctrine2 DBAL][2]
 * [ZF2 Db][4]

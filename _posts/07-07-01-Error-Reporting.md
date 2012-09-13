@@ -1,32 +1,29 @@
 ---
+title: Повідомлення про помилки
 isChild: true
 ---
 
-## Error Reporting
+## Повідомлення про помилки
 
-Error logging can be useful in finding the problem spots in your application, but it can also expose infromation about 
-the structure of your application to the outside world. To effectively protect your application from issues that could 
-be caused by the output of these messages, you need to configure your server differently in development versus 
-production (live).
+Логування помилок може бути корисним, при пошуку проблемних місць вашого додатку, але він також може розпізнати інформацію про структуру вашого додатку. Для ефективного захисту вашого додатку від проблем, котрі можуть бути викликані виводом цих помилок, вам потрібно налаштувати сервер по різному під час розробки і під час режиму продукту(production)(live).
 
-### Development
+### Розробка
 
-To show errors in your <strong>development</strong> environment, configure the following settings in your `php.ini`:
+Щоб показати помилки в вашому середовищі <strong>розробки</strong>, сконфігуруйте наступні налаштування у вашому `php.ini`:
 
 - display_errors: On
 - error_reporting: E_ALL
 - log_errors: On
 
-### Production
+### Продукт
 
-To hide the errors on your <strong>production</strong> environment, configure your `php.ini` as:
+Щоб приховати помилки в вашому середовищі <strong>продукту</strong>, сконфігуруйте ваш `php.ini` як:
 
 - display_errors: Off
 - error_reporting: E_ALL
 - log_errors: On
 
-With these settings in production, errors will still be logged to the error logs for the web server, but will not be 
-shown to the user. For more information on these settings, see the PHP manual:
+З цими налаштуваннями в виробництві, помилки все одно будуть добавлятися в лог помилок веб-сервера, та не будуть показуватися користувачу. Для отримання додаткової інформації про ці параметри, дивіться керівництво PHP:
 
 * [Error_reporting](http://www.php.net/manual/en/errorfunc.configuration.php#ini.error-reporting)
 * [Display_errors](http://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors)

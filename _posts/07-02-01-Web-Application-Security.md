@@ -1,13 +1,13 @@
 ---
+title: Безпека веб додатків
 isChild: true
 ---
 
-## Web Application Security
+## Безпека веб додатків
 
-There are bad people ready and willing to exploit your web application. It is important that you
- take necessary precautions to harden your web application's security. Luckily, the fine folks at [The Open Web Application Security Project][1] (OWASP) have compiled a comprehensive list of known security issues and methods to protect yourself against them. This is a must read for the security-conscious developer.
+Є погані люди, котрі готові і хочуть зламати ваші веб додатки. Важливо, щоб ви прийняли необхідні заходи безпеки, щоб укріпити безпеку вашого додатку. На щастя, хороші люди з [The Open Web Application Security Project][1] (OWASP) склали повний перелік відомих проблем безпеки і методів захисту від них. Це повинно бути прочитано кожним розробником, котрий переймається безпекою.
 
-* [Read the OWASP Security Guide][2]
+* [Читати керівництво з безпеки OWASP][2]
 
 [1]: https://www.owasp.org/
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents

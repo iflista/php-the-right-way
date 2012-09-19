@@ -1,7 +1,8 @@
 ---
+title: Загальні сервери
 isChild: true
 ---
 
-## Shared Servers
+## Загальні сервери
 
-PHP has shared servers to thank for its popularity. It is hard to find a host without PHP installed, but be sure it's the latest version. Shared servers allow you and other developers to deploy websites to a single machine. The upside to this is that it has become a cheap commodity. The downside is that you never know what kind of a ruckus your neighboring tenants are going to create; loading down the server or opening up security holes are the main concerns. If your project's budget can afford to avoid shared servers you should.
+PHP завдячує своїй популярності загальним серверам. Важко знайти хостинг без встановленого PHP, та спочатку впевніться, що він останньої версії. Загальні сервери дозволяють вам та іншим розробникам розгортати вебсайти на одному компютері. Хороша сторота тут в тому, що хостинг стає дешевим. Мінус в тому, що ви не знаєте, яке чудовисько ваші сусіди по хосту збираються створити; перевантаження серверу чи відкриття дири безпеки - основні приводи для хвилювання. Якщо бюджет вашого проекту може дозволити виділений сервер, ви повинні скористатися цією можливістю.

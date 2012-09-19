@@ -1,3 +1,3 @@
-# Servers and Deployment
+# Сервери та розгортання
 
-PHP applications can be deployed and run on production web servers in a number of ways.
+PHP додатки можуть розгортатися та виконуватися на веб серверах багатьма способами.

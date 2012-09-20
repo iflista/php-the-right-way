@@ -1,29 +1,19 @@
 ---
+title: Кешування об'єктів
 isChild: true
 ---
 
-## Object Caching
+## Кешування об'єктів
 
-There are times when it can be beneficial to cache individual objects in your code, such as with data that is expensive
-to get or database calls where the result is unlikely to change. You can use object caching software to hold these
-pieces of data in memory for extremely fast access later on. If you save these items to a data store after you retrieve
-them, then pull them directly from the cache for following requests, you can gain a significant improvement in
-performance as well as reduce the load on your database servers.
+Є часи коли може бути вигідно кешувати індивідуальні об'єкти у вашому коді, так як і з даними котрі важко отримати чи виклики до бази даних, де результат швидше за все буде незмінним. Ви можете використовувати софт для кешування об'єктів, щоб зберігати ці частини даних в оперативній пам'яті для екстримально швидкого доступу пізніше. Якщо ви збережете ці елементи до сховища даних після того як відтворите їх, тоді витягніть їх прямо з кешу для наведених запитів, ви можете отримати значне покращення у швидкодії разом з зменшення завантаження серверів баз даних.
 
-Many of the popular bytecode caching solutions let you cache custom data as well, so there's even more reason to take
-advantage of them. APC, XCache, and WinCache all provide APIs to save data from your PHP code to their memory cache.
+Багато з популярних рішень байт кешування дозволяють вам кешувати вибірковід дані також, отож існує навіть більше причин користуватися їх перевагами. APC, XCache та WinCache кожна надає API для збереження даних з вашого PHP коду в їх кеш пам'яті.
 
-The most commonly used memory object caching systems are APC and memcached. APC is an excellent choice for object
-caching, it includes a simple API for adding your own data to its memory cache and is very easy to setup and use. The
-one real limitation of APC is that it is tied to the server it's installed on. Memcached on the other hand is installed
-as a separate service and can be accessed across the network, meaning that you can store objects in a hyper-fast data
-store in a central location and many different systems can pull from it.
+Найбільш використовуваними системами кешування об'єктів є APC та memcached. APC це ідеальний вибір для кешування об'єктів, вона включає просте API для додавання ваших власних даних до свого кешу пам'яті і є дуже легкою для встановлення та використання. Одне справжнє обмеження APC це те, що вона прив'язана до сервера, на якому встановлена. Memcached з іншої сторони встановлена як окремий сервіс і може бути доступною через мережу, що означає, що ви можете зберігати об'єкти у гіпершвидкому сховищі даних в центральному розташуванні і багато різних систем можуть витягувати дані з нього.
 
-In a networked configuration APC will usually outperform memcached in terms of access speed, but memcached will be able
-to scale up faster and further. If you do not expect to have multiple servers running your application, or do not need
-the extra features that memcached offers then APC is probably your best choice for object caching.
+В мережевій конфігурації APC зазвичай випереджує memcached в плані швидкості доступу, та memcached здатна масштабуватися швидше і ширше. Якщо ви не очікуєте мати багато серверів, котрі будуть запускати ваш додаток, або вам не потрібний екстра функціонал, що пропонує memcached, тоді APC напевне ваш кращий вибір для кешування об'єктів.
 
-Example logic using APC:
+Приклад логіки, що використовується APC:
 
 {% highlight php %}
 <?php
@@ -39,7 +29,7 @@ if (!$data)
 print_r($data);
 {% endhighlight %}
 
-Learn more about popular object caching systems:
+Дізнатися більше про системи кешування об'єктів:
 
 * [APC Functions](http://php.net/manual/en/ref.apc.php)
 * [Memcached](http://memcached.org/)

@@ -1,18 +1,18 @@
 ---
+title: Байт кеш
 isChild: true
 ---
 
-## Bytecode Cache
+## Байт кеш
 
-When a PHP file is executed, under the hood it is first compiled to bytecode (also known as opcode) and, only then, the bytecode is executed.
-If a PHP file is not modified, the bytecode will always be the same. This means that the compilation step is a waste of CPU resources.
+Коли PHP файл виконується, всередині він спочатку компілюється в байт код (також відомий як opcode) і тільки тоді байт код виконується.
+Якщо PHP файл не модифікується, байткод завжди буде тим самим. Це означає, що компілювання стає розтратою ресурсів CPU.
 
-This is where Bytecode cache comes in. It prevents redundant compilation by storing bytecode in memory and reusing it on successive calls.
-Setting up bytecode cache is a matter of minutes, and your application will speed up significantly. There's really no reason not to use it.
+Ось де Байт кеш приходить на допомогу. Він запобігає надлишковій компіляції, зберігаючи байт код в оперативній пам'яті і повторно використовуючи його на наступних викликах. Налаштування байт кешу справа хвилинна та ваш додаток значно додасть в швидкості. Насправді немає жодної причини не використовувати його.
 
-Popular bytecodes caches are:
+Популярні байт кеші:
 
 * [APC](http://php.net/manual/en/book.apc.php)
 * [XCache](http://xcache.lighttpd.net/)
-* [Zend Optimizer+](http://www.zend.com/products/server/) (part of Zend Server package)
-* [WinCache](http://www.iis.net/download/wincacheforphp) (extension for MS Windows Server)
+* [Zend Optimizer+](http://www.zend.com/products/server/) (частина пакету Zend Server)
+* [WinCache](http://www.iis.net/download/wincacheforphp) (розширення для MS Windows Server)

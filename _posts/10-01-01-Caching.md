@@ -1,4 +1,4 @@
-# Caching
+# Кешування
 
-PHP is pretty quick by itself, but bottlenecks can arise when you make remote connections, load files, etc. 
-Thankfully, there are various tools available to speed up certain parts of your application, or reduce the number of times these various time consuming tasks need to run.
+PHP досить швидкий сам по собі, та незручності можуть виникати коли ви здійснюєте віддалені з'єднання, завантажуєте файли, тощо. 
+На щастя існує багато інструментів, доступних для пришвидшення певних частин вашого додатку, або зменшення числа разів, коли ці споживачі часу повинні запускатися.

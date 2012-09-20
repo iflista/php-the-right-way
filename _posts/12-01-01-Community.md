@@ -1,20 +1,20 @@
-# Community
+# Спільнота
 
-The PHP community is as diverse as it is large, and it's members are ready and willing to support new PHP programmers. You should consider joining your local PHP user group (PUG) or attending larger PHP conferences to learn more about the best practices shown here. You can also hang out on IRC in the #phpc channel on irc.freenode.com and follow the [@phpc][phpc-twitter] twitter account. Get out there, meet new developers, learn new topics and, above all, make new friends.
+PHP товариство настільки ж різноманітне, як і велике. Його учасники готові підтримати нових PHP програмістів. Ви повинні розглянути можливість приєднання до групи ваших локальних користувачів PHP (PUG) або участь у більших PHP сонференціях, щоб дізнатися більше про кращі практики, показані тут. Ви також можете спілкуватися через IRC в групі #phpc на сервері irc.freenode.com і фоловити [@phpc][phpc-twitter] твітер акаунт. Знайомтеся там з новими девелоперами, вчіть нові теми, і перш за все заводьте нових друзів.
 
-[Read the Official PHP Events Calendar][php-calendar]
+[Читайте офіційний календар PHP подій][php-calendar]
 
-## PHP User Groups
+## Групи користувачів PHP
 
-If you live in a larger city, odds are there's a PHP user group nearby. Although there's not yet an official list of PUGs, you can easily find your local PUG by searching on [Google][google] or [Meetup.com][meetup]. If you live in a smaller town, there may not be a local PUG; if that's the case, start one!
+Якщо ви живете у великому місті, є великі шанси, що поблизу група користувачів PHP. Хоча є ще не офіційний список МОПСів, ви можете знайти найближчий МОПС за допомогою пошуку в [Google][google] чи [Meetup.com][meetup]. Якщо ви живете в маленькому містечку, там може не бути локальної МОПС, якщо так - почніть одну.
 
-[Read about User Groups on the PHP Wiki][php-wiki]
+[Читати про групи користувачів у PHP Wiki][php-wiki]
 
-## PHP Conferences
+## PHP конференції
 
-The PHP community also hosts larger regional and national conferences in many countries around the world. Well-known members of the PHP community usually speak at these larger events, so it's a great opportunity to learn directly from industry leaders.
+PHP товариство також проводить великі регіональні та національні конференції у багатьох країнах по світу. Відомі учасники PHP спільноти зазвичай виступають на цих конференціях, отож велика можливіть вчитися безпосередньо в лідерів галузі.
 
-[Find a PHP Conference][php-conf]
+[Знайти PHP конференцію][php-conf]
 
 [php-calendar]: http://www.php.net/cal.php
 [google]: https://www.google.com/search?q=php+user+group+near+me

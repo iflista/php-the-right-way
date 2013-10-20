@@ -4,3 +4,8 @@
 /.buildpath
 /.gitignore
 /.project
+
+# Intellij
+.idea/
+*.iml
+*.iws

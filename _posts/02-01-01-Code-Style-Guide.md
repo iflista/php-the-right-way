@@ -9,16 +9,28 @@ title: Керівництво з написання коду
 
 В ідеалі ви повинні писати код, котрий притримується одного або кількох із цих стандартів, щоб інші розробники могли легко читати і працювати з вашим кодом. Всі вони добавляють вимоги до попередньої рекомендації, отож використання PSR-1 вимагає PSR-0, але не вимагає PSR-2.
 
-* [Читати про PSR-0][psr0]
-* [Читати про PSR-1][psr1]
-* [Читати про PSR-2][psr2]
+* [Read about PSR-0][psr0]
+* [Read about PSR-1][psr1]
+* [Read about PSR-2][psr2]
+* [Read about PSR-4][psr4]
+* [Read about PEAR Coding Standards][pear-cs]
+* [Read about Zend Coding Standards][zend-cs]
+* [Read about Symfony Coding Standards][symfony-cs]
 
-Ви можете використовувати [phpcs-psr][phpcs-psr] або [PHP_CodeSniffer][phpcs], щоб перевірити код на відповідність цим рекомендаціям. Використовуйте [Налагоджувач стандартів кодування PHP][phpcsfixer] Фаб'єна Потенсьєра для автоматичної зміни синтаксису вашого коду, щоб він відповідав цим стандартам, це позбавить вас від виправлення кожної проблеми вручну.
+Ви можете використовувати [PHP_CodeSniffer][phpcs], для перевірки коду на відповідність цим рекомендаціям, додатки до текстових редакторів; [Sublime Text 2][st-cs] або подібні для отримання допомоги у реальному часі. 
+
+Використовуйте [Налагоджувач стандартів кодування PHP][phpcsfixer] Фаб'єна Потенсьєра для автоматичної зміни синтаксису вашого коду, щоб він відповідав цим стандартам, це позбавить вас від виправлення кожної проблеми вручну.
+
+Слід використовувати англійську для іменування. Коментарі  можуть бути на будь-якій мові, зручній для усіх, хто працює з кодом або буде працювати у майбутньому.
 
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [psr1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+[pear-cs]: http://pear.php.net/manual/en/standards.php
+[zend-cs]: http://framework.zend.com/wiki/display/ZFDEV2/Coding+Standards
+[symfony-cs]: http://symfony.com/doc/current/contributing/code/standards.html
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
-[phpcs-psr]: https://github.com/klaussilveira/phpcs-psr
+[st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: http://cs.sensiolabs.org/

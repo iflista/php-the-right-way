@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: подальше_читання
+title: "Подальше читання"
 ---
 
 ## Подальше читання {#further_reading_title}

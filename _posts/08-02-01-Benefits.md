@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив’язка: переваги шаблонів
+title: "Переваги"
 ---
 
 ## Переваги {#templating_benefits_title}

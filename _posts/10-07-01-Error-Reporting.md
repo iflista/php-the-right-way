@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив'язка: error_reporting
+title: "Повідомлення про помилку"
 ---
 
 ## Повідомлення про помилку {#error_reporting_title}

@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив'язка: shared_servers
+title: "Спільні сервери"
 ---
 
 ## Спільні сервери {#shared_servers_title}

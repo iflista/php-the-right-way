@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: простори імен
+title: "Простори імен"
 ---
 
 ## Простори імен {#namespaces_title}

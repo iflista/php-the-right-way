@@ -1,7 +1,8 @@
 ---
-isChild: правда
+isChild: true
 назва: Шари абстракції
 якір: бази даних_абстракційних_шарів
+title: "Шари абстракції"
 ---
 
 ## Шари абстракції {#databases_abstraction_layers_title}

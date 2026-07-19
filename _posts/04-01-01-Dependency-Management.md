@@ -1,5 +1,6 @@
 ---
 прив’язка: dependency_management
+title: "Керування залежностями"
 ---
 
 # Керування залежностями {#dependency_management_title}

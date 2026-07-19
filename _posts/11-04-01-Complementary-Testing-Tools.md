@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив’язка: complementary_testing_tools
+title: "Додаткові інструменти тестування"
 ---
 
 ## Додаткові інструменти тестування {#complementary_testing_tools_title}

@@ -1,7 +1,8 @@
 ---
 назва: Стандартна бібліотека PHP
-isChild: правда
+isChild: true
 якір: standard_php_library
+title: "Стандартна бібліотека PHP"
 ---
 
 ## Стандартна бібліотека PHP {#standard_php_library_title}

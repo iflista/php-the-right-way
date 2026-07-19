@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: бродяга
+title: "Vagrant"
 ---
 
 ## Vagrant {#vagrant_title}

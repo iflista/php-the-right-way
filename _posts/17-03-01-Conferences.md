@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 вед.: конференц
+title: "Конференції PHP"
 ---
 
 ## Конференції PHP {#conferences_title}

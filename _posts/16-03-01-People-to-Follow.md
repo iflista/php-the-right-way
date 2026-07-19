@@ -1,7 +1,8 @@
 ---
 назва: Люди, за якими варто стежити
-isChild: правда
+isChild: true
 якір: people_to_follow
+title: "Люди, за якими варто стежити"
 ---
 
 ## Люди, за якими варто стежити {#people_to_follow_title}

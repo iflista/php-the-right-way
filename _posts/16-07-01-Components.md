@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: компоненти
+title: "Компоненти"
 ---
 
 ## Компоненти {#components_title}

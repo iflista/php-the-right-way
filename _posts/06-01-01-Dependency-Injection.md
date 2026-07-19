@@ -1,6 +1,7 @@
 ---
 назва: Ін'єкція залежності
 якір: dependency_injection
+title: "Впровадження залежностей"
 ---
 
 # Впровадження залежностей {#dependency_injection_title}

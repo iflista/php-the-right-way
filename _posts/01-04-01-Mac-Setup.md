@@ -1,6 +1,7 @@
 ---
 isChild: true
 anchor:  mac_setup
+title: "Налаштування macOS"
 ---
 
 ## Налаштування macOS {#mac_setup_title}

@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив’язка: data_filtering
+title: "Фільтрування даних"
 ---
 
 ## Фільтрування даних {#data_filtering_title}

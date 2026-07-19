@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: конфігураційні_файли
+title: "Файли конфігурації"
 ---
 
 ## Файли конфігурації {#configuration_files_title}

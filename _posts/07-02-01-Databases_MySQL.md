@@ -1,7 +1,8 @@
 ---
-isChild: правда
+isChild: true
 назва: розширення MySQL
 якір: mysql_extension
+title: "Розширення MySQL"
 ---
 
 ## Розширення MySQL {#mysql_extension_title}

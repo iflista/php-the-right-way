@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив’язка: compiled_templates
+title: "Зібрані шаблони"
 ---
 
 ## Зібрані шаблони {#compiled_templates_title}

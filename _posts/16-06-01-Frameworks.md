@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: каркаси
+title: "Фреймворки"
 ---
 
 ## Фреймворки {#frameworks_title}

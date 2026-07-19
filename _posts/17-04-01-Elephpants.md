@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: слони
+title: "ElePHPants"
 ---
 
 ## ElePHPants {#elephpants_title}

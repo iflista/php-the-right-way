@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: windows_setup
+title: "Налаштування Windows"
 ---
 
 ## Налаштування Windows {#windows_setup_title}

@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: парадигми програмування
+title: "Парадигми програмування"
 ---
 
 ## Парадигми програмування {#programming_paradigms_title}

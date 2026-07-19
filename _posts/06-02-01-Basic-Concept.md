@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: базова_концепція
+title: "Основна концепція"
 ---
 
 ## Основна концепція {#basic_concept_title}

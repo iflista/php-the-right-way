@@ -1,5 +1,6 @@
 ---
 anchor: code_style_guide
+title: "Довідник зі стилю коду"
 ---
 
 # Довідник зі стилю коду {#code_style_guide_title}

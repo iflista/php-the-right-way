@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: винятки
+title: "Винятки"
 ---
 
 ## Винятки {#exceptions_title}

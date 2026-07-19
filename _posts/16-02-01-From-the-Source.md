@@ -1,7 +1,8 @@
 ---
 назва: З джерела
-isChild: правда
+isChild: true
 якір: from_the_source
+title: "З джерела"
 ---
 
 ## З джерела {#from_the_source_title}

@@ -1,5 +1,5 @@
 ---
-title:   Use the Current Stable Version (8.5)
+title: "Використовуйте поточну стабільну версію (8.5)"
 isChild: true
 anchor:  use_the_current_stable_version
 ---

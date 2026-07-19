@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив’язка: object_caching
+title: "Кешування об'єктів"
 ---
 
 ## Кешування об'єктів {#object_caching_title}

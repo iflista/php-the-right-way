@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: хешування пароля
+title: "Хешування пароля"
 ---
 
 ## Хешування пароля {#password_hashing_title}

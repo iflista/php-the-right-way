@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив’язка: web_application_security
+title: "Безпека веб-додатків"
 ---
 
 ## Безпека веб-додатків {#web_application_security_title}

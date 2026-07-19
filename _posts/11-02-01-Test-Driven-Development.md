@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: test_driven_development
+title: "Розробка, орієнтована на тестування"
 ---
 
 ## Розробка, орієнтована на тестування {#test_driven_development_title}

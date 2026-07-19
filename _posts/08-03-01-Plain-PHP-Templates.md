@@ -1,7 +1,8 @@
 ---
 назва: Прості шаблони PHP
-isChild: правда
+isChild: true
 якір: plain_php_templates
+title: "Прості шаблони PHP"
 ---
 
 ## Прості шаблони PHP {#plain_php_templates_title}

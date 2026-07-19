@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: linux_setup
+title: "Налаштування Linux"
 ---
 
 ## Налаштування Linux {#linux_setup_title}

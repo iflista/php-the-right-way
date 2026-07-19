@@ -1,7 +1,8 @@
 ---
 назва: Робота з UTF-8
-isChild: правда
+isChild: true
 якір: php_and_utf8
+title: "Робота з UTF-8"
 ---
 
 ## Робота з UTF-8 {#php_and_utf8_title}

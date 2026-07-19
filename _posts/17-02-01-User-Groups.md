@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: групи користувачів
+title: "Групи користувачів PHP"
 ---
 
 ## Групи користувачів PHP {#user_groups_title}

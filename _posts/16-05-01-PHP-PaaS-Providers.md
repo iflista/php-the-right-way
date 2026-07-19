@@ -1,7 +1,8 @@
 ---
 назва: PHP PaaS Providers
-isChild: правда
+isChild: true
 якір: php_paas_providers
+title: "Постачальники PHP PaaS"
 ---
 
 ## Постачальники PHP PaaS {#php_paas_providers_title}

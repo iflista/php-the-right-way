@@ -1,7 +1,8 @@
 ---
 назва: Віртуальні або виділені сервери
-isChild: правда
+isChild: true
 прив’язка: virtual_or_dedicated_servers
+title: "Віртуальні або виділені сервери"
 ---
 
 ## Віртуальні або виділені сервери {#virtual_or_dedicated_servers_title}

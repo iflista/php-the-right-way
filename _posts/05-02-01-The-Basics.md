@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: the_basics
+title: "Основи"
 ---
 
 ## Основи {#the_basics_title}

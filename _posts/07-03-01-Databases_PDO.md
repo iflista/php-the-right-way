@@ -1,7 +1,8 @@
 ---
-isChild: правда
+isChild: true
 назва: розширення PDO
 прив’язка: pdo_extension
+title: "Розширення PDO"
 ---
 
 ## Розширення PDO {#pdo_extension_title}

@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: register_globals
+title: "Реєстрація Globals"
 ---
 
 ## Реєстрація Globals {#register_globals_title}

@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 anchor: build_and_deploying_your_application
+title: "Створення та розгортання вашої програми"
 ---
 
 ## Створення та розгортання вашої програми {#building_and_deploying_your_application_title}

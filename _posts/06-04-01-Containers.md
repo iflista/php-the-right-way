@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: контейнери
+title: "Контейнери"
 ---
 
 ## Контейнери {#containers_title}

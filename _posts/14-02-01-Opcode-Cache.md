@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 прив’язка: opcode_cache
+title: "Кеш опкодів"
 ---
 
 ## Кеш опкодів {#opcode_cache_title}

@@ -1,6 +1,7 @@
 ---
 назва: Сервери та розгортання
 якір: servers_and_deployment
+title: "Сервери та розгортання"
 ---
 
 # Сервери та розгортання {#servers_and_deployment_title}

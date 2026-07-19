@@ -1,6 +1,7 @@
 ---
-isChild: правда
+isChild: true
 якір: складна_проблема
+title: "Складне завдання"
 ---
 
 ## Складне завдання {#complex_problem_title}

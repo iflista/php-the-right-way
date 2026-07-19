@@ -1,5 +1,5 @@
 ---
-якір: coding_practices
+anchor: coding_practices
 title: "Практики кодування"
 ---
 

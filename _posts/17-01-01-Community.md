@@ -1,5 +1,5 @@
 ---
-якір: громада
+anchor: community
 title: "Спільнота"
 ---
 

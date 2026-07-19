@@ -1,6 +1,6 @@
 ---
-назва: Ін'єкція залежності
-якір: dependency_injection
+title:  Dependency Injection
+anchor: dependency_injection
 title: "Впровадження залежностей"
 ---
 

@@ -1,5 +1,5 @@
 ---
-якір: language_highlights
+anchor: language_highlights
 title: "Особливості мови"
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: "Composer і Packagist"
+title:   Composer and Packagist
 isChild: true
 anchor:  composer_and_packagist
+title: "Composer і Packagist"
 ---
 
 ## Composer і Packagist {#composer_and_packagist_title}

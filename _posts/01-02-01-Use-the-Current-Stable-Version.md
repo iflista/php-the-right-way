@@ -1,7 +1,8 @@
 ---
-title: "Використовуйте поточну стабільну версію (8.5)"
+title:   Use the Current Stable Version (8.5)
 isChild: true
 anchor:  use_the_current_stable_version
+title: "Використовуйте поточну стабільну версію (8.5)"
 ---
 
 ## Використовуйте поточну стабільну версію (8.5) {#use_the_current_stable_version_title}

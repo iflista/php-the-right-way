@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: контейнери
+anchor:  containers
 title: "Контейнери"
 ---
 

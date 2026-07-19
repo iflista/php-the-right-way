@@ -1,5 +1,5 @@
 ---
-якір: безпека
+anchor: security
 title: "Безпека"
 ---
 

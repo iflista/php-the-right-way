@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: простори імен
+anchor:  namespaces
 title: "Простори імен"
 ---
 

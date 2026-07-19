@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: інтерфейс_командного_рядка
+anchor:  command_line_interface
 title: "Інтерфейс командного рядка"
 ---
 

@@ -1,6 +1,6 @@
 ---
-назва: Сервери та розгортання
-якір: servers_and_deployment
+title:  Servers and Deployment
+anchor: servers_and_deployment
 title: "Сервери та розгортання"
 ---
 

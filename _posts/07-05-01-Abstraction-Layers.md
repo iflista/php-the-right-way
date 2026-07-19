@@ -1,7 +1,7 @@
 ---
 isChild: true
-назва: Шари абстракції
-якір: бази даних_абстракційних_шарів
+title:   Abstraction Layers
+anchor:  databases_abstraction_layers
 title: "Шари абстракції"
 ---
 

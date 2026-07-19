@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: поведінка_керований_розробкою
+anchor:  behavior_driven_development
 title: "Розробка, орієнтована на поведінку"
 ---
 

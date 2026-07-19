@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: винятки
+anchor:  exceptions
 title: "Винятки"
 ---
 

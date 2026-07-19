@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив'язка: shared_servers
+anchor:  shared_servers
 title: "Спільні сервери"
 ---
 

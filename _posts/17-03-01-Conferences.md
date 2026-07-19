@@ -1,6 +1,6 @@
 ---
 isChild: true
-вед.: конференц
+anchor:  conferences
 title: "Конференції PHP"
 ---
 

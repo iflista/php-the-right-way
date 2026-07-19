@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: complementary_testing_tools
+anchor:  complementary_testing_tools
 title: "Додаткові інструменти тестування"
 ---
 

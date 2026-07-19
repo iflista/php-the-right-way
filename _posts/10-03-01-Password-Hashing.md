@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: хешування пароля
+anchor:  password_hashing
 title: "Хешування пароля"
 ---
 

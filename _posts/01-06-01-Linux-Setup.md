@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: linux_setup
+anchor:  linux_setup
 title: "Налаштування Linux"
 ---
 

@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: слони
+anchor:  elephpants
 title: "ElePHPants"
 ---
 

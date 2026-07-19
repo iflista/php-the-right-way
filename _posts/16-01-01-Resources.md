@@ -1,5 +1,5 @@
 ---
-якір: ресурси
+anchor: resources
 title: "Ресурси"
 ---
 

@@ -1,7 +1,7 @@
 ---
-Назва: Дата і час
+title:   Date and Time
 isChild: true
-прив’язка: дата_і_час
+anchor:  date_and_time
 title: "Дата й час"
 ---
 

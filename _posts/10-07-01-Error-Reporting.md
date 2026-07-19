@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив'язка: error_reporting
+anchor:  error_reporting
 title: "Повідомлення про помилку"
 ---
 

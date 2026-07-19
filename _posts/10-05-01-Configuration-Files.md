@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: конфігураційні_файли
+anchor:  configuration_files
 title: "Файли конфігурації"
 ---
 

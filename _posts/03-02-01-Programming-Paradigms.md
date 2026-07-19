@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: парадигми програмування
+anchor:  programming_paradigms
 title: "Парадигми програмування"
 ---
 

@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: register_globals
+anchor:  register_globals
 title: "Реєстрація Globals"
 ---
 

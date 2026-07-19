@@ -1,7 +1,7 @@
 ---
-назва: З джерела
+title:   From the Source
 isChild: true
-якір: from_the_source
+anchor:  from_the_source
 title: "З джерела"
 ---
 

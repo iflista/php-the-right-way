@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: object_caching
+anchor:  object_caching
 title: "Кешування об'єктів"
 ---
 

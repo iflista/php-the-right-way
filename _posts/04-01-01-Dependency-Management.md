@@ -1,5 +1,5 @@
 ---
-прив’язка: dependency_management
+anchor: dependency_management
 title: "Керування залежностями"
 ---
 

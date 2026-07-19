@@ -1,7 +1,7 @@
 ---
-назва: Загальна структура каталогу
+title:   Common Directory Structure
 isChild: true
-прив’язка: структура_загального_каталогу
+anchor:  common_directory_structure
 title: "Загальна структура каталогу"
 ---
 

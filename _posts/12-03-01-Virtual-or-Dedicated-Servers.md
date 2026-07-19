@@ -1,7 +1,7 @@
 ---
-назва: Віртуальні або виділені сервери
+title:   Virtual or Dedicated Servers
 isChild: true
-прив’язка: virtual_or_dedicated_servers
+anchor:  virtual_or_dedicated_servers
 title: "Віртуальні або виділені сервери"
 ---
 

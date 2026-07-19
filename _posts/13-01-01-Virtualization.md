@@ -1,5 +1,5 @@
 ---
-якір: віртуалізація
+anchor: virtualization
 title: "Віртуалізація"
 ---
 

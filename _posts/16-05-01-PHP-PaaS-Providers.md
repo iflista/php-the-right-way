@@ -1,7 +1,7 @@
 ---
-назва: PHP PaaS Providers
+title: PHP PaaS Providers
 isChild: true
-якір: php_paas_providers
+anchor:  php_paas_providers
 title: "Постачальники PHP PaaS"
 ---
 

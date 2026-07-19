@@ -1,6 +1,6 @@
 ---
-назва: Шаблони
-якір: створення шаблонів
+title:  Templating
+anchor: templating
 title: "Шаблонізація"
 ---
 

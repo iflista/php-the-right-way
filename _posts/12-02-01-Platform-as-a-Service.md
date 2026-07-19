@@ -1,7 +1,7 @@
 ---
-назва: Платформа як послуга (PaaS)
+title:   Platform as a Service (PaaS)
 isChild: true
-прив’язка: platform_as_a_service
+anchor:  platform_as_a_service
 title: "Платформа як послуга (PaaS)"
 ---
 

@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: web_application_security
+anchor:  web_application_security
 title: "Безпека веб-додатків"
 ---
 

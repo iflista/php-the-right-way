@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: складна_проблема
+anchor:  complex_problem
 title: "Складне завдання"
 ---
 

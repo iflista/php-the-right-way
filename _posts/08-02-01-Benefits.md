@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: переваги шаблонів
+anchor:  templating_benefits
 title: "Переваги"
 ---
 

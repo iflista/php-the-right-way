@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: the_basics
+anchor:  the_basics
 title: "Основи"
 ---
 

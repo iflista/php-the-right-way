@@ -1,6 +1,6 @@
 ---
-назва: Бази даних
-якір: бази даних
+title:  Databases
+anchor: databases
 title: "Бази даних"
 ---
 

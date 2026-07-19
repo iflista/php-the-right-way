@@ -1,7 +1,7 @@
 ---
-назва: Робота з UTF-8
+title:   Working with UTF-8
 isChild: true
-якір: php_and_utf8
+anchor:  php_and_utf8
 title: "Робота з UTF-8"
 ---
 

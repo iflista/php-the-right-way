@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: групи користувачів
+anchor:  user_groups
 title: "Групи користувачів PHP"
 ---
 

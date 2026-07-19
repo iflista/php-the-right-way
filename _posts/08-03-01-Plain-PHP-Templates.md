@@ -1,7 +1,7 @@
 ---
-назва: Прості шаблони PHP
+title: Plain PHP Templates
 isChild: true
-якір: plain_php_templates
+anchor:  plain_php_templates
 title: "Прості шаблони PHP"
 ---
 

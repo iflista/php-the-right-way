@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: базова_концепція
+anchor:  basic_concept
 title: "Основна концепція"
 ---
 

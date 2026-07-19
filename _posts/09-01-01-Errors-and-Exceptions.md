@@ -1,6 +1,6 @@
 ---
-назва: Помилки та винятки
-якір: errors_and_exceptions
+title:  Errors and Exceptions
+anchor: errors_and_exceptions
 title: "Помилки та винятки"
 ---
 

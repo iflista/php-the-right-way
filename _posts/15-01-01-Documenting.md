@@ -1,6 +1,6 @@
 ---
-якір: документування
-назва: Документування вашого коду
+anchor: documenting
+title:  Documenting your Code
 title: "Документування вашого коду"
 ---
 

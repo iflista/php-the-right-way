@@ -1,7 +1,7 @@
 ---
-назва: Люди, за якими варто стежити
+title:   People to Follow
 isChild: true
-якір: people_to_follow
+anchor:  people_to_follow
 title: "Люди, за якими варто стежити"
 ---
 

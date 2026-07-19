@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: подальше_читання
+anchor:  further_reading
 title: "Подальше читання"
 ---
 

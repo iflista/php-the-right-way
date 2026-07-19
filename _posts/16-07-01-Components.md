@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: компоненти
+anchor:  components
 title: "Компоненти"
 ---
 

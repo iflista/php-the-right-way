@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: data_filtering
+anchor:  data_filtering
 title: "Фільтрування даних"
 ---
 

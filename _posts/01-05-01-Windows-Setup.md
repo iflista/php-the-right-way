@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: windows_setup
+anchor:  windows_setup
 title: "Налаштування Windows"
 ---
 

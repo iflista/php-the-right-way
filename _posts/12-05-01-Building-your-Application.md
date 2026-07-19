@@ -1,6 +1,6 @@
 ---
 isChild: true
-anchor: build_and_deploying_your_application
+anchor:  building_and_deploying_your_application
 title: "Створення та розгортання вашої програми"
 ---
 

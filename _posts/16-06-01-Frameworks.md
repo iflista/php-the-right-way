@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: каркаси
+anchor:  frameworks
 title: "Фреймворки"
 ---
 

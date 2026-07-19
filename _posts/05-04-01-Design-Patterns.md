@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: шаблони_дизайну
+anchor:  design_patterns
 title: "Патерні проектування"
 ---
 

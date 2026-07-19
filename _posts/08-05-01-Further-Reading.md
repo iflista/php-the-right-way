@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: шаблон_подальше_читання
+anchor:  templating_further_reading
 title: "Подальше читання"
 ---
 

@@ -1,7 +1,7 @@
 ---
 isChild: true
-назва: Взаємодія з базами даних
-прив’язка: взаємодія з базами даних
+title:   Interacting with Databases
+anchor:  databases_interacting
 title: "Взаємодія з базою даних"
 ---
 

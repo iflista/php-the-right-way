@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: test_driven_development
+anchor:  test_driven_development
 title: "Розробка, орієнтована на тестування"
 ---
 

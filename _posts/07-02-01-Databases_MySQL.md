@@ -1,7 +1,7 @@
 ---
 isChild: true
-назва: розширення MySQL
-якір: mysql_extension
+title:   MySQL Extension
+anchor:  mysql_extension
 title: "Розширення MySQL"
 ---
 

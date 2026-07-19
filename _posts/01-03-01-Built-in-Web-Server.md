@@ -1,7 +1,8 @@
 ---
-title: "Вбудований веб-сервер"
+title:   Built-in Web Server
 isChild: true
 anchor:  builtin_web_server
+title: "Вбудований веб-сервер"
 ---
 
 ## Вбудований веб-сервер {#builtin_web_server_title}

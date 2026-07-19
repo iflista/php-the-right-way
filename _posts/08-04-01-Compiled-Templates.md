@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: compiled_templates
+anchor:  compiled_templates
 title: "Зібрані шаблони"
 ---
 

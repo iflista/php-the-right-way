@@ -1,7 +1,7 @@
 ---
-назва: Стандартна бібліотека PHP
+title:   Standard PHP Library
 isChild: true
-якір: standard_php_library
+anchor:  standard_php_library
 title: "Стандартна бібліотека PHP"
 ---
 

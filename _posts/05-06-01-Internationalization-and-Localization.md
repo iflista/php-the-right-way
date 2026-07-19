@@ -1,7 +1,7 @@
 ---
-назва: Інтернаціоналізація та локалізація
+title:   Internationalization and Localization
 isChild: true
-якір: i18n_l10n
+anchor:  i18n_l10n
 title: "Інтернаціоналізація (i18n) і локалізація (l10n)"
 ---
 

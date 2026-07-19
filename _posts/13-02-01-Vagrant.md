@@ -1,6 +1,6 @@
 ---
 isChild: true
-якір: бродяга
+anchor:  vagrant
 title: "Vagrant"
 ---
 

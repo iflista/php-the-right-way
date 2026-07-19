@@ -1,6 +1,6 @@
 ---
 isChild: true
-прив’язка: opcode_cache
+anchor:  opcode_cache
 title: "Кеш опкодів"
 ---
 

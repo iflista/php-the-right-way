@@ -1,7 +1,7 @@
 ---
 isChild: true
-назва: розширення PDO
-прив’язка: pdo_extension
+title:   PDO Extension
+anchor:  pdo_extension
 title: "Розширення PDO"
 ---
 

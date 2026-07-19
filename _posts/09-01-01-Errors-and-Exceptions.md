@@ -1,7 +1,6 @@
 ---
-title:  Errors and Exceptions
-anchor: errors_and_exceptions
+назва: Помилки та винятки
+якір: errors_and_exceptions
 ---
 
-# Errors and Exceptions {#errors_and_exceptions_title}
-
+# Помилки та винятки {#errors_and_exceptions_title}

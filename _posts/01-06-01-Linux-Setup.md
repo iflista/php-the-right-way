@@ -1,78 +1,56 @@
 ---
-isChild: true
-anchor:  linux_setup
+isChild: правда
+якір: linux_setup
 ---
 
-## Linux Setup {#linux_setup_title}
+## Налаштування Linux {#linux_setup_title}
 
-Most GNU/Linux distributions come with PHP available from the official repositories, but those packages usually are a little behind the current stable version. There are multiple ways to get newer PHP versions on such distributions.
+Більшість дистрибутивів GNU/Linux постачаються з PHP, доступними з офіційних сховищ, але ці пакети зазвичай трохи відстають від поточної стабільної версії. Є кілька способів отримати нові версії PHP для таких дистрибутивів.
 
-### Ubuntu-based distributions
+### Дистрибутиви на основі Ubuntu
 
-On Ubuntu and Debian-based GNU/Linux distributions, for instance, the best alternatives for native packages are provided and maintained by [Ondřej Surý][Ondrej Sury Blog], through his Personal Package Archive (PPA) on Ubuntu and DPA/bikeshed on Debian. Find instructions for each of these below.
+Наприклад, у дистрибутивах GNU/Linux на базі Ubuntu та Debian найкращі альтернативи для нативних пакетів надає та підтримує [Ондржей Сурі][Блог Ондрея Сурі] через його особистий пакет архівів (PPA) на Ubuntu та DPA/bikeshed на Debian. Знайдіть інструкції для кожного з них нижче.
 
-For Ubuntu distributions, the [PPA by Ondřej Surý][Ondrej Sury PPA] provides supported PHP versions along with many PECL extensions. To add this PPA to your system, perform the following steps in your terminal:
+Для дистрибутивів Ubuntu [PPA від Ondřej Surý][Ondrej Sury PPA] надає підтримувані версії PHP разом із багатьма розширеннями PECL. Щоб додати цей PPA до вашої системи, виконайте наступні кроки у ваших терміналах:
 
-1. First, add the PPA to your system's software sources using the command:
-
+1. Спочатку додайте PPA до джерела програмного забезпечення вашої системи за допомогою команди:
    ```bash
    sudo add-apt-repository ppa:ondrej/php
-   ```
-
-2. After adding the PPA, update your system's package list:
-
+   ```2. Після додавання PPA оновіть список пакетів вашої системи:
    ```bash
    sudo apt update
-   ```
+   ```Пакет гарантує, що ваша система зможе отримати доступ і встановити цей останній PHP, доступний у PPA.
 
-This will ensure that your system can access and install the latest PHP packages available in the PPA.
+### Дистрибутиви на основі Debian
 
-### Debian-based distributions
+Для дистрибутивів на основі Debian Ондржей Сурі також надає [bikeshed][bikeshed](еквівалент PPA у Debian). Щоб додати навіс для велосипедів у свою систему та оновити його, виконайте такі дії:
 
-For Debian-based distributions, Ondřej Surý also provides a [bikeshed][bikeshed] (Debian equivalent of a PPA). To add the bikeshed to your system and update it, follow these steps:
+1. Переконайтеся, що у вас є root-доступ. Якщо ні, ви можете використовувати `sudo` для наступних команд.
 
-1. Ensure that you have root access. If not, you might need to use `sudo` for the following commands.
-
-2. Update your system's package list:
-
+2. Оновіть список пакетів вашої системи:
    ```bash
    sudo apt-get update
-   ```
-
-3. Install `lsb-release`, `ca-certificates`, and `curl`:
-
+   ```3. Встановіть `lsb-release`, `ca-certificates` і `curl`:
    ```bash
    sudo apt-get -y install lsb-release ca-certificates curl
-   ```
-
-4. Download the signing key for the repository:
-
+   ```4. Завантажте ключ підпису для репозиторію:
    ```bash
    sudo curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
-   ```
-
-5. Add the repository to your system's software sources:
-
+   ```5. Додайте репозиторій до джерел програмного забезпечення вашої системи:
    ```bash
    sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
-   ```
-
-6. Finally, update your system's package list again:
-
+   ```6. Нарешті, знову оновіть список пакетів вашої системи:
    ```bash
    sudo apt-get update
-   ```
+   ```Завдяки цим крокам ваша система зможе інсталювати найновіші PHP-пакети з велосипедного сараю.
 
-With these steps, your system will be able to install the latest PHP packages from the bikeshed.
+### Дистрибутиви на основі RPM
 
-### RPM-based distributions
+У дистрибутивах на базі версії RPM (CentOS, Fedora, RHEL тощо) ви можете використовувати [репозиторій RPM Remi][remi-repo], щоб одночасно інсталювати останню PHP або мати кілька доступних версій PHP.
 
-On RPM-based distributions (CentOS, Fedora, RHEL, etc.) you can use the [Remi's RPM repository][remi-repo] to install the latest PHP version or to have multiple PHP versions simultaneously available.
+Існує [майстер конфігурації][remi-wizard], доступний для налаштування дистрибутива на основі RPM.
 
-There is a [configuration wizard][remi-wizard] available to configure your RPM-based distribution.
-
-All that said, you can always use containers or compile the PHP source code from scratch.
-
+Зрештою, ви завжди можете використовувати контейнери або скомпіювати вихідний код PHP з нуля.
 [Ondrej Sury Blog]: https://deb.sury.org/
 [Ondrej Sury PPA]: https://launchpad.net/~ondrej/+archive/ubuntu/php
 [bikeshed]: https://packages.sury.org/php/

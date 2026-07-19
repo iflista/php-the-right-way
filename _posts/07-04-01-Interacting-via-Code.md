@@ -1,13 +1,13 @@
 ---
-isChild: true
-title:   Interacting with Databases
-anchor:  databases_interacting
+isChild: правда
+назва: Взаємодія з базами даних
+прив’язка: взаємодія з базами даних
 ---
 
-## Interacting with Databases {#databases_interacting_title}
+## Взаємодія з базою даних {#databases_interacting_title}
 
-When developers first start to learn PHP, they often end up mixing their database interaction up with their
-presentation logic, using code that might look like this:
+Коли розробники вперше починають вивчати PHP, вони часто змішують його взаємодію з базою даних
+логіка представлення, використовуючи код, який можна виглядати так:
 
 {% highlight php %}
 <ul>
@@ -19,48 +19,48 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 </ul>
 {% endhighlight %}
 
-This is bad practice for all sorts of reasons, mainly that it's hard to debug, hard to test, hard to read and it is
-going to output a lot of fields if you don't put a limit on there.
+Це погана практика з багатьох причин, головним чином через те, що її важко налагодити, важко перевірити, важко прочитати, і це
+виводитиме багато полів, якщо ви не обмежите їх.
 
-While there are many other solutions to doing this - depending on if you prefer [OOP](/#object-oriented-programming) or
-[functional programming](/#functional-programming) - there must be some element of separation.
+існує хоча багато інших рішень для цього – залежно від того, чи ви віддаєте перевагу [ООП]({{ site.baseurl }}/#object-oriented-programming) чи
+[функціональне програмування]({{ site.baseurl }}/#functional-programming) - має бути якийсь елемент розділення.
 
-Consider the most basic step:
+Розглянемо найпростіший крок:
 
 {% highlight php %}
 <?php
-function getAllFoos($db) {
+функція getAllFoos($db) {
     return $db->query('SELECT * FROM table');
 }
 
-$results = getAllFoos($db);
+$результати = getAllFoos($db);
 foreach ($results as $row) {
-    echo "<li>".$row['field1']." - ".$row['field1']."</li>"; // BAD!!
+    echo "<li>".$row['field1']." - ".$row['field1']."</li>"; // ПОГАНО!!
 }
 {% endhighlight %}
 
-That is a good start. Put those two items in two different files and you've got some clean separation.
+Це хороший початок. Помістіть ці два елементи в два різні файли, і ви отримаєте чітке розділення.
 
-Create a class to place that method in and you have a "Model". Create a simple `.php` file to put the presentation
-logic in and you have a "View", which is very nearly [MVC] - a common OOP architecture for most
-[frameworks](/#frameworks).
+Створіть клас, щоб розповісти цей метод, і у вас буде «Модель». Створіть простий файл `.php`, щоб розмістити презентацію
+логіка, і ви маєте "Вид", який дуже схожий на [MVC] - звичайну ООП-архітектуру для незалежної
+[frameworks]({{ site.baseurl }}/#frameworks).
 
 **foo.php**
 
 {% highlight php %}
 <?php
-$db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8mb4', 'username', 'password');
+$db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8mb4', 'ім'я користувача', 'пароль');
 
-// Make your model available
+// Зробити свою модель доступною
 include 'models/FooModel.php';
 
-// Create an instance
-$fooModel = new FooModel($db);
-// Get the list of Foos
+// Створення екземпляра
+$fooModel = новий FooModel($db);
+// Отримати список Foos
 $fooList = $fooModel->getAllFoos();
 
-// Show the view
-include 'views/foo-list.php';
+// Показати вигляд
+включати 'views/foo-list.php';
 {% endhighlight %}
 
 
@@ -68,13 +68,13 @@ include 'views/foo-list.php';
 
 {% highlight php %}
 <?php
-class FooModel
+клас FooModel
 {
-    public function __construct(protected PDO $db)
+    публічна функція __construct(захищений PDO $db)
     {
     }
 
-    public function getAllFoos() {
+публічна функція getAllFoos() {
         return $this->db->query('SELECT * FROM table');
     }
 }
@@ -83,14 +83,13 @@ class FooModel
 **views/foo-list.php**
 
 {% highlight php %}
-<?php foreach ($fooList as $row): ?>
+<?php foreach ($fooList як $row): ?>
     <li><?= $row['field1'] ?> - <?= $row['field1'] ?></li>
 <?php endforeach ?>
 {% endhighlight %}
 
-This is essentially the same as what most modern frameworks are doing, albeit a little more manual. You might not
-need to do all of that every time, but mixing together too much presentation logic and database interaction can be a
-real problem if you ever want to [unit-test](/#unit-testing) your application.
-
+По суті, це те саме, що роблять більшість сучасних фреймворків, хоча й трохи більше вручну. Ви можете ні
+потрібно робити все це щоразу, але змішування надто великої кількості логіки презентації та взаємодії з базою даних може бути а
+справжня проблема, якщо ви коли-небудь захочете [модульне тестування]({{ site.baseurl }}/#unit-testing) вашої програми.
 
 [MVC]: https://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488

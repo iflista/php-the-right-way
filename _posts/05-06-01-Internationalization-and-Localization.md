@@ -1,404 +1,389 @@
 ---
-title:   Internationalization and Localization
-isChild: true
-anchor:  i18n_l10n
+назва: Інтернаціоналізація та локалізація
+isChild: правда
+якір: i18n_l10n
 ---
 
-## Internationalization (i18n) and Localization (l10n) {#i18n_l10n_title}
+## Інтернаціоналізація (i18n) і локалізація (l10n) {#i18n_l10n_title}
 
-_Disclaimer for newcomers: i18n and l10n are numeronyms, a kind of abbreviation where numbers are used to shorten
-words - in our case, internationalization becomes i18n and localization, l10n._
+_Застереження для новачків: i18n і l10n є нумеронімами, свого роду абревіатурою, де цифри використовуються для скорочення
+слова - у нашому випадку інтернаціоналізація стає i18n, а локалізація - l10n._
 
-First of all, we need to define those two similar concepts and other related things:
+Перш за все, нам потрібно визначити ці два схожі поняття та інші пов’язані речі:
 
-- **Internationalization** is when you organize your code so it can be adapted to different languages or regions
-without refactorings. This action is usually done once - preferably, at the beginning of the project, or else you will
-probably need some huge changes in the source!
-- **Localization** happens when you adapt the interface (mainly) by translating contents, based on the i18n work done
-before. It usually is done every time a new language or region needs support and is updated when new interface pieces
-are added, as they need to be available in all supported languages.
-- **Pluralization** defines the rules required between distinct languages to interoperate strings containing numbers and 
-counters. For instance, in English when you have only one item, it is singular, and anything different from that is 
-called plural; plural in this language is indicated by adding an S after some words, and sometimes changes parts of it.
-In other languages, such as Russian or Serbian, there are two plural forms in addition to the singular - you may even
-find languages with a total of four, five or six forms, such as Slovenian, Irish or Arabic.
+- **Інтернаціоналізація** - це коли ви організовуєте свій код так, щоб його можна було адаптувати до різних мов або регіонів
+без рефакторингів. Ця дія зазвичай виконується один раз - бажано на початку проекту, інакше ви це зробите
+ймовірно, потрібні значні зміни в джерелі!
+- **Локалізація** відбувається, коли ви адаптуєте інтерфейс (переважно) шляхом перекладу вмісту на основі виконаної роботи i18n
+раніше. Зазвичай це робиться щоразу, коли потрібна підтримка нової мови чи регіону, і оновлюється, коли з’являються нові елементи інтерфейсу
+додаються, оскільки вони мають бути доступними всіма підтримуваними мовами.
+- **Множина** визначає правила, необхідні між різними мовами для взаємодії рядків, що містять числа та
+лічильники. Наприклад, в англійській мові, коли у вас є лише один елемент, він в однині, а все, що відрізняється від цього, є
+називається множиною; множина в цій мові позначається додаванням S після деяких слів і іноді змінює його частини.
+В інших мовах, таких як російська чи сербська, є дві форми множини на додаток до однини - ви можете навіть
+знайти мови із чотирма, п’ятьма або шістьма формами, як-от словенська, ірландська чи арабська.
 
-## Common ways to implement
-The easiest way to internationalize PHP software is by using array files and using those strings in templates, such as
-`<h1><?=$TRANS['title_about_page']?></h1>`. This way is, however, hardly recommended for serious projects, as it poses
-some maintenance issues along the road - some might appear in the very beginning, such as pluralization. So, please,
-don't try this if your project will contain more than a couple of pages.
+## Загальні способи реалізації
+Найпростіший спосіб інтернаціоналізації програмного забезпечення PHP — використання масивів файлів і використання цих рядків у шаблонах, таких як
+`<h1><?=$TRANS['title_about_page']?></h1>`. Однак цей спосіб навряд рекомендований для серйозних проектів, як він представляє
+Деякі проблеми з техобслуговуванням уздовж дороги - деякі можуть виникнути на самому початку, наприклад, множинність. Тож будь ласка,
+не пробуйте це, якщо ваш проект надрукуйте більше двох сторінок.
 
-The most classic way and often taken as reference for i18n and l10n is a [Unix tool called `gettext`][gettext]. It dates
-back to 1995 and is still a complete implementation for translating software. It is easy enough to get running, while
-still sporting powerful supporting tools. It is about Gettext we will be talking here. Also, to help you not get messy
-over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source.
+Найбільш класичним способом, який часто виконується як посилання для i18n і l10n, є [інструмент Unix під назвою `gettext`][gettext]. Це дати
+повертається до 1995 року і досягає повної реалізації для перекладу програмного забезпечення. Досить легко почати працювати, поки
+все ще має потужні інструменти підтримки. Саме про Gettext ми тут і будемо говорити. Крім того, щоб допомогти вам не заплутатися
+через командний рядок ми представляємо чудову програму з графічним інтерфейсом користувача, яку можна використовувати для легкого оновлення джерела l10n.
 
-### Other tools
+### Інші інструменти
 
-There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to
-install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the
-PHP core, but here we list others for completion:
+Використовуються загальні бібліотеки, які підтримують Gettext та інші реалізації i18n. Деякі з них можуть здатися легшими
+інсталювати або використовувати додаткові функції або формати файлів i18n. В цьому документі ми зосереджуємося на інструментах, які надаються разом з
+Ядро PHP, але тут ми перераховуємо інші для доповнення:- [aura/intl][aura-intl]: Надає інструменти інтернаціоналізації (I18N), зокрема пакетно-орієнтоване повідомлення для всіх мов
+переклад. Він використовує формати масивів для повідомлень. Не надає екстрактора повідомляє, але надає розширені можливості
+форматування повідомлень за допомогою розширення `intl` (включно з повідомленнями в загальному множині).
+- [php-gettext/Gettext][php-gettext]: підтримка Gettext з інтерфейсом OO; містить покращені допоміжні функції, потужний
+екстрактори для кількох форматів файлів (деякі з них не підтримуються спочатку командою `gettext`), а також можуть експортувати
+в інших форматах, крім файлів `.mo/.po`. Може бути корисним, якщо вам потрібно інтегрувати ваші файли перекладу в інші
+частини системи, наприклад інтерфейс JavaScript.
+- [симфонія/переклад][symfony]: підтримує багато різних форматів, але рекомендує використовувати докладні XLIFF. не робить
+включають допоміжні функції та вбудований екстрактор, але підтримують заповнювачі за допомогою внутрішнього `strtr()`.
+- [laminas/laminas-i18n][laminas]: підтримує файли масиву та INI або формати Gettext. Реалізує рівень кешування, щоб позбавити вас від
+щоразу читати файлу system. Він також містить помічники перегляду та фільтри та валідатори, введені з розрахункової локалі.
+Однак він не має екстрактора повідомляє.
 
-- [aura/intl][aura-intl]: Provides internationalization (I18N) tools, specifically package-oriented per-locale message
-translation. It uses array formats for messages. Does not provide a message extractor, but does provide advanced
-message formatting via the `intl` extension (including pluralized messages).
-- [php-gettext/Gettext][php-gettext]: Gettext support with an OO interface; includes improved helper functions, powerful
-extractors for several file formats (some of them not supported natively by the `gettext` command), and can also export
-to other formats besides `.mo/.po` files. Can be useful if you need to integrate your translation files into other
-parts of the system, like a JavaScript interface.
-- [symfony/translation][symfony]: supports a lot of different formats, but recommends using verbose XLIFF's. Doesn't
-include helper functions nor a built-in extractor, but supports placeholders using `strtr()` internally.
-- [laminas/laminas-i18n][laminas]: supports array and INI files, or Gettext formats. Implements a caching layer to save you from
-reading the filesystem every time. It also includes view helpers, and locale-aware input filters and validators.
-However, it has no message extractor.
+Інші фреймворки також включають модулі i18n, але вони недоступні за межами їхніх кодових баз:
 
-Other frameworks also include i18n modules, but those are not available outside of their codebases:
+— [Laravel] підтримує базові масиви файлів, не має автоматичного екстрактора, але містить помічник `@lang` для файлів шаблонів.
+- [Yii] підтримує масив, Gettext і переклад на основі бази даних, а також містить екстрактор повідомлень. Це підтримуватися
+Розширення [`Intl`][intl], доступне з PHP 5.3 і засноване на [проекті ICU]; це дозволяє Yii працювати потужно
+заміни, як-от написання чисел, форматування дат, часу, інтервалів, валюти та порядкових номерів.
 
-- [Laravel] supports basic array files, has no automatic extractor but includes a `@lang` helper for template files.
-- [Yii] supports array, Gettext, and database-based translation, and includes a messages extractor. It is backed by the
-[`Intl`][intl] extension, available since PHP 5.3, and based on the [ICU project]; this enables Yii to run powerful
-replacements, like spelling out numbers, formatting dates, times, intervals, currency, and ordinals.
-
-If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so
-you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
+Якщо ви вирішите вибрати одну з бібліотек, які не містять екстрактори, ви можете використовувати формат gettext, тому
+ви можете використовувати оригінальний інструментарій gettext (включаючи Poedit), як описано в останньому розділі.
 
 ## Gettext
 
-### Installation
-You might need to install Gettext and the related PHP library by using your package manager, like `apt-get` or `yum`.
-After installed, enable it by adding `extension=gettext.so` (Linux/Unix) or `extension=php_gettext.dll` (Windows) to
-your `php.ini`.
+### Установка
+Можливо, вам знадобиться інсталювати Gettext і відповідну бібліотеку PHP за допомогою пакетів менеджера, наприклад `apt-get` або `yum`.
+Після встановлення увімкніть його, додавши `extension=gettext.so` (Linux/Unix) або `extension=php_gettext.dll` (Windows) до
+ваш `php.ini`.
 
-Here we will also be using [Poedit] to create translation files. You will probably find it in your system's package
-manager; it is available for Unix, macOS, and Windows, and can be [downloaded for free on their website][poedit_download]
-as well.
+Тут ми також будемо використовувати [Poedit] для створення файлів перекладу. Ймовірно, ви знайдете його в пакеті вашої системи
+менеджер; він доступний для Unix, macOS і Windows, і його можна [завантажити безкоштовно на веб-сайті][poedit_download]
+також.
 
-### Structure
+### Структура
 
-#### Types of files
-There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and
-MO (Machine Object) files, the first being a list of readable "translated objects" and the second, the corresponding
-binary to be interpreted by gettext when doing localization. There's also a POT (Template) file, which simply contains
-all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template
-files are not mandatory: depending on the tool you are using to do l10n, you can go just fine with only PO/MO files.
-You will always have one pair of PO/MO files per language and region, but only one POT per domain.
+#### Типи файлів
+Під час роботи з gettext ви зазвичай маєте роботу з трьома файлами. Основними з них є PO (Portable Object) і
+Файли MO (Machine Object), перший з яких є списком доступних для читання «перекладених об’єктів», інших — відповідний.
+двійковий файл, який буде інтерпретовано gettext під час локалізації. Існує також файл POT (шаблон), який просто містить
+всі наявні ключі з ваших вихідних файлів і можуть використовуватися як посібник для створення та оновлення всіх PO-файлів. Ті шаблони
+файли не є обов’язковими: залежно від інструменту, який ви використовуєте для виконання l10n, ви можете добре працювати лише з файлами PO/MO.
+У вас завжди буде одна пара файлів PO/MO для кожної мови та регіону, але лише один POT для кожного домену.### Домени
+Бувають випадки у великих проектах, коли ви можете знадобитися розділити переклади, коли передаються однакові слова
+різне значення в контексті. У таких випадках ви розділяєте їх на інші _домени_. Вони, в основному, названі
+групи файлів POT/PO/MO, де ім’я файлу є зібраним _доменом перекладу_. Малі та середні проекти, як правило,
+для спрощення використовуйте лише один домен; назва є вільною, але ми будемо використовувати його "main" для наших зразків коду.
+У проектах [Symfony], наприклад, домени сайту для розділення перекладу повідомлень перевірки.
 
-### Domains
-There are some cases, in big projects, where you might need to separate translations when the same words convey 
-different meaning given a context. In those cases, you split them into different _domains_. They are, basically, named
-groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually,
-for simplicity, use only one domain; its name is arbitrary, but we will be using "main" for our code samples.
-In [Symfony] projects, for example, domains are used to separate the translation for validation messages.
+#### Код мови
+Локаль — це просто код, який ідентифікує одну версію мови. Це визначено відповідно до [ISO 639-1][639-1] і
+Специфікації [ISO 3166-1 alpha-2][3166-1]: дві малі літери для мови, необов’язково після підкреслення двох
+великі літери, що ідентифікують код країни або регіону. Для [рідкісних мов][рідкісних] є три літери.
 
-#### Locale code
-A locale is simply a code that identifies one version of a language. It is defined following the [ISO 639-1][639-1] and 
-[ISO 3166-1 alpha-2][3166-1] specs: two lower-case letters for the language, optionally followed by an underline and two
-upper-case letters identifying the country or regional code. For [rare languages][rare], three letters are used.
+Деяким мовцям частина країни може здатися зайвою. Насправді деякі мови мають різні діалекти
+таких країнах, як австрійська німецька (`de_AT`) або бразильська португальська (`pt_BR`). Друга частина використовується для розрізнення
+між цими діалектами - коли його немає, його сприймають як "загальну" або "гібридну" версію мови.
 
-For some speakers, the country part may seem redundant. In fact, some languages have dialects in different
-countries, such as Austrian German (`de_AT`) or Brazilian Portuguese (`pt_BR`). The second part is used to distinguish
-between those dialects - when it is not present, it is taken as a "generic" or "hybrid" version of the language.
-
-### Directory structure
-To use Gettext, we will need to adhere to a specific structure of folders. First, you will need to select an arbitrary
-root for your l10n files in your source repository. Inside it, you will have a folder for each needed locale, and a
-fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
+### Структура каталогу
+Щоб використовувати Gettext, нам потрібно буде виконувати певну структуру папок. Спочатку вам потрібно буде вибрати довільний
+root для ваших файлів l10n у вашому вихідному сховищі. Усередині нього ви матимете папку для кожної необхідної мови та a
+виправлено папку `LC_MESSAGES`, яка наповнює всі ваші пари PO/MO. приклад:
 
 {% highlight console %}
-<project root>
+<корінь проекту>
  ├─ src/
- ├─ templates/
- └─ locales/
-    ├─ forum.pot
+ ├─ шаблони/
+ └─ локалі/
+    ├─ форум.пот
     ├─ site.pot
     ├─ de/
-    │  └─ LC_MESSAGES/
-    │     ├─ forum.mo
-    │     ├─ forum.po
-    │     ├─ site.mo
-    │     └─ site.po
+    │ └─ LC_MESSAGES/
+    │ ├─ forum.mo
+    │ ├─ forum.po
+    │ ├─ site.mo
+    │ └─ site.po
     ├─ es_ES/
-    │  └─ LC_MESSAGES/
-    │     └─ ...
-    ├─ fr/
-    │  └─ ...
+    │ └─ LC_MESSAGES/
+    │ └─ ...
+    ├─ пт/
+    │ └─ ...
     ├─ pt_BR/
-    │  └─ ...
+    │ └─ ...
     └─ pt_PT/
        └─ ...
 {% endhighlight %}
 
-### Plural forms
-As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from
-this trouble once again. When creating a new `.po` file, you will have to declare the [plural rules][plural] for that
-language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When
-calling Gettext in code, you will have to specify the number related to the sentence, and it will work out the correct
-form to use - even using string substitution if needed.
+### Форми множини
+Як ми вже говорили у вступі, інші мови можуть використовувати різні правила множини. Однак gettext рятує нас від
+знову ця біда. Під час створення нового файлу `.po` вам цікаво оцінити [правила множини][множина] для цього
+мову, і перекладені частини, які чутливі до множини, мають різну форму для кожного з цих правил. Коли
+Викликаючи Gettext у коді, вам зовсім вказати число, пов’язане з реченнями, і воно буде правильним
+форма для використання - навіть використовуючи підстановку рядка, якщо потрібно.
 
-Plural rules include the number of plurals available and a boolean test with `n` that would define in which rule the
-given number falls (starting the count with 0). For example:
+Правила множини включають кількість доступних форм множини та логічний тест із `n`, який визначає, у якому правилі
+дане число випадає (починаючи відлік з 0). Наприклад:
 
-- Japanese: `nplurals=1; plural=0` - only one rule
-- English: `nplurals=2; plural=(n != 1);` - two rules, first if N is one, second rule otherwise
-- Brazilian Portuguese: `nplurals=2; plural=(n > 1);` - two rules, second if N is bigger than one, first otherwise
+- Японська: `nplurals=1; plural=0` - лише одне правило
+– Англійська: `nplurals=2; plural=(n != 1);` – два правила, перше, якщо N дорівнює одиниці, друге правило – інше
+- Бразильська португальська: `nplurals=2; plural=(n > 1);` - два правила, друге, якщо N більше за одиницю, перше в іншому випадку
 
-Now that you understood the basis of how plural rules works - and if you didn't, please look at a deeper explanation
-on the [LingoHub tutorial][lingohub_plurals] -, you might want to copy the ones you need from a [list][plural] instead
-of writing them by hand.
+Тепер, коли ви зрозуміли, як працюють правила множини, а ні, перегляньте глибше пояснення
+у [підручнику LingoHub][lingohub_plurals] - ви можете замість цього скопіювати ті, які вам потрібні, із [list][множина]
+написання їх від рук.
 
-When calling out Gettext to do localization on sentences with counters, you will have to provide it the
-related number as well. Gettext will work out what rule should be in effect and use the correct localized version.
-You will need to include in the `.po` file a different sentence for each plural rule defined.
-
-### Sample implementation
-After all that theory, let's get a little practical. Here's an excerpt of a `.po` file - don't mind with its format,
-but with the overall content instead; you will learn how to edit it easily later:
+Викликаючи Gettext для локалізації речей із лічильниками, ви повинні надати йому значення
+також відповідний номер. Gettext визначте, яке правило має діяти, і використовує правильну локалізовану версію.
+Вам потрібно буде включити у файл `.po` інше речення для кожного визначеного правила множини.### Приклад реалізації
+Після цієї теорії дайте трохи практики. Ось уривок файлу `.po` – не зважайте на його формат,
+але натомість із загальним змістом; пізніше ви дізнаєтеся, як це легко редагувати:
 
 {% highlight po %}
-msgid ""
 msgstr ""
-"Language: pt_BR\n"
+msgstr ""
+"Мова: pt_BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Форми множини: nplurals=2; множина=(n > 1);\n"
 
-msgid "We are now translating some strings"
-msgstr "Nós estamos traduzindo algumas strings agora"
+msgstr "Зараз ми перекладаємо деякі рядки"
+msgstr "Наш переклад агори рядків"
 
-msgid "Hello %1$s! Your last visit was on %2$s"
-msgstr "Olá %1$s! Sua última visita foi em %2$s"
+msgstr "Вітаємо, %1$s! Ваш останній візит був %2$s"
+msgstr "Ой, %1$s! Останнє відвідування для %2$s"
 
-msgid "Only one unread message"
-msgid_plural "%d unread messages"
-msgstr[0] "Só uma mensagem não lida"
-msgstr[1] "%d mensagens não lidas"
+msgstr "Вище одне непрочитане повідомлення"
+msgid_plural "%d непрочитаних повідомлень"
+msgstr[0] "Немає повідомлення"
+msgstr[1] "%d повідомлень немає"
 {% endhighlight %}
 
-The first section works like a header, having the `msgid` and `msgstr` especially empty. It describes the file encoding,
-plural forms and other things that are less relevant.
-The second section translates a simple string from English to
-Brazilian Portuguese, and the third does the same, but leveraging string replacement from [`sprintf`][sprintf] so the
-translation may contain the user name and visit date.
-The last section is a sample of pluralization forms, displaying
-the singular and plural version as `msgid` in English and their corresponding translations as `msgstr` 0 and 1
-(following the number given by the plural rule). There, string replacement is used as well so the number can be seen
-directly in the sentence, by using `%d`. The plural forms always have two `msgid` (singular and plural), so it is
-advised not to use a complex language as the source of translation.
+Перший розділ працює як заголовок, після `msgid` і `msgstr` особливо порожні. Він описує кодування файлу,
+форми множини та інші речі, які менш актуальні.
+Другий розділ перекладає простий рядок з англійської мови
+бразильською португальською, а третій робить те саме, але використовуючи заміну рядка з [`sprintf`][sprintf], тому
+переклад може надрукувати ім'я користувача та дату відвідування.
+Останній розділ — зразок форм множини, відображення
+версії одні та множини як `msgid` англійською мовою та їхні відповідні переклади як `msgstr` 0 та 1
+(за номером, заданим правилом множини). Там також використовується заміна рядка, щоб число було видно
+один у реченні, використовуючи `%d`. У формі множини завжди є два `msgid` (однина та множина), тому це
+радимо не використовувати складну мову як джерело перекладу.
 
-### Discussion on l10n keys
-As you might have noticed, we are using as source ID the actual sentence in English. That `msgid` is the same used
-throughout all your `.po` files, meaning other languages will have the same format and the same `msgid` fields but
-translated `msgstr` lines.
+### Обговорення ключів l10n
+Як ви могли помітити, ми використовуємо як ідентифікатор джерела фактичне речення англійською мовою. `msgid` використовується так само
+у всіх ваших файлах `.po`, які інші мови мають той самий формат і однакові поля `msgid`, але
+перекладені рядки `msgstr`.
 
-Talking about translation keys, there are two main "schools" here:
+Якщо говорити про ключі перекладу, то тут є дві основні «школи»:
 
-1. _`msgid` as a real sentence_.
-    The main advantages are:
-    - if there are pieces of the software untranslated in any given language, the key displayed will still maintain some
-    meaning. Example: if you happen to translate by heart from English to Spanish but need help to translate to French,
-    you might publish the new page with missing French sentences, and parts of the website would be displayed in English
-    instead;
-    - it is much easier for the translator to understand what's going on and do a proper translation based on the
+1. _`msgid` як реальне речення_.
+    Основні переваги:
+    - якщо є частини програмного забезпечення, не перекладені будь-якою мовою, відображений ключ усе одно збереже деякі
+    значення. Приклад: якщо ви перекладаєте напам’ять з англійської на іспанську, але вам потрібна допомога з перекладом на французьку,
+    ви можете опублікувати нову сторінку з відсутніми французькими реченнями, а частина веб-сайту відображається англійською мовою
+    замість цього;
+    - перекладачу набагато легше зрозуміти, що відбувається, і зробити правильний переклад на основі
     `msgid`;
-    - it gives you "free" l10n for one language - the source one;
-    - The only disadvantage: if you need to change the actual text, you would need to replace the same `msgid`
-    across several language files.
+    - це дає вам "вільний" l10n для однієї мови - вихідної;
+    - Єдиний недолік: якщо вам потрібно змінити фактичний текст, вам потрібно буде замінити той самий `msgid`
+    у кількох мовних файлах.2. _`msgid` як унікальний структурований ключ_.
+Він структуровано описує роль речення в додатку, включаючи шаблон або частину, де
+рядок знаходиться замість його вмісту.
+    - це чудовий спосіб упорядкувати код, відокремивши текстовий вміст від логіки шаблону.
+    - однак це може створити проблеми для перекладача, після чого він втратить контекст. Файл вихідної мови буде
+    потрібна як основа для інших перекладів. Приклад: в ідеалі розробник мав би мати файл `en.po`
+    перекладачі читали б, щоб зрозуміти, що писати, наприклад, `fr.po`.
+    - показ перекладів відображається безглузді клавіші на екрані (`top_menu.welcome` замість `Hello there, User!`
+    на згаданій неперекладеній французькій сторінці). Це добре, такий переклад має бути завершеним перед публікацією -
+    однак проблеми з перекладом були надзвичайно жахливими в інтерфейсі. Однак деякі бібліотеки відповідають an
+    можливість вказати цю мову як "резервну", маючи поведінку, подібну до іншого підходу.
 
-2. _`msgid` as a unique, structured key_.
-It would describe the sentence role in the application in a structured way, including the template or part where the
-string is located instead of its content.
-    - it is a great way to have the code organized, separating the text content from the template logic.
-    - however, that could bring problems to the translator that would miss the context. A source language file would be
-    needed as a basis for other translations. Example: the developer would ideally have an `en.po` file, that
-    translators would read to understand what to write in `fr.po` for instance.
-    - missing translations would display meaningless keys on screen (`top_menu.welcome` instead of `Hello there, User!`
-    on the said untranslated French page). That is good it as would force translation to be complete before publishing -
-    however, bad as translation issues would be remarkably awful in the interface. Some libraries, though, include an
-    option to specify a given language as "fallback", having a similar behavior as the other approach.
+[Посібник Gettext][посібник] надає перевагу першому підходу, після, загалом, перекладачам і користувачам легше
+випадок біди. Так ми будемо працювати і тут. Однак [документація Symfony][symfony-keys] дає перевагу
+переклад на основі ключових слів, щоб дозволити незалежні зміни всіх перекладів, не впливаючи також на шаблони.
 
-The [Gettext manual][manual] favors the first approach as, in general, it is easier for translators and users in
-case of trouble. That is how we will be working here as well. However, the [Symfony documentation][symfony-keys] favors
-keyword-based translation, to allow for independent changes of all translations without affecting templates as well.
+### Щоденне використання
+У типових програмах ви використовували деякі функції Gettext під час написання статичного тексту на своїх сторінках. Ті речення
+потім з’явиться у файлі `.po`, буде перекладено, скомпільовано у файлі `.mo`, а потім Gettext під час використання візуалізації
+фактичний інтерфейс. Враховуючи це, давайте об’єднаємо те, що ми обговорювали досі, у покроковому прикладі:
 
-### Everyday usage
-In a typical application, you would use some Gettext functions while writing static text in your pages. Those sentences
-would then appear in `.po` files, get translated, compiled into `.mo` files and then, used by Gettext when rendering
-the actual interface. Given that, let's tie together what we have discussed so far in a step-by-step example:
-
-#### 1. A sample template file, including some different gettext calls
+#### 1. Зразок файлу шаблону, включаючи кілька різних викликів gettext
 {% highlight php %}
 <?php include 'i18n_setup.php' ?>
 <div id="header">
-    <h1><?=sprintf(gettext('Welcome, %s!'), $name)?></h1>
-    <!-- code indented this way only for legibility -->
+    <h1><?=sprintf(gettext('Ласкаво просимо, %s!'), $name)?></h1>
+    <!-- код із таким відступом лише для розбірливості -->
     <?php if ($unread): ?>
         <h2><?=sprintf(
-            ngettext('Only one unread message',
-                     '%d unread messages',
-                     $unread),
-            $unread)?>
+            ngettext('Ще одне непрочитане повідомлення',
+                     '%d непрочитаних повідомлень',
+                     $непрочитане),
+            $непрочитане)?>
         </h2>
     <?php endif ?>
 </div>
 
 <h1><?=gettext('Introduction')?></h1>
-<p><?=gettext('We\'re now translating some strings')?></p>
+<p><?=gettext('Ми зараз перекладаємо деякі рядки')?></p>
 {% endhighlight %}
 
-- [`gettext()`][func] simply translates a `msgid` into its corresponding `msgstr` for a given language. There's also
-the shorthand function `_()` that works the same way;
-- [`ngettext()`][n_func] does the same but with plural rules;
-- There are also [`dgettext()`][d_func] and [`dngettext()`][dn_func], that allow you to override the domain for a single
-call. More on domain configuration in the next example.
+- [`gettext()`][func] просто перекладає `msgid` на відповідний `msgstr` для даної мови. Є також
+скорочена функція `_()`, яка працює так само;
+- [`ngettext()`][n_func] робить те саме, але з правилами множини;
+- Є також [`dgettext()`][d_func] і [`dngettext()`][dn_func], які замінити домен для одного
+виклик. Докладніше про налаштування домену в наступному прикладі.
 
-#### 2. A sample setup file (`i18n_setup.php` as used above), selecting the correct locale and configuring Gettext
+#### 2. Зразок налаштування файлу (`i18n_setup.php`, як використовується вище), правильний вибір мови та налаштування Gettext
 {% highlight php %}
 <?php
 /**
- * Verifies if the given $locale is supported in the project
- * @param string $locale
+ * Перевіряє, чи даний $locale підтримується проектом
+ * @param рядок $locale
  * @return bool
  */
-function valid($locale) {
+функція valid($locale) {
    return in_array($locale, ['en_US', 'en', 'pt_BR', 'pt', 'es_ES', 'es']);
 }
 
-//setting the source/default locale, for informational purposes
-$lang = 'en_US';
-
-if (isset($_GET['lang']) && valid($_GET['lang'])) {
-    // the locale can be changed through the query-string
-    $lang = $_GET['lang'];    //you should sanitize this!
-    setcookie('lang', $lang); //it's stored in a cookie so it can be reused
+//встановлення вихідної/замовної мови для інформаційних цілей
+$lang = 'en_US';if (isset($_GET['lang']) && valid($_GET['lang'])) {
+    // локаль можна змінити за допомогою рядка запиту
+    $lang = $_GET['lang'];    //ви повинні продезінфікувати це!
+    setcookie('lang', $lang); //зберігається у файлі cookie, тому його можна використовувати повторно
 } elseif (isset($_COOKIE['lang']) && valid($_COOKIE['lang'])) {
-    // if the cookie is present instead, let's just keep it
-    $lang = $_COOKIE['lang']; //you should sanitize this!
+    // якщо присутній файл cookie, давайте просто збережемо його
+    $lang = $_COOKIE['lang']; //ви повинні продезінфікувати це!
 } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    // default: look for the languages the browser says the user accepts
+    // замовчуванням: пошук мов, які, за словами браузера, користувача користувача
     $langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
-    array_walk($langs, function (&$lang) { $lang = strtr(strtok($lang, ';'), ['-' => '_']); });
-    foreach ($langs as $browser_lang) {
+    array_walk($langs, функція (&$lang) { $lang = strtr(strtok($lang, ';'), ['-' => '_']); });
+    foreach ($langs як $browser_lang) {
         if (valid($browser_lang)) {
             $lang = $browser_lang;
-            break;
+            розрив;
         }
     }
 }
 
-// here we define the global system locale given the found language
+// тут ми шукаємо глобальну системну локаль з урахуванням знайденої мови
 putenv("LANG=$lang");
 
-// this might be useful for date functions (LC_TIME) or money formatting (LC_MONETARY), for instance
+// це може бути корисним для функції дати (LC_TIME) або форматування грошей (LC_MONETARY), наприклад
 setlocale(LC_ALL, $lang);
 
-// this will make Gettext look for ../locales/<lang>/LC_MESSAGES/main.mo
+// це змусити Gettext шукати ../locales/<lang>/LC_MESSAGES/main.mo
 bindtextdomain('main', '../locales');
 
-// indicates in what encoding the file should be read
+// вказує, у якому кодуванні має бути прочитаний файл
 bind_textdomain_codeset('main', 'UTF-8');
 
-// if your application has additional domains, as cited before, you should bind them here as well
-bindtextdomain('forum', '../locales');
-bind_textdomain_codeset('forum', 'UTF-8');
+// якщо ваша програма має додаткові домени, як уже згадувалося раніше, вам також слід зв’язати їх тут
+bindtextdomain('форум', '../локалі');
+bind_textdomain_codeset('форум', 'UTF-8');
 
-// here we indicate the default domain the gettext() calls will respond to
+// тут ми вказуємо домен за замовчуванням, на який відповідають виклики gettext().
 textdomain('main');
 
-// this would look for the string in forum.mo instead of main.mo
-// echo dgettext('forum', 'Welcome back!');
+// це буде шукати рядок у forum.mo замість main.mo
+// echo dgettext('forum', 'Ласкаво просимо назад!');
 ?>
 {% endhighlight %}
 
-#### 3. Preparing translation for the first run
-One of the great advantages Gettext has over custom framework i18n packages is its extensive and powerful file format.
-"Oh man, that’s quite hard to understand and edit by hand, a simple array would be easier!" Make no mistake,
-applications like [Poedit] are here to help - _a lot_. You can get the program from [their website][poedit_download],
-it’s free and available for all platforms. It’s a pretty easy tool to get used to, and a very powerful one at the same
-time - using all features Gettext has available. This guide is based on PoEdit 1.8.
+#### 3. Підготовка перекладу до першого запуску
+Однією з великих переваг Gettext над спеціальними пакетами фреймворка i18n є його широкий і потужний формат файлів.
+"О, чувак, це досить важко зрозуміти та редагувати вручну, простий масив був би легшим!" Не помилитися,
+такі програми, як [Poedit] тут, щоб допомогти - _багато_. Ви можете отримати програму з [їхнього веб-сайту][poedit_download],
+це безкоштовно та доступно для всіх платформ. Це досить простий інструмент, до якого можна звикнути, і водночас дуже потужний
+час – використання всіх доступних функцій Gettext. Цей посібник базується на PoEdit 1.8.
 
-In the first run, you should select “File > New...” from the menu. You’ll be asked straight ahead for the language:
-here you can select/filter the language you want to translate to, or use that format we mentioned before, such as
-`en_US` or `pt_BR`.
+Під час першого запуску вам слід вибрати в меню «Файл > Створити...». Вас одразу запитають про мову:
+тут ви можете вибрати/відфільтрувати мову, якою ви хочете перекласти, або використати формат, який ми згадували раніше, наприклад
+`en_US` або `pt_BR`.
 
-Now, save the file - using that directory structure we mentioned as well. Then you should click “Extract from sources”,
-and here you’ll configure various settings for the extraction and translation tasks. You’ll be able to find all those
-later through “Catalog > Properties”:
+Збережіть файл, використовуючи цю структуру каталогів, яку ми також згадували. Потім слід натиснути «Витягти з джерела»,
+і тут ви налаштовуєте різні параметри для завдань вилучення та перекладу. Ви можете знайти все це
+Пізніше через «Каталог > Властивості»:- Вихідні шляхи: тут ви повинні включити всі папки з проекту, де викликаються `gettext()` (і братів і сестер) - це
+зазвичай це папка(и) шаблонів/переглядів. Це єдине обов'язкове налаштування;
+- Властивості перекладу:
+    - Назва та версія проекту, команда та адреса електронної пошти команди: корисна інформація, яка міститься в заголовку файлу .po;
+    - Форми множини: ось ці правила, про які ми згадували раніше - там також є посилання зі зразками. Ви можете
+    Здебільшого залиште параметр для замовчування, після чого PoEdit вже містить зручну базу даних правил у множині для
+    багато мов.
+    - Кодування: UTF-8, бажано;
+    - Набір кодів вихідного коду: установіть тут набір символів, який використовується вашою кодовою базою - можливо, також UTF-8, чи не так?
+- Вихідні ключові слова: базове програмне забезпечення знає, як виглядають виклики `gettext()` і подібні функції у кількох
+мови програмування, але ви також можете створити власні функції перекладу. Ви їх додасте тут
+інші методи. Про це йтиметься пізніше в розділі «Поради».
 
-- Source paths: here you must include all folders from the project where `gettext()` (and siblings) are called - this
-is usually your templates/views folder(s). This is the only mandatory setting;
-- Translation properties:
-    - Project name and version, Team and Team’s email address: useful information that goes in the .po file header;
-    - Plural forms: here go those rules we mentioned before - there’s a link in there with samples as well. You can
-    leave it with the default option most of the time, as PoEdit already includes a handy database of plural rules for
-    many languages.
-    - Charsets: UTF-8, preferably;
-    - Source code charset: set here the charset used by your codebase - probably UTF-8 as well, right?
-- Source keywords: The underlying software knows how `gettext()` and similar function calls look like in several
-programming languages, but you might as well create your own translation functions. It will be here you’ll add those
-other methods. This will be discussed later in the “Tips” section.
+Після встановлення цих точок він запустить сканування ваших вихідних файлів, щоб знайти всі виклики локалізації. Після кожного
+сканування PoEdit відобразити підсумок того, що було знайдено та що було видалено з вихідних файлів. Нові записи будуть подані
+пусті в таблицю перекладу, і ви почнете вводити локалізовані версії цих рядків. Збережіть його та .mo
+файл буде (повторно) скомпільовано в ту саму папку, і так: ваш проект інтернаціоналізовано.
 
-After setting those points it will run a scan through your source files to find all the localization calls. After every
-scan PoEdit will display a summary of what was found and what was removed from the source files. New entries will fed
-empty into the translation table, and you’ll start typing in the localized versions of those strings. Save it and a .mo
-file will be (re)compiled into the same folder and ta-dah: your project is internationalized.
+#### 4. Переклад рядків
+Як ви могли помітити, раніше існують два основних типи локалізованих рядків: прості та рядки з множиною.
+форми. Перші просто мають два поля: джерело та локалізований рядок. Вихідний рядок не можна змінити як
+Gettext/Poedit не відповідає повноважень змінювати ваші вихідні файли - вам слід змінити вихідний код і повторно відсканувати
+файли. Порада: ви можете клацнути правою кнопкою миші рядок перекладу, і він підкаже вам вихідні файли та рядки, де це
+рядок використання.
+З іншого боку рядки форми множини включають два поля для відображення двох вихідних рядків і вкладок, щоб ви могли налаштувати
+різні різні форми.
 
-#### 4. Translating strings
-As you may have noticed before, there are two main types of localized strings: simple ones and those with plural
-forms. The first ones have simply two boxes: source and localized string. The source string cannot be modified as
-Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan
-the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that
-string is being used.
-On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure
-the different final forms.
+Щоразу, коли ви змінюєте свої джерела та потребуєте оновити переклади, просто натисніть «Оновити», і Poedit повторно відсканує код,
+видалення неісних записів, об’єднання змінених і додавання нових. Він також може спробувати вгадати деякі
+перекладів на основі інших ваших перекладів. Ці відгадки та змінені записи отримують маркер «Нечіткість»,
+вказуючи, що його потрібно переглянути, у списку відображуватися золотим кольором. Це також корисно, якщо у вас є команда перекладачів і хтось
+намагається написати щось, у чому вони не впевнені: просто позначте Fuzzy, і хтось інший перегляне пізніше.
 
-Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code,
-removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some
-translations, based on other ones you did. Those guesses and the changed entries will receive a "Fuzzy" marker,
-indicating it needs review, appearing golden in the list. It is also useful if you have a translation team and someone
-tries to write something they are not sure about: just mark Fuzzy, and someone else will review later.
+Нарешті, радимо залишити позначку «Перегляд > Спочатку неперекладені записи», оскільки це допоможе вам _багато_ не забути
+будь-який запис. У цьому меню ви також можете відкрити частини інтерфейсу користувача, які дозволяють залишити контекстну інформацію для
+перекладачі, якщо потрібно.
 
-Finally, it is advised to leave "View > Untranslated entries first" marked, as it will help you _a lot_ to not forget
-any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for
-translators if needed.
+### Поради та підказки
 
-### Tips & Tricks
+#### Можливі проблеми з кешуванням
+Якщо ви використовуєте PHP як модуль Apache (`mod_php`), ви можете виявити проблеми з кешуванням файлу `.mo`. Це
+відбувається під час першого читання, а потім, щоб оновити його, вам можна знадобитися перезапустити сервер. На Nginx і PHP5 це
+потрібно лише кілька оновлень сторінок, щоб оновити кеш перекладу, а на PHP7 це потрібно.#### Додаткові допоміжні функції
+На думку багатьох людей, простіше використовувати `_()` замість `gettext()`. Багато спеціальних бібліотек i18n з
+Фреймворки також потрібно щось подібне до `t()`, щоб зробити перекладений код коротшим. Однак це єдина функція
+що спортивний ярлик. Ви можете додати до свого проекту деякі інші, наприклад `__()` або `_n()` для `ngettext()`,
+або, можливо, вигадливий `_r()`, який приєднався до викликів `gettext()` і `sprintf()`. Інші бібліотеки, як напр
+Gettext [php-gettext] [php-gettext] також надає такі допоміжні функції.
 
-#### Possible caching issues
-If you are running PHP as a module on Apache (`mod_php`), you might face issues with the `.mo` file being cached. It
-happens the first time it is read, and then, to update it, you might need to restart the server. On Nginx and PHP5 it
-usually takes only a couple of page refreshes to refresh the translation cache, and on PHP7 it is rarely needed.
+У таких випадках вам потрібно буде вказати утиліту Gettext, як витягнути рядки з цих нових функцій.
+Не бійся; це дуже легко. Це лише поле у ​​файлі `.po` або налаштування екрану в Poedit. У редакторі
+ця опція знаходиться в середині «Каталог > Властивості > Вихідні ключові слова». Пам’ятайте: Gettext вже знає стандартні функції
+для багатьох мов, тому не бійтеся, якщо цей список здасться порожнім. Ви повинні включити туди їх характеристики
+нові функції в [певному форматі][func_format]:
 
-#### Additional helper functions
-As preferred by many people, it is easier to use `_()` instead of `gettext()`. Many custom i18n libraries from
-frameworks use something similar to `t()` as well, to make translated code shorter. However, that is the only function
-that sports a shortcut. You might want to add in your project some others, such as `__()` or `_n()` for `ngettext()`,
-or maybe a fancy `_r()` that would join `gettext()` and `sprintf()` calls. Other libraries, such as
-[php-gettext's Gettext][php-gettext] also provide helper functions like these.
+- якщо ви створите щось на зразок `t()`, що просто повертає переклад для рядка, ви можете вказати його як `t`.
+Gettext знаєте, що єдиним аргументом функції є рядок, який потрібно перекласти;
+- якщо функція має більше ніж один аргумент, ви можете вказати, у якому з них перший рядок - і, якщо потрібно,
+форма множини також. Наприклад, якщо ми виберемо нашу функцію так: `__('one user', '%d users', $number)`,
+специфікація буде `__:1,2`, яка перша форма є першим аргументом, а друга форма – іншим
+аргумент. Якщо натомість вашого числа є першим аргументом, специфікація буде `__:2,3`, що вказує на те, що перша форма є
+другий аргумент і так далі.
 
-In those cases, you'll need to instruct the Gettext utility on how to extract the strings from those new functions.
-Don't be afraid; it is very easy. It is just a field in the `.po` file, or a Settings screen on Poedit. In the editor,
-that option is inside "Catalog > Properties > Source keywords". Remember: Gettext already knows the default functions
-for many languages, so don’t be afraid if that list seems empty. You need to include there the specifications of those
-new functions, following [a specific format][func_format]:
+Після включення цих нових правил у файл `.po` нове сканування введе ваші нові рядки так само легко, як і раніше.
 
-- if you create something like `t()` that simply returns the translation for a string, you can specify it as `t`.
-Gettext will know the only function argument is the string to be translated;
-- if the function has more than one argument, you can specify in which one the first string is - and if needed, the
-plural form as well. For instance, if we call our function like this: `__('one user', '%d users', $number)`, the
-specification would be `__:1,2`, meaning the first form is the first argument, and the second form is the second
-argument. If your number comes as the first argument instead, the spec would be `__:2,3`, indicating the first form is
-the second argument, and so on.
+### Посилання
 
-After including those new rules in the `.po` file, a new scan will bring in your new strings just as easy as before.
-
-### References
-
-* [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
-* [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext)
-* [LingoHub: PHP internationalization with gettext tutorial][lingohub]
-* [PHP Manual: Gettext](https://www.php.net/manual/book.gettext.php)
+* [Вікіпедія: i18n і l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
+* [Вікіпедія: Gettext](https://en.wikipedia.org/wiki/Gettext)
+* [LingoHub: інтернаціоналізація PHP за допомогою підручника gettext][lingohub]
+* [Посібник PHP: Gettext](https://www.php.net/manual/book.gettext.php)
 * [Gettext Manual][manual]
-
 [Poedit]: https://poedit.net
 [poedit_download]: https://poedit.net/download
 [lingohub]: https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/

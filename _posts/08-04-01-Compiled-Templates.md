@@ -1,49 +1,49 @@
 ---
-isChild: true
-anchor:  compiled_templates
+isChild: правда
+прив’язка: compiled_templates
 ---
 
-## Compiled Templates {#compiled_templates_title}
+## Зібрані шаблони {#compiled_templates_title}
 
-While PHP has evolved into a mature, object oriented language, it [hasn't improved much][article_templating_engines] as
-a templating language. Compiled templates, like [Twig], [Brainy], or [Smarty]*, fill this void by offering a new syntax that has
-been geared specifically to templating. From automatic escaping, to inheritance and simplified control structures,
-compiled templates are designed to be easier to write, cleaner to read and safer to use. Compiled templates can even be
-shared across different languages, [Mustache] being a good example of this. Since these templates must be compiled
-there is a slight performance hit, however this is very minimal when proper caching is used.
+на те, що PHP перетворився на зрілу об’єктно-орієнтовану мову, він [не значно покращився][article_templating_engines] як
+мова шаблонів. Зкомпільовані шаблони, такі як [Twig], [Brainy] або [Smarty]*, заповнюють цю породу, пропонуючи новий синтаксис, який
+розроблено спеціально для створення шаблонів. Від автоматичного екранування до успадкування та спрощених структур керування,
+скомпільовані шаблони розроблено таким чином, щоб їх було легше писати, чистіше читати та безпечніше використовувати. Скомпільовані шаблони можуть бути навіть
+поширені іншими мовами, [Mustache] є хорошим прикладом цього. Так як ці шаблони повинні бути скомпільовані
+є невелике зниження продуктивності, однак воно дуже мінімальне, якщо використовується належне кешування.
 
-**While Smarty offers automatic escaping, this feature is NOT enabled by default.*
+**Хоча Smarty пропонує автоматичний вихід, ця функція НЕ ввімкнена за умовчанням.*
 
-### Simple example of a compiled template
+### Простий приклад скомпільованого шаблону
 
-Using the [Twig] library.
+Використання бібліотеки [Twig].
 
 {% highlight html+jinja %}
 {% raw %}
 {% include 'header.html' with {'title': 'User Profile'} %}
 
-<h1>User Profile</h1>
-<p>Hello, {{ name }}</p>
+<h1>Профіль користувача</h1>
+<p>Вітаємо, {{ name }}</p>
 
 {% include 'footer.html' %}
 {% endraw %}
 {% endhighlight %}
 
-### Example of compiled templates using inheritance
+### Приклад скомпільованих шаблонів із використанням успадкування
 
-Using the [Twig] library.
+Використання бібліотеки [Twig].
 
 {% highlight html+jinja %}
 {% raw %}
 // template.html
 
 <html>
-<head>
+<голова>
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
+<тіло>
 
-<main>
+<головний>
     {% block content %}{% endblock %}
 </main>
 
@@ -58,14 +58,13 @@ Using the [Twig] library.
 
 {% extends "template.html" %}
 
-{% block title %}User Profile{% endblock %}
+{% block title %}Профіль користувача{% endblock %}
 {% block content %}
-    <h1>User Profile</h1>
-    <p>Hello, {{ name }}</p>
+    <h1>Профіль користувача</h1>
+    <p>Вітаю, {{ name }}</p>
 {% endblock %}
 {% endraw %}
 {% endhighlight %}
-
 
 [article_templating_engines]: http://fabien.potencier.org/templating-engines-in-php.html
 [Twig]: https://twig.symfony.com/

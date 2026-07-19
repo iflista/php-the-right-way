@@ -1,15 +1,14 @@
 ---
-isChild: true
-anchor:  conferences
+isChild: правда
+вед.: конференц
 ---
 
-## PHP Conferences {#conferences_title}
+## Конференції PHP {#conferences_title}
 
-The PHP community also hosts larger regional and national conferences in many countries around the world. Well-known
-members of the PHP community usually speak at these larger events, so it's a great opportunity to learn directly from
-industry leaders.
+Спільнота PHP також проводить більші регіональні та національні конференції в багатьох країнах світу. Добре відомий
+члени PHP-спільноти зазвичай виступають на цих великих заходах, тож це чудова можливість навчитися безпосередньо
+лідери галузі.
 
-[Find a PHP Conference][php-conf]
-
+[Знайти конференцію PHP][php-conf]
 
 [php-conf]: https://www.php.net/conferences/index.php

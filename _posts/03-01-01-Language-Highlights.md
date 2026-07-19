@@ -1,5 +1,5 @@
 ---
-anchor: language_highlights
+якір: language_highlights
 ---
 
-# Language Highlights {#language_highlights_title}
+# Особливості мови {#language_highlights_title}

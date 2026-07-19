@@ -1,88 +1,87 @@
 ---
-layout: page
-title:  Functional Programming in PHP
-sitemap: true
+макет: стор
+назва: Функціональне програмування на PHP
+мапа сайту: правда
 ---
 
-# Functional Programming in PHP
+# Функціональне програмування на PHP
 
-PHP supports first-class functions, meaning that a function can be assigned to a variable. Both user-defined and
-built-in functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to
-other functions and a function can return other functions (a feature called higher-order functions).
+PHP підтримує функції першого класу, тобто функцію можна призначити змінній. Як визначені користувачем, так і
+на вбудовані функції можна посилатися за допомогою змінної та викликати їх динамічно. Функції можна передавати як аргументи
+інші функції, і функція може повертати інші функції (це функція називається функціями вищого порядку).
 
-Recursion, a feature that allows a function to call itself, is supported by the language, but most of the PHP code
-focus is on iteration.
+Рекурсія, функція, яка дозволяє функції викликати саму себе, підтримується мовою, але більшою частиною коду PHP
+акцент робиться на ітерації.
 
-Anonymous functions (with support for closures) have been present since PHP 5.3 (2009).
+Анонімні функції (з підтримкою закриття) присутні з PHP 5.3 (2009).
 
-PHP 5.4 added the ability to bind closures to an object's scope and also improved support for callables such that they
-can be used interchangeably with anonymous functions in almost all cases.
+У PHP 5.4 додано можливість прив’язувати замикання до області видимості об’єкта, а також покращено підтримку викликів, щоб вони
+можна використовувати як взаємозамінні з анонімними функціями майже у всіх випадках.
 
-The most common usage of higher-order functions is when implementing a strategy pattern. The built-in `array_filter()`
-function asks both for the input array (data) and a function (a strategy or a callback) used as a filter function on
-each array item.
+Найпоширенішим використанням функцій вищого порядку є реалізація шаблону стратегії. Вбудований `array_filter()`
+запитує як вхідний масив (дані), так і функцію (стратегію або зворотний виклик), яка використовується як функція фільтра на
+кожен елемент масиву.
 
 {% highlight php %}
 <?php
 $input = array(1, 2, 3, 4, 5, 6);
 
-// Creates a new anonymous function and assigns it to a variable
-$filter_even = function($item) {
+// Створює нову анонімну функцію та призначає її змінній
+$filter_even = функція($item) {
     return ($item % 2) == 0;
 };
 
-// Built-in array_filter accepts both the data and the function
+// Вбудований array_filter приймає як дані, так і функцію
 $output = array_filter($input, $filter_even);
 
-// The function doesn't need to be assigned to a variable. This is valid too:
+// Функцію не потрібно призначати змінній. Це також справедливо:
 $output = array_filter($input, function($item) {
     return ($item % 2) == 0;
 });
 
-print_r($output);
+print_r($вивід);
 {% endhighlight %}
 
-A closure is an anonymous function that can access variables imported from the outside scope without using any global
-variables. Theoretically, a closure is a function with some arguments closed (e.g. fixed) by the environment when it is
-defined. Closures can work around variable scope restrictions in a clean way.
+Закриття — це анонімна функція, яка може отримати доступ до змінних, імпортованих із зовнішньої області без використання глобальних
+змінні. Теоретично, замикання — це функція з деякими аргументами, закритими (наприклад, фіксованими) середовищем, коли вона
+визначено. Закриття можуть обійти обмеження змінної області видимості чистим способом.
 
-In the next example we use closures to define a function returning a single filter function for `array_filter()`, out
-of a family of filter functions.
+У наступному прикладі ми використовуємо замикання, щоб визначити функцію, яка повертає одну функцію фільтра для `array_filter()`, out
+сімейства функцій фільтра.
 
 {% highlight php %}
 <?php
 /**
- * Creates an anonymous filter function accepting items > $min
+ * Створює функцію анонімного фільтра, яка приймає елементи > $min
  *
- * Returns a single filter out of a family of "greater than n" filters
+ * Повертає один фільтр із сімейства фільтрів «більше ніж n».
  */
-function criteria_greater_than($min)
+функція критерій_більше_ніж($min)
 {
     return function($item) use ($min) {
-        return $item > $min;
+        повернути $item > $min;
     };
 }
 
 $input = array(1, 2, 3, 4, 5, 6);
 
-// Use array_filter on a input with a selected filter function
-$output = array_filter($input, criteria_greater_than(3));
+// Використовувати array_filter для входу з вибраною функцією фільтра
+$вихід = array_filter($вхід, критерій_більший_ніж(3));
 
-print_r($output); // items > 3
+print_r($вивід); // елементи > 3
 {% endhighlight %}
 
-Each filter function in the family accepts only elements greater than some minimum value. The single filter returned by
-`criteria_greater_than` is a closure with `$min` argument closed by the value in the scope (given as an argument when
-`criteria_greater_than` is called).
+Кожна функція фільтра в сімействі приймає лише елементи, що перевищують деяке мінімальне значення. Єдиний фільтр повернув
+`criteria_greater_than` — це замикання з аргументом `$min`, закритим значенням в області (надається як аргумент, коли
+`criteria_greater_than` називається).
 
-Early binding is used by default for importing `$min` variable into the created function. For true closures with late
-binding one should use a reference when importing. Imagine a templating or input validation library, where a closure is
-defined to capture variables in scope and access them later when the anonymous function is evaluated.
+Раннє зв’язування використовується за замовчуванням для імпорту змінної `$min` у створену функцію. Для справжнього закриття із запізненням
+binding під час імпортування слід використовувати посилання. Уявіть собі бібліотеку шаблонів або перевірки введення, де є закриття
+визначено для захоплення змінних у межах і доступу до них пізніше, коли анонімна функція оцінюється.
 
-* [Read about Anonymous functions][anonymous-functions]
-* [More details in the Closures RFC][closures-rfc]
-* [Read about dynamically invoking functions with `call_user_func_array()`][call-user-func-array]
-
+* [Читати про анонімні функції][анонімні функції]
+* [Докладніше в Closures RFC][closures-rfc]
+* [Прочитайте про динамічний виклик функцій за допомогою `call_user_func_array()`][call-user-func-array]
 
 [anonymous-functions]: https://www.php.net/functions.anonymous
 [closures-rfc]: https://wiki.php.net/rfc/closures

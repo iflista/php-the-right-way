@@ -1,18 +1,17 @@
 ---
-title:  Databases
-anchor: databases
+назва: Бази даних
+якір: бази даних
 ---
 
-# Databases {#databases_title}
+# Бази даних {#databases_title}
 
-Many times your PHP code will use a database to persist information. You have a few options to connect and interact
-with your database. The recommended option **until PHP 5.1.0** was to use native drivers such as [mysqli], [pgsql],
-[mssql], etc.
+Багато разів ваш код PHP використовує базу даних для збереження інформації. У вас є кілька варіантів підключення та взаємодії
+з вашою базою даних. Рекомендованим варіантом **до PHP 5.1.0** було використано власні драйвери, такі як [mysqli], [pgsql],
+[mssql] тощо.
 
-Native drivers are great if you are only using _one_ database in your application, but if, for example, you are using
-MySQL and a little bit of MSSQL, or you need to connect to an Oracle database, then you will not be able to use the
-same drivers. You'll need to learn a brand new API for each database &mdash; and that can get silly.
-
+Рідні драйвери чудові, якщо ви використовуєте лише _одну_ базу даних у своїй програмі, але якщо, наприклад, ви використовуєте
+MySQL і трохи MSSQL, або вам потрібно підключитися до бази даних Oracle, тоді ви не зможете використовувати
+однакові драйвери. Вам потрібно буде вивчити абсолютно новий API для кожної бази даних — і це може стати безглуздим.
 
 [mysqli]: https://www.php.net/mysqli
 [pgsql]: https://www.php.net/pgsql

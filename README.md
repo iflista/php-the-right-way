@@ -1,52 +1,52 @@
-# PHP: The Right Way
+# PHP: правильний шлях
 
-## Overview
+## Огляд
 
-This is the GitHub Pages repository for the _PHP: The Right Way_ project.
+Це сховище GitHub Pages для проекту _PHP: The Right Way_.
 
-* This website is a Jekyll project.
-* Each section and sub-section are a Markdown file in `_posts/`.
-* Sub-sections have `isChild: true` in their front matter.
-* The navigation and page structure are automatically generated.
+* Цей веб-сайт є проектом Jekyll.
+* Кожен розділ і підрозділ є файлом Markdown у `_posts/`.
+* Підрозділи містять `isChild: true` на передній частині.
+* Навігація та структура сторінки створюються автоматично.
 
-## Spread the Word!
+## Поширюйте слово!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP
-developers know where to find good information!
+_PHP: The Right Way_ містить зображення веб-банерів, які можна використовувати на своєму веб-сайті. Продемонструйте свою підтримку та запустіть новий PHP
+розробники знають, де знайти корисну інформацію!
 
-[See Banner Images](https://www.phptherightway.com/banners.html)
+[Див. зображення банерів](https://www.phptherightway.com/banners.html)
 
-## How to Contribute
+## Як зробити внесок
 
-You should read the `CONTRIBUTING.md` file for precise instructions and tips. But, if you prefer a TL;DR:
+Ви повинні прочитати файл `CONTRIBUTING.md`, щоб отримати точні інструкції та поради. Але якщо ви віддаєте перевагу TL;DR:
 
-1. Fork and edit
-2. Optionally install [Ruby](https://rvm.io/rvm/install/) with [Jekyll](https://github.com/mojombo/jekyll/) gem to preview locally
-3. Submit pull request for consideration
+1. Форк і редагування
+2. Необов’язково встановіть [Ruby](https://rvm.io/rvm/install/) із дорогоцінним каменем [Jekyll](https://github.com/mojombo/jekyll/) для попереднього перегляду локально
+3. Надішліть запит на розгляд
 
-### Contributor Style Guide
+### Посібник зі стилю учасника
 
-1. Use American English spelling (*primary English repo only*).
-2. Use four (4) spaces to indent text; do not use tabs.
-3. Wrap all text to 120 characters.
-4. Code samples should adhere to PSR-1 or higher.
+1. Використовуйте написання американською англійською мовою (*лише первинне англійське репо*).
+2. Використовуйте чотири (4) пробіли для відступу тексту; не використовуйте вкладки.
+3. Перенести весь текст на 120 символів.
+4. Зразки коду повинні відповідати PSR-1 або вище.
 
-## Where
+## Де
 
 <https://www.phptherightway.com>
 
-* [English](https://www.phptherightway.com)
+* [Англійська](https://www.phptherightway.com)
 * [Español](https://phpdevenezuela.github.io/php-the-right-way)
 * [Français](https://eilgin.github.io/php-the-right-way/)
-* [Indonesia](https://id.phptherightway.com)
-* [Italiano](https://it.phptherightway.com)
+* [Індонезія](https://id.phptherightway.com)
+* [Італійська](https://it.phptherightway.com)
 * [Polski](https://pl.phptherightway.com)
 * [Português do Brasil](https://br.phptherightway.com)
-* [Română](https://bgui.github.io/php-the-right-way/)
-* [Slovenščina](https://sl.phptherightway.com)
+* [Руманська](https://bgui.github.io/php-the-right-way/)
+* [Словенська](https://sl.phptherightway.com)
 * [Srpski](https://phpsrbija.github.io/php-the-right-way/)
 * [Türkçe](https://hkulekci.github.io/php-the-right-way/)
-* [български](https://bg.phptherightway.com)
+* [българський](https://bg.phptherightway.com)
 * [Русский язык](https://getjump.github.io/ru-php-the-right-way)
 * [Українська](https://iflista.github.io/php-the-right-way/)
 * [العربية](https://adaroobi.github.io/php-the-right-way/)
@@ -57,34 +57,34 @@ You should read the `CONTRIBUTING.md` file for precise instructions and tips. Bu
 * [简体中文](https://laravel-china.github.io/php-the-right-way/)
 * [繁體中文](https://laravel-taiwan.github.io/php-the-right-way)
 
-### Translations
+### Переклади
 
-If you are interested in translating _PHP: The Right Way_, fork this repo on GitHub and publish your localized fork to your own GitHub Pages account. We'll link to your translation from the primary document.
+Якщо ви зацікавлені в перекладі _PHP: The Right Way_, створіть це репо на GitHub і опублікуйте свій локалізований форк у своєму обліковому записі GitHub Pages. Ми створимо посилання на ваш переклад із основного документа.
 
-To avoid fragmentation and reader confusion, please choose one of these options:
+Щоб уникнути фрагментації та плутанини читача, виберіть один із цих варіантів:
 
-1. We link to your GitHub Pages fork with `[username].github.io/php-the-right-way`
-2. We link to your GitHub Pages fork with a subdomain (e.g. "ru.phptherightway.com")
+1. Ми посилаємося на ваш форк GitHub Pages за допомогою `[username].github.io/php-the-right-way`
+2. Ми посилаємося на ваш форк GitHub Pages за допомогою субдомену (наприклад, "ru.phptherightway.com")
 
-If you use a subdomain, enter the subdomain into the `CNAME` file, and ask us to setup DNS for you. If you do not use a subdomain, remove the `CNAME` file entirely else your fork will not build when pushed.
+Якщо ви використовуєте субдомен, введіть субдомен у файл `CNAME` і попросіть нас налаштувати для вас DNS. Якщо ви не використовуєте субдомен, повністю видаліть файл `CNAME`, інакше ваш форк не буде створюватися при натисканні.
 
-Add information about your translation in the [wiki page](https://github.com/codeguy/php-the-right-way/wiki/Translations).
+Додайте інформацію про свій переклад на [вікі-сторінку](https://github.com/codeguy/php-the-right-way/wiki/Translations).
 
-When your translation is ready, open an issue on the Issue Tracker to let us know.
+Коли ваш переклад буде готовий, відкрийте проблему в системі відстеження проблем, щоб повідомити нас.
 
-## Why
+## Чому
 
-There's been a lot of discussion lately about how the PHP community lacks sufficient, credible information for programmers new to PHP. This repository aims to solve this problem.
+Останнім часом точиться багато дискусій про те, що PHP-спільноті не вистачає достатньої надійної інформації для програмістів, які не знайомі з PHP. Цей репозиторій спрямований на вирішення цієї проблеми.
 
-## Who
+## ВООЗ
 
-My name is [Josh Lockhart](https://x.com/codeguy). I'm the author of the [Slim Framework](https://www.slimframework.com/), and I work for [New Media Campaigns](https://www.newmediacampaigns.com/).
+Мене звати [Джош Локхарт](https://x.com/codeguy). Я автор [Slim Framework](https://www.slimframework.com/) і працюю в [New Media Campaigns](https://www.newmediacampaigns.com/).
 
-### Collaborators
+### Співавтори
 
-* [Kris Jordan](https://krisjordan.com/)
-* [Phil Sturgeon](https://phil.tech/)
+* [Кріс Джордан](https://krisjordan.com/)
+* [Філ Стерджен](https://phil.tech/)
 
-## License
+## Ліцензія
 
-[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+[Неперенесена ліцензія Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)

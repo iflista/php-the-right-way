@@ -1,36 +1,35 @@
 ---
-isChild: true
-anchor:  web_application_security
+isChild: правда
+прив’язка: web_application_security
 ---
 
-## Web Application Security {#web_application_security_title}
+## Безпека веб-додатків {#web_application_security_title}
 
-It is very important for every PHP developer to learn [the basics of web application security][4], which can be broken
-down into a handful of broad topics:
+Для кожного розробника PHP дуже важливо вивчити [основи безпеки веб-додатків][4], які можуть бути зламані
+на декілька широких тем:
 
-1. Code-data separation.
-   * When data is executed as code, you get SQL Injection, Cross-Site Scripting, Local/Remote File Inclusion, etc.
-   * When code is printed as data, you get information leaks (source code disclosure or, in the case of C programs,
-     enough information to bypass [ASLR][5]).
-2. Application logic.
-   * Missing authentication or authorization controls.
-   * Input validation.
-3. Operating environment.
-   * PHP versions.
-   * Third party libraries.
-   * The operating system.
-4. Cryptography weaknesses.
-   * [Weak random numbers][6].
-   * [Chosen-ciphertext attacks][7].
-   * [Side-channel information leaks][8].
+1. Розділення код-дані.
+   * Якщо дані забезпечуються як код, ви отримуєте впровадження SQL, міжсайтовий сценарій, локальне/віддалене включення файлів тощо.
+   * Коли код друкується як дата, ви отримуєте вихідну інформацію (розкриття вихідного коду або, у випадку програми C,
+     достатньо інформації, щоб обійти [ASLR][5]).
+2. Логіка застосування.
+   * Відсутні елементи керування автентифікацією або авторизацією.
+   * Перевірка введених даних.
+3. Операційне середовище.
+   * Версії PHP.
+   * Сторонні бібліотеки.
+   * Операційна система.
+4. Слабкі сторони криптографії.
+   * [Слабкі випадкові числа][6].
+   * [Атаки за допомогою вибраного зашифрованого тексту][7].
+   * [Вітік інформації з бічного каналу][8].
 
-There are bad people ready and willing to exploit your web application. It is important that you take necessary
-precautions to harden your web application's security. Luckily, the fine folks at
-[The Open Web Application Security Project][1] (OWASP) have compiled a comprehensive list of known security issues and
-methods to protect yourself against them. This is a must read for the security-conscious developer. [Survive The Deep End: PHP Security][3] by Padraic Brady is also another good web application security guide for PHP.
+Є погані люди, готові та готові використовувати вашу веб-програму. Важливо, щоб ви взяли необхідне
+запобіжні заходи для посилення безпеки вашої веб-програми. На щастя, хороші люди в
+[Проект відкритих веб-додатків безпеки][1](OWASP) склав вичерпний список відомих проблем безпеки та
+методи захисту від них. Це обов’язковий для читання розробник, який пікселиться про безпеку. [Survive The Deep End: PHP Security][3] Padraic Brady також є ще одним хорошим посібником із безпеки веб-додатків для PHP.
 
-* [Read the OWASP Security Guide][2]
-
+* [Прочитайте посібник із безпеки OWASP][2]
 
 [1]: https://www.owasp.org/
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents

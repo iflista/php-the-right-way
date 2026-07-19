@@ -1,24 +1,23 @@
 ---
-isChild: true
-anchor:  opcode_cache
+isChild: правда
+прив’язка: opcode_cache
 ---
 
-## Opcode Cache {#opcode_cache_title}
+## Кеш опкодів {#opcode_cache_title}
 
-When a PHP file is executed, it must first be compiled into [opcodes](https://php-legacy-docs.zend.com/manual/php4/en/internals2.opcodes) (machine language instructions for the CPU). If the source code is unchanged, the opcodes will be the same, so this compilation step becomes a waste of CPU resources.
+Коли PHP-файл виконується, його потрібно спочатку скомпілювати в [opcodes](https://php-legacy-docs.zend.com/manual/php4/en/internals2.opcodes) (інструкції машинної мови для ЦП). Якщо вихідний код не змінено, коди операцій залишаться тими самими, тому цей крок компіляції стає марною тратою ресурсів ЦП.
 
-An opcode cache prevents redundant compilation by storing opcodes in memory and reusing them on successive calls. It will typically check signature or modification time of the file first, in case there have been any changes.
+Кеш кодів операцій запобігає надлишковій компіляції, зберігаючи коди операцій у пам’яті та повторно використовуючи їх під час послідовних викликів. Як правило, спочатку перевіряється підпис або час модифікації файлу на випадок, якщо були якісь зміни.
 
-It's likely an opcode cache will make a significant speed improvement to your application.  Since PHP 5.5 there is one built in - [Zend OPcache][opcache-book]. Depending on your PHP package/distribution, it's usually turned on by default - check [opcache.enable](https://www.php.net/manual/opcache.configuration.php#ini.opcache.enable) and the output of `phpinfo()` to make sure. For earlier versions there's a PECL extension.
+Цілком ймовірно, що кеш коду операції значно покращить швидкість вашої програми.  Починаючи з PHP 5.5, є один вбудований - [Zend OPcache][opcache-book]. Залежно від вашого пакета/дистрибутива PHP, зазвичай його ввімкнено за умовчанням. Щоб переконатися, перевірте [opcache.enable](https://www.php.net/manual/opcache.configuration.php#ini.opcache.enable) і вихід `phpinfo()`. Для попередніх версій є розширення PECL.
 
-Read more about opcode caches:
+Докладніше про кеші кодів операцій:
 
-* [Zend OPcache][opcache-book] (bundled with PHP since 5.5)
-* Zend OPcache (formerly known as Zend Optimizer+) is now [open source][Zend Optimizer+]
-* [WinCache] (extension for MS Windows Server)
-* [list of PHP accelerators on Wikipedia][PHP_accelerators]
-* [PHP Preloading] - PHP >= 7.4
-
+* [Zend OPcache][opcache-book](у комплекті з PHP з версії 5.5)
+* Zend OPcache (раніше відомий як Zend Optimizer+) тепер називається [з відкритим кодом][Zend Optimizer+]
+* [WinCache](розширення для MS Windows Server)
+* [список прискорювачів PHP у Вікіпедії][PHP_accelerators]
+* [Попереднє завантаження PHP] - PHP >= 7.4
 
 [opcache-book]: https://www.php.net/book.opcache
 [Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus

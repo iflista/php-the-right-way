@@ -1,13 +1,13 @@
 ---
-title:   Platform as a Service (PaaS)
-isChild: true
-anchor:  platform_as_a_service
+назва: Платформа як послуга (PaaS)
+isChild: правда
+прив’язка: platform_as_a_service
 ---
 
-## Platform as a Service (PaaS) {#platform_as_a_service_title}
+## Платформа як послуга (PaaS) {#platform_as_a_service_title}
 
-PaaS provides the system and network architecture necessary to run PHP applications on the web. This means little to no
-configuration for launching PHP applications or PHP frameworks.
+PaaS забезпечує системну та мережеву архітектуру, необхідну для запуску програми PHP в Інтернеті. Це майже ні
+конфігурація для запуску програм PHP або фреймворків PHP.
 
-Recently PaaS has become a popular method for deploying, hosting, and scaling PHP applications of all sizes. You can
-find a list of [PHP PaaS "Platform as a Service" providers](#php_paas_providers) in our [resources section](#resources).
+Нещодавно PaaS став популярним методом розгортання, розміщення та масштабування PHP-додатків будь-якого розміру. Ви можете
+знайдіть список [постачальників платформи як послуги PHP PaaS](#php_paas_providers) у нашому [розділі ресурсів](#resources).

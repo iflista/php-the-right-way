@@ -1,69 +1,68 @@
 ---
-title:   Date and Time
-isChild: true
-anchor:  date_and_time
+Назва: Дата і час
+isChild: правда
+прив’язка: дата_і_час
 ---
 
-## Date and Time {#date_and_time_title}
+## Дата й час {#date_and_time_title}
 
-PHP has a class named DateTime to help you when reading, writing, comparing or calculating with date and time. There
-are many date and time related functions in PHP besides DateTime, but it provides nice object-oriented interface to
-most common uses. DateTime can handle time zones, but that is outside the scope of this short introduction.
+У PHP є клас під назвою DateTime, який допоможе вам читати, записувати, порівнювати або обчислювати дату й час. там
+Крім DateTime, в PHP є багато функцій, пов’язаних із датою та часом, але він забезпечує гарний об’єктно-орієнтований інтерфейс для
+найпоширеніші використання. DateTime може обробляти часові пояси, але це виходить за рамки цього короткого вступу.
 
-To start working with DateTime, convert raw date and time string to an object with `createFromFormat()` factory method
-or do `new DateTime` to get the current date and time. Use `format()` method to convert DateTime back to a string for
-output.
+Щоб почати роботу з DateTime, перетворіть необроблений рядок дати й часу на об’єкт за допомогою фабричного методу `createFromFormat()`
+або виконайте `new DateTime`, щоб отримати поточну дату та час. Використовуйте метод `format()`, щоб перетворити DateTime назад на рядок для
+вихід.
 
 {% highlight php %}
 <?php
 $raw = '22. 11. 1968';
 $start = DateTime::createFromFormat('d. m. Y', $raw);
 
-echo 'Start date: ' . $start->format('Y-m-d') . PHP_EOL;
+echo 'Початок даних: ' . $start->format('Y-m-d') . PHP_EOL;
 {% endhighlight %}
 
-Calculating with DateTime is possible with the DateInterval class. DateTime has methods like `add()` and `sub()` that
-take a DateInterval as an argument. Do not write code that expects the same number of seconds in every day. Both daylight
-saving and time zone alterations will break that assumption. Use date intervals instead. To calculate date difference
-use the `diff()` method. It will return new DateInterval, which is super easy to display.
+Обчислення за допомогою DateTime можливо за допомогою класу DateInterval. DateTime має такі методи, як `add()` і `sub()`, які
+візьміть DateInterval як аргумент. Не пиши код, який очікує однакову кількість секунд щодня. Обидва денне світло
+збереження та зміни часового поясу порушити це припущення. Натомість використовуйте інтервалі дат. Щоб розрахувати різницю дат
+використовуйте метод `diff()`. Він поверне новий DateInterval, який дуже легко відобразити.
 
 {% highlight php %}
 <?php
-// create a copy of $start and add one month and 6 days
-$end = clone $start;
+// створити копію $start і додати один місяць і 6 днів
+$end = клон $start;
 $end->add(new DateInterval('P1M6D'));
 
 $diff = $end->diff($start);
-echo 'Difference: ' . $diff->format('%m month, %d days (total: %a days)') . PHP_EOL;
-// Difference: 1 month, 6 days (total: 37 days)
+echo 'Різниця: ' . $diff->format('%m місяць, %d днів (загалом: %a днів)') . PHP_EOL;
+// Різниця: 1 місяць, 6 днів (загалом: 37 днів)
 {% endhighlight %}
 
-You can use standard comparisons on DateTime objects:
+Ви можете використовувати стандартні порівняння об’єктів DateTime:
 
 {% highlight php %}
 <?php
 if ($start < $end) {
-    echo "Start is before the end!" . PHP_EOL;}
+    echo "Початок перед кінцем!" . PHP_EOL;}
 {% endhighlight %}
 
-One last example to demonstrate the DatePeriod class. It is used to iterate over recurring events. It can take two
-DateTime objects, start and end, and the interval for which it will return all events in between.
+Останній приклад для демонстрації класу DatePeriod. Він використовується для повторення подій, що повторюєте. Це може зайняти два
+Об’єкти DateTime, початок і кінець, інтервал, течія якого повертаються також усі події між ними.
 
 {% highlight php %}
 <?php
-// output all thursdays between $start and $end
-$periodInterval = DateInterval::createFromDateString('first thursday');
-$periodIterator = new DatePeriod($start, $periodInterval, $end, DatePeriod::EXCLUDE_START_DATE);
-foreach ($periodIterator as $date) {
-    // output each date in the period
+// вивести всі четверги між $start і $end
+$periodInterval = DateInterval::createFromDateString('перший четвер');
+$periodIterator = новий DatePeriod($start, $periodInterval, $end, DatePeriod::EXCLUDE_START_DATE);
+foreach ($periodIterator як $date) {
+    // виведення кожного дати в періоді
     echo $date->format('Y-m-d') . ' ';
 }
 {% endhighlight %}
 
-A popular PHP API extension is [Carbon](https://carbon.nesbot.com/). It inherits everything in the DateTime class, so involves minimal code alterations, but extra features include Localization support, further ways to add, subtract and format a DateTime object, plus a means to test your code by simulating a date and time of your choosing.
+Популярним розширенням PHP API є [Carbon](https://carbon.nesbot.com/). Він успадковує все в класі DateTime, тому забезпечує мінімальні зміни коду, але додатково включає функції підтримки локалізації, додаткові способи додавання, віднімання та форматування об’єкта DateTime, а також засоби для тестування вашого коду шляхом імітації дати та часу за вашим вибором.
 
-* [Read about DateTime][datetime]
-* [Read about date formatting][dateformat] (accepted date format string options)
-
+* [Читати про DateTime][datetime]
+* [Прочитайте про форматування дати][формат дати](прийнятні параметри рядка формату дати)
 [datetime]: https://www.php.net/book.datetime
 [dateformat]: https://www.php.net/function.date

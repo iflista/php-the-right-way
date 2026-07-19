@@ -1,55 +1,55 @@
 ---
-isChild: true
-anchor:  error_reporting
+isChild: правда
+прив'язка: error_reporting
 ---
 
-## Error Reporting {#error_reporting_title}
+## Повідомлення про помилку {#error_reporting_title}
 
-Error logging can be useful in finding the problem spots in your application, but it can also expose information about
-the structure of your application to the outside world. To effectively protect your application from issues that could
-be caused by the output of these messages, you need to configure your server differently in development versus
-production (live).
+Реєстрація помилок може бути корисною для пошуку проблемних місць у вашій програмі, але вона також може відкрити інформацію про
+структуру вашої програми для зовнішнього світу. Щоб ефективно захистити свою програму від проблем, які можуть
+бути спричиненим виводом цих повідомлень, вам потрібно налаштувати свій сервер по-різному під час розробки та
+виробництво (наживо).
 
-### Development
+### Розвиток
 
-To show every possible error during **development**, configure the following settings in your `php.ini`:
+Щоб відобразити всі можливості помилки під час **розробки**, налаштуйте такі параметри у своєму `php.ini`:
 
 {% highlight ini %}
-display_errors = On
-display_startup_errors = On
+display_errors = Увімк
+display_startup_errors = Увімк
 error_reporting = -1
-log_errors = On
+log_errors = Увімкнено
 {% endhighlight %}
 
-> Passing in the value `-1` will show every possible error, even when new levels and constants are added in future PHP
-> versions. The `E_ALL` constant also behaves this way as of PHP 5.4. -
+> Передача значення `-1` показує всі можливі помилки, навіть нові, якщо рівні та постійні будуть додані в наступний PHP
+> версії. Константа `E_ALL` також ведеться таким чином, починаючи з PHP 5.4. -
 > [php.net](https://www.php.net/function.error-reporting)
 
-The `E_STRICT` error level constant was introduced in 5.3.0 and is not part of `E_ALL`, however it became part of
-`E_ALL` in 5.4.0. What does this mean? In terms of reporting every possible error in version 5.3 it means you must
-use either `-1` or `E_ALL | E_STRICT`.
+Помилка постійного рівня `E_STRICT` була введена в 5.3.0 і не є частиною `E_ALL`, проте вона стала частиною
+`E_ALL` у 5.4.0. Що це означає? З точки зору повідомлення про всі можливі помилки у версії 5.3 це означає, що ви повинні
+використовуйте `-1` або `E_ALL | E_STRICT`.
 
-**Reporting every possible error by PHP version**
+**Повідомлення про можливість усіх помилок за версією PHP**
 
-* &lt; 5.3 `-1` or `E_ALL`
-* &nbsp; 5.3 `-1` or `E_ALL | E_STRICT`
-* &gt; 5.3 `-1` or `E_ALL`
+* < 5,3 `-1` або `E_ALL`
+*   5.3 `-1` або `E_ALL | E_STRICT`
+* > 5.3 `-1` або `E_ALL`
 
-### Production
+### Виробництво
 
-To hide errors on your **production** environment, configure your `php.ini` as:
+Щоб приховати помилки у вашому **виробничому** середовищі, налаштуйте `php.ini` як:
 
 {% highlight ini %}
-display_errors = Off
-display_startup_errors = Off
+display_errors = Вимк
+display_startup_errors = Вимк
 error_reporting = E_ALL
-log_errors = On
+log_errors = Увімкнено
 {% endhighlight %}
 
-With these settings in production, errors will still be logged to the error logs for the web server, but will not be
-shown to the user. For more information on these settings, see the PHP manual:
+З цими налаштуваннями у виробництві помилки все одно реєструватимуться в журналах помилок веб-сервера, але не будуть
+показано користувачеві. Щоб отримати додаткові відомості про ці параметри, перегляньте посібник PHP:
 
-* [error_reporting](https://www.php.net/errorfunc.configuration#ini.error-reporting)
-* [display_errors](https://www.php.net/errorfunc.configuration#ini.display-errors)
+* [повідомлення про помилки](https://www.php.net/errorfunc.configuration#ini.error-reporting)
+* [помилки відображення](https://www.php.net/errorfunc.configuration#ini.display-errors)
 * [display_startup_errors](https://www.php.net/errorfunc.configuration#ini.display-startup-errors)
 * [log_errors](https://www.php.net/errorfunc.configuration#ini.log-errors)

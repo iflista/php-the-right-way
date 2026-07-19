@@ -1,50 +1,50 @@
 ---
-title: Plain PHP Templates
-isChild: true
-anchor:  plain_php_templates
+назва: Прості шаблони PHP
+isChild: правда
+якір: plain_php_templates
 ---
 
-## Plain PHP Templates {#plain_php_templates_title}
+## Прості шаблони PHP {#plain_php_templates_title}
 
-Plain PHP templates are simply templates that use native PHP code. They are a natural choice since PHP is actually a
-template language itself. That simply means that you can combine PHP code within other code, like HTML. This is
-beneficial to PHP developers as there is no new syntax to learn, they know the functions available to them, and their
-code editors already have PHP syntax highlighting and auto-completion built-in. Further, plain PHP templates tend to be
-very fast as no compiling stage is required.
+Звичайні шаблони PHP — це просто шаблони, які забирають рідний код PHP. Вони є природним вибором, після чого PHP насправді є
+сама мова шаблону. Це просто означає, що ви можете підключити код PHP до іншого коду, наприклад HTML. Це є
+корисно для розробників PHP, немає нового синтаксису для вивчення, вони знають доступні їм функції та їхні
+редактори коду вже мають підсвічування синтаксису PHP і вбудоване автозавершення. Крім того, звичайні шаблони PHP, як правило, є
+дуже швидко, після не потрібен етап компіляції.
 
-Every modern PHP framework employs some kind of template system, most of which use plain PHP by default. Outside of
-frameworks, libraries like [Plates][plates] or [Aura.View][aura] make working with plain PHP templates easier by
-offering modern template functionality such as inheritance, layouts and extensions.
+Кожен сучасний фреймворк PHP використовує певну систему шаблонів, серед яких для замовчування використовується звичайний PHP. За межами
+фреймворки, бібліотеки, такі як [Plates][plates] або [Aura.View][aura] полегшують роботу з простими шаблонами PHP,
+пропонує такі сучасні функції шаблонів, як успадкування, макети та розширення.
 
-### Simple example of a plain PHP template
+### Простий звичайного шаблону PHP
 
-Using the [Plates][plates] library.
+Використання бібліотеки [Plates][пластини].
 
 {% highlight php %}
 <?php // user_profile.php ?>
 
-<?php $this->insert('header', ['title' => 'User Profile']) ?>
+<?php $this->insert('header', ['title' => 'Профіль користувача']) ?>
 
-<h1>User Profile</h1>
-<p>Hello, <?=$this->escape($name)?></p>
+<h1>Профіль користувача</h1>
+<p>Вітаємо, <?=$this->escape($name)?></p>
 
 <?php $this->insert('footer') ?>
 {% endhighlight %}
 
-### Example of plain PHP templates using inheritance
+### Приклад простих шаблонів PHP із використанням успадкування
 
-Using the [Plates][plates] library.
+Використання бібліотеки [Plates][пластини].
 
 {% highlight php %}
 <?php // template.php ?>
 
 <html>
-<head>
+<голова>
     <title><?=$title?></title>
 </head>
-<body>
+<тіло>
 
-<main>
+<головний>
     <?=$this->section('content')?>
 </main>
 
@@ -55,12 +55,11 @@ Using the [Plates][plates] library.
 {% highlight php %}
 <?php // user_profile.php ?>
 
-<?php $this->layout('template', ['title' => 'User Profile']) ?>
+<?php $this->layout('template', ['title' => 'Профіль користувача']) ?>
 
-<h1>User Profile</h1>
-<p>Hello, <?=$this->escape($name)?></p>
+<h1>Профіль користувача</h1>
+<p>Вітаємо, <?=$this->escape($name)?></p>
 {% endhighlight %}
-
 
 [plates]: https://platesphp.com/
 [aura]: https://github.com/auraphp/Aura.View

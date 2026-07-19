@@ -1,14 +1,14 @@
 ---
-isChild: true
-title:   PDO Extension
-anchor:  pdo_extension
+isChild: правда
+назва: розширення PDO
+прив’язка: pdo_extension
 ---
 
-## PDO Extension {#pdo_extension_title}
+## Розширення PDO {#pdo_extension_title}
 
-[PDO] is a database connection abstraction library &mdash; built into PHP since 5.1.0 &mdash; that provides a common
-interface to talk with many different databases. For example, you can use basically identical code to interface with
-MySQL or SQLite:
+[PDO] — це бібліотека абстракцій підключення до бази даних — вбудована в PHP версії 5.1.0 — забезпечує загальний
+интерфейс для общения с большим количеством баз данных. Наприклад, ви можете використовувати в основному ідентичний код для взаємодії
+MySQL або SQLite:
 
 {% highlight php %}
 <?php
@@ -19,57 +19,56 @@ $row = $statement->fetch(PDO::FETCH_ASSOC);
 echo htmlentities($row['some_field']);
 
 // PDO + SQLite
-$pdo = new PDO('sqlite:/path/db/foo.sqlite');
+$pdo = новий PDO('sqlite:/path/db/foo.sqlite');
 $statement = $pdo->query("SELECT some_field FROM some_table");
 $row = $statement->fetch(PDO::FETCH_ASSOC);
 echo htmlentities($row['some_field']);
 {% endhighlight %}
 
-PDO will not translate your SQL queries or emulate missing features; it is purely for connecting to multiple types of
-database with the same API.
+PDO не перекладаємо ваші запити SQL або емулюємо відсутні функції; це спеціально для підключення до кількох типів
+бази даних з тим самим API.
 
-More importantly, `PDO` allows you to safely inject foreign input (e.g. IDs) into your SQL queries without worrying
-about database SQL injection attacks.
-This is possible using PDO statements and bound parameters.
+Що ще важливо, `PDO` дозволяє безпечно вводити сторонні дані (наприклад, ідентифікатори) у ваші запити SQL, не турбуючись
+про атаки SQL-ін’єкції бази даних.
+Це можливо за допомогою операторів PDO та зв’язаних параметрів.
 
-Let's assume a PHP script receives a numeric ID as a query parameter. This ID should be used to fetch a user record
-from a database. This is the `wrong` way to do this:
-
-{% highlight php %}
-<?php
-$pdo = new PDO('sqlite:/path/db/users.db');
-$pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NO!
-{% endhighlight %}
-
-This is terrible code. You are inserting a raw query parameter into a SQL query. This will get you hacked in a
-heartbeat, using a practice called [SQL Injection]. Just imagine if a hacker passes in an inventive `id` parameter by
-calling a URL like `http://domain.com/?id=1%3BDELETE+FROM+users`. This will set the `$_GET['id']` variable to `1;DELETE
-FROM users` which will delete all of your users! Instead, you should sanitize the ID input using PDO bound parameters.
+Припустимо, скрипт PHP отримує числовий ідентифікатор як параметр запиту. Цей ідентифікатор слід використовувати для отримання запису користувача
+з бази даних. Це `wrong` спосіб зробити це:
 
 {% highlight php %}
 <?php
-$pdo = new PDO('sqlite:/path/db/users.db');
-$stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT); // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
-$stmt->bindParam(':id', $id, PDO::PARAM_INT); // <-- Automatically sanitized for SQL by PDO
-$stmt->execute();
+$pdo = новий PDO('sqlite:/path/db/users.db');
+$pdo->query("ВИБРАТИ ім'я FROM користувача WHERE id = ". $_GET['id']); // <-- НІ!
 {% endhighlight %}
 
-This is correct code. It uses a bound parameter on a PDO statement. This escapes the foreign input ID before it is
-introduced to the database preventing potential SQL injection attacks.
+Це жахливий код. Ви вставляєте необроблений параметр запиту в запит SQL. Це дозволяє вам зламати a
+heartbeat, використовуючи практику під назвою [SQL Injection]. Тільки уявіть, якщо хакер передає винахідливий параметр `id` через
+виклик URL-адреси на зразок `http://domain.com/?id=1%3BDELETE+FROM+users`. Установіть змінну `$_GET['id']` на `1;DELETE
+FROM users`, яка видалить усіх ваших користувачів! Натомість вам слід очистити введений ідентифікатор за допомогою параметрів, пов’язаних із PDO.
 
-For writes, such as INSERT or UPDATE, it's especially critical to still [filter your data](#data_filtering) first and sanitize it for other things (removal of HTML tags, JavaScript, etc).  PDO will only sanitize it for SQL, not for your application.
+{% highlight php %}
+<?php
+$pdo = новий PDO('sqlite:/path/db/users.db');
+$stmt = $pdo->prepare('ВИБРАТИ ім'я FROM користувача WHERE id = :id');
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT); // <-- спочатку фільтруйте дані (див. [Фільтрування даних](#data_filtering)), особливо важливо для ВСТАВЛЕННЯ, ОНОВЛЕННЯ тощо.
+$stmt->bindParam(':id', $id, PDO::PARAM_INT); // <-- Автоматично очищається для SQL PDO
+$stmt->виконати();
+{% endhighlight %}
 
-* [Learn about PDO][pdo]
+Це правильний код. Він використовує зв’язаний параметр у заяві PDO. Це екранує іноземний ідентифікатор, введений перед ним
+введено в базу даних, запобігаючи атакам SQL-ін’єкцій.
 
-You should also be aware that database connections use up resources and it was not unheard-of to have resources
-exhausted if connections were not implicitly closed, however this was more common in other languages. Using PDO you can
-implicitly close the connection by destroying the object by ensuring all remaining references to it are deleted, i.e.
-set to NULL. If you don't do this explicitly, PHP will automatically close the connection when your script ends -
-unless of course you are using persistent connections.
+Для записів, таких як INSERT або UPDATE, особливо важливо спочатку [фільтрувати свої дані](#data_filtering) і очистити їх для інших речей (видалення тегів HTML, JavaScript тощо).  PDO очистити його лише для SQL, а не для вашої програми.
 
-* [Learn about PDO connections]
+* [Дізнайтеся про PDO][pdo]
 
+Вам також слід пам’ятати, що з’єднання з базою даних виробляють ресурси, і наявність ресурсів не була чимось нечуваним.
+вичерпується, якщо зв’язки не були явно закриті, однак це було більш поширеним на інших мовах. Використовуючи PDO, ви можете
+неявно закрити з’єднання, знищивши об’єкт, переконавшись, що всі решта посилань на нього видалено, тобто.
+встановити значення NULL. Якщо ви не зробите це явно, PHP автоматично закриє з’єднання, коли ваш сценарій завершиться -
+якщо, звичайно, ви не використовуєте постійні підключення.
+
+* [Дізнайтеся про підключення PDO]
 
 [pdo]: https://www.php.net/pdo
 [SQL Injection]: https://web.archive.org/web/20210413233627/http://wiki.hashphp.org/Validation

@@ -1,73 +1,72 @@
 ---
-isChild: true
-anchor:  exceptions
+isChild: правда
+якір: винятки
 ---
 
-## Exceptions {#exceptions_title}
+## Винятки {#exceptions_title}
 
-Exceptions are a standard part of most popular programming languages, but they are often overlooked by PHP programmers.
-Languages like Ruby are extremely Exception heavy, so whenever something goes wrong such as a HTTP request failing, or
-a DB query goes wrong, or even if an image asset could not be found, Ruby (or the gems being used) will throw an
-exception to the screen meaning you instantly know there is a mistake.
+Вінятки є стандартною частиною необхідних популярних мов програмування, але програми PHP їх часто не помічають.
+Такі мови, як Ruby, надзвичайно важкі для видів, тому щоразу, коли щось піде не так, як-от помилка запиту HTTP або
+запит БД пішов не так, або навіть якщо зображення ресурсу не вдалося знайти, Ruby (або дорогоцінні камені, що використовують) видасть
+виняток на екрані означає, що ви миттєво бачите, що є помилка.
 
-PHP itself is fairly lax with this, and a call to `file_get_contents()` will usually just get you a `FALSE` and a
-warning.
-Many older PHP frameworks like CodeIgniter will just return a false, log a message to their proprietary logs and maybe
-let you use a method like `$this->upload->get_error()` to see what went wrong. The problem here is that you have to go
-looking for a mistake and check the docs to see what the error method is for this class, instead of having it made
-extremely obvious.
+Сам PHP досить слабкий із цим, і виклик `file_get_contents()` зазвичай просто принесе вам `FALSE` і
+попередження.
+Багато старших фреймворків PHP, як-от CodeIgniter, просто повертають false, реєструють повідомлення до своїх власних журналів і, можливо,
+дозволити вам використовувати такий метод, як `$this->upload->get_error()`, щоб побачити, що пішло не так. Проблема тут у тому, що ви повинні піти
+шукайте помилку та перевіряйте документи, щоб побачити, який метод його помилки для цього класу, замість того, щоб зробити
+надзвичайно очевидно.
 
-Another problem is when classes automatically throw an error to the screen and exit the process. When you do this you
-stop another developer from being able to dynamically handle that error. Exceptions should be thrown to make a
-developer aware of an error; they then can choose how to handle this. E.g.:
+Інша проблема полягає в тому, що класи автоматично видають помилку на екран і виходять з процесу. Коли ви робите це ви
+заборонити іншому розробнику динамічно виправляти цю помилку. Слід робити винятки, щоб зробити a
+розробник знає про помилку; потім вони можуть вибрати, як це зробити. наприклад:
 
 {% highlight php %}
 <?php
-$email = new Fuel\Email;
-$email->subject('My Subject');
-$email->body('How the heck are you?');
+$email = новий Fuel\Email;
+$email->subject('Моя тема');
+$email->body('Як ти, біса?');
 $email->to('guy@example.com', 'Some Guy');
 
-try
+пробувати
 {
     $email->send();
 }
 catch(Fuel\Email\ValidationFailedException $e)
 {
-    // The validation failed
+    // Помилка перевірки
 }
 catch(Fuel\Email\SendingFailedException $e)
 {
-    // The driver could not send the email
+    // Драйвер не зміг надіслати електронний лист
 }
-finally
+нарешті
 {
-    // Executed regardless of whether an exception has been thrown, and before normal execution resumes
+    // Виконується незалежно від того, чи був викинутий виняток, і до відновлення нормального виконання
 }
 {% endhighlight %}
 
-### SPL Exceptions
+### Винятки SPL
 
-The generic `Exception` class provides very little debugging context for the developer; however, to remedy this, it is
-possible to create a specialized `Exception` type by sub-classing the generic `Exception` class:
+Загальний клас `Exception` надає дуже мало контексту накладання для розробника; однак, щоб виправити це, це
+можна створити спеціалізований тип `Exception` за підкласом загального класу `Exception`:
 
 {% highlight php %}
 <?php
 class ValidationException extends Exception {}
 {% endhighlight %}
 
-This means you can add multiple catch blocks and handle different Exceptions differently. This can lead to the
-creation of a <em>lot</em> of custom Exceptions, some of which could have been avoided using the SPL Exceptions
-provided in the [SPL extension][splext].
+Це означає, що ви можете додати кілька блоків catch і по-різному обробляти різні. Це може призвести до
+створення <em>багатьох</em> окремих спеціалістів, деяких з яких можна було б уникнути за допомогою деяких SPL
+надається в [розширенні SPL][splext].
 
-If for example you use the `__call()` Magic Method and an invalid method is requested then instead of throwing a
-standard Exception which is vague, or creating a custom Exception just for that, you could just
+Якщо, наприклад, ви використовуєте магічний метод `__call()` і запитуєте недійсний метод, замість того, щоб кинути
+стандартний віняток, який є розливчастим, або створити спеціальний віняток саме для цього, ви можете просто
 `throw new BadMethodCallException;`.
 
-* [Read about Exceptions][exceptions]
-* [Read about SPL Exceptions][splexe]
-* [Nesting Exceptions In PHP][nesting-exceptions-in-php]
-
+* [Читати про запаси][винятки]
+* [Читати про запаси SPL][splexe]
+* [Вкладені наявні в PHP][nesting-exceptions-in-php]
 
 [splext]: /#standard_php_library
 [exceptions]: https://www.php.net/language.exceptions

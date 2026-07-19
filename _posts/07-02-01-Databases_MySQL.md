@@ -1,32 +1,31 @@
 ---
-isChild: true
-title:   MySQL Extension
-anchor:  mysql_extension
+isChild: правда
+назва: розширення MySQL
+якір: mysql_extension
 ---
 
-## MySQL Extension {#mysql_extension_title}
+## Розширення MySQL {#mysql_extension_title}
 
-The [mysql] extension for PHP is incredibly old and has been superseded by two other extensions:
+Розширення [mysql] для PHP неймовірно старе, його замінили два інших розширення:
 
 - [mysqli]
 - [pdo]
 
-Not only did development stop long ago on [mysql], but it
-**has been [officially removed in PHP 7.0][mysql_removed]**.
+Розробка [mysql] не тільки минула давно, але й
+**було [офіційно видалено в PHP 7.0][mysql_removed]**.
 
-To save digging into your `php.ini` settings to see which module you are using, one option is to search for `mysql_*`
-in your editor of choice. If any functions such as `mysql_connect()` and `mysql_query()` show up, then `mysql` is
-in use.
+Щоб не копіюватись у своїх налаштуваннях `php.ini`, щоб побачити, який модуль ви використовуєте, одним із варіантів є пошук `mysql_*`
+у обраному вами редакторі. Якщо з’явилися такі функції, як `mysql_connect()` і `mysql_query()`, то `mysql` є
+у використанні.
 
-Even if you are not using PHP 7.x or later yet, failing to consider this upgrade as soon as possible will lead to greater
-hardship when the PHP upgrade does come about. The best option is to replace mysql usage with [mysqli] or [PDO] in
-your applications within your own development schedules so you won't be rushed later on.
+Крім того, якщо ви не використовуєте PHP 7.x або новішу версію, якщо не вважаєте це оновлення найвищим, це призведе до більшої
+труднощі, коли все-таки відбудеться оновлення PHP. Найкращий варіант – замінити використання mysql на [mysqli] або [PDO].
+ваші додатки в рамках ваших власних розробок графіків, щоб потім вас не поспішали.
 
-**If you are upgrading from [mysql] to [mysqli], beware lazy upgrade guides that suggest you can simply find and replace `mysql_*` with `mysqli_*`. Not only is that a gross oversimplification, it misses out on the advantages that mysqli provides, such as parameter binding, which is also offered in [PDO][pdo].**
+**Якщо ви оновлюєте [mysql] до [mysqli], слідкуйте за оновленнями ледачих посібників, які пропонують просто знайти та замінити `mysql_*` на `mysqli_*`. Мало того, що це посилене спрощення, воно втрачає переваги, які дає mysqli, наприклад зв’язування параметрів, яке також пропонується в [PDO][pdo].**
 
-* [MySQLi Prepared Statements][mysqli_prepared_statements]
-* [PHP: Choosing an API for MySQL][mysql_api]
-
+* [Підготовлені оператори MySQLi][mysqli_prepared_statements]
+* [PHP: Вибір API для MySQL][mysql_api]
 [mysql]: https://www.php.net/mysqli
 [mysql_removed]: https://www.php.net/manual/migration70.removed-exts-sapis.php
 [mysqli]: https://www.php.net/mysqli

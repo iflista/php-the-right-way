@@ -1,20 +1,20 @@
 ---
-isChild: true
-anchor:  design_patterns
+isChild: правда
+якір: шаблони_дизайну
 ---
 
-## Design Patterns {#design_patterns_title}
+## Патерні проектування {#design_patterns_title}
 
-When you are building your application it is helpful to use common patterns in your code and common patterns for the
-overall structure of your project. Using common patterns is helpful because it makes it much easier to manage your code
-and lets other developers quickly understand how everything fits together.
+Коли ви створюєте свою програму, корисно використовувати загальні шаблони у вашому коді та загальні шаблони для
+загальна структура вашого проекту. Використання загальних шаблонів є корисним, оскільки це значно полегшує керування кодом
+і дозволяє іншим розробникам швидко зрозуміти, як все поєднується.
 
-If you use a framework then most of the higher level code and project structure will be based on that framework, so a
-lot of the pattern decisions are made for you. But it is still up to you to pick out the best patterns to follow in the
-code you build on top of the framework. If, on the other hand, you are not using a framework to build your application
-then you have to find the patterns that best suit the type and size of application that you're building.
+Якщо ви використовуєте фреймворк, то більша частина коду вищого рівня та структура проекту базуватимуться на цьому фреймворку, тому a
+багато рішень про шаблони приймаються за вас. Але ви все одно повинні вибрати найкращі шаблони для наслідування
+код, який ви створюєте поверх фреймворку. Якщо, з іншого боку, ви не використовуєте фреймворк для створення своєї програми
+тоді ви повинні знайти шаблони, які найкраще відповідають типу та розміру програми, яку ви створюєте.
 
-You can learn more about PHP design patterns and see working examples at:
+Ви можете дізнатися більше про шаблони проектування PHP і переглянути робочі приклади за адресою:
 
 * <https://refactoring.guru/design-patterns/php>
-* [https://designpatternsphp.readthedocs.io/](https://designpatternsphp.readthedocs.io/en/latest/) ([PDF download](https://www.computer-pdf.com/web-programming/php/924-tutorial-designpatternsphp-documentation.html))
+* [https://designpatternsphp.readthedocs.io/](https://designpatternsphp.readthedocs.io/en/latest/) ([Завантажити PDF](https://www.computer-pdf.com/web-programming/php/924-tutorial-designpatternsphp-documentation.html))

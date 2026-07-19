@@ -1,86 +1,83 @@
 ---
-isChild: true
-anchor:  building_and_deploying_your_application
+isChild: правда
+anchor: build_and_deploying_your_application
 ---
 
-## Building and Deploying your Application {#building_and_deploying_your_application_title}
+## Створення та розгортання вашої програми {#building_and_deploying_your_application_title}
 
-If you find yourself doing manual database schema changes or running your tests manually before updating your files
-(manually), think twice! With every additional manual task needed to deploy a new version of your app, the chances for
-potentially fatal mistakes increase. Whether you're dealing with a simple update, a comprehensive build process or even
-a continuous integration strategy, [build automation][buildautomation] is your friend.
+Якщо ви бачите, що вручну змінюєте схему бази даних або виконуєте тести вручну перед оновленням файлів
+(вручну), подумайте двічі! З кожним додатковим ручним завданням, необхідним для розгортання нової версії програми, шанси на
+збільшується кількість потенційно фатальних помилок. Незалежно від того, чи маєте ви справу з простим оновленням, комплексним процесом збирання чи навіть
+стратегія безперервної інтеграції, [build automation][buildautomation] — ваш друг.
 
-Among the tasks you might want to automate are:
+Серед завдань, які ви можете автоматизувати, є:
 
-* Dependency management
-* Compilation, minification of your assets
-* Running tests
-* Creation of documentation
-* Packaging
-* Deployment
+* Управління залежностями
+* Компіляція, мінімізація ваших активів
+* Проведення тестів
+* Створення документації
+* Упаковка
+* Розгортання
 
 
-### Deployment Tools
+### Інструменти розгортання
 
-Deployment tools can be described as a collection of scripts that handle common tasks of software deployment. The deployment tool is not a part of your software, it acts on your software from 'outside'.
+Інструменти розгортання можна описати як набір сценаріїв, які виконують типові завдання розгортання програмного забезпечення. Інструмент розгортання не є частиною вашого програмного забезпечення, він впливає на ваше програмне забезпечення «зовні».
 
-There are many open source tools available to help you with build automation and deployment, some are written in PHP others aren't. This shouldn't hold you back from using them, if they're better suited for the specific job. Here are a few examples:
+Існує багато доступних інструментів з відкритим кодом, які допоможуть вам з автоматизацією створення та розгортанням, деякі з них написані на PHP, інші – ні. Це не повинно утримувати вас від їх використання, якщо вони краще підходять для конкретної роботи. Ось кілька прикладів:
 
-[Phing] can control your packaging, deployment or testing process from within a XML build file. Phing (which is based on [Apache Ant]) provides a rich set of tasks usually needed to install or update a web application and can be extended with additional custom tasks, written in PHP. It's a solid and robust tool and has been around for a long time, however the tool could be perceived as a bit old fashioned because of the way it deals with configuration (XML files).
+[Phing] може керувати процесом упакування, розгортання або тестування з файлу збірки XML. Phing (який базується на [Apache Ant]) надає багатий набір завдань, які зазвичай потрібні для встановлення або оновлення веб-програми, і може бути розширений додатковими спеціальними завданнями, написаними на PHP. Це надійний і надійний інструмент, який існує вже давно, однак його можна було б сприйняти як трохи старомодний через те, як він працює з конфігурацією (файли XML).
 
-[Capistrano] is a system for *intermediate-to-advanced programmers* to execute commands in a structured, repeatable way on one or more remote machines. It is pre-configured for deploying Ruby on Rails applications, however you can successfully deploy PHP systems with it. Successful use of Capistrano depends on a working knowledge of Ruby and Rake.
+[Capistrano] — це система для *програмістів середнього та просунутого рівня* для виконання команд у структурований, повторюваний спосіб на одній або кількох віддалених машинах. Він попередньо налаштований для розгортання програм Ruby on Rails, однак ви можете успішно розгортати системи PHP з ним. Успішне використання Capistrano залежить від робочого знання Ruby та Rake.
 
-[Ansistrano] is a couple of Ansible roles to easily manage the deployment process (deploy and rollback) for scripting applications such as PHP, Python and Ruby. It's an Ansible port for [Capistrano]. It's been used by quite a lot of PHP companies already.
+[Ansistrano] — це кілька ролей Ansible для легкого керування процесом розгортання (розгортання та відкат) для програм сценаріїв, таких як PHP, Python і Ruby. Це порт Ansible для [Capistrano]. Його вже використовувало досить багато компаній PHP.
 
-[Deployer] is a deployment tool written in PHP. It's simple and functional. Features include running tasks in parallel, atomic deployment and keeping consistency between servers. Recipes of common tasks for Symfony, Laravel, Zend Framework and Yii are available. Younes Rafie's article [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer] is a great tutorial for deploying your application with the tool.
+[Deployer] — це інструмент розгортання, написаний на PHP. Це просто і функціонально. Функції включають паралельне виконання завдань, атомарне розгортання та підтримку узгодженості між серверами. Доступні рецепти типових завдань для Symfony, Laravel, Zend Framework і Yii. Стаття Юнеса Рафі [Просте розгортання PHP-додатків за допомогою Deployer][phpdeploy_deployer] є чудовим посібником із розгортання вашої програми за допомогою інструменту.
 
-[Magallanes] is another tool written in PHP with simple configuration done in YAML files. It has support for multiple servers and environments, atomic deployment, and has some built in tasks that you can leverage for common tools and frameworks.
+[Magallanes] — ще один інструмент, написаний на PHP із простою конфігурацією у файлах YAML. Він підтримує кілька серверів і середовищ, атомарне розгортання та має деякі вбудовані завдання, які можна використовувати для звичайних інструментів і фреймворків.
 
-#### Further reading:
+#### Подальше читання:
 
-* [Automate your project with Apache Ant][apache_ant_tutorial]
-* [Deploying PHP Applications][deploying_php_applications] - paid book on best practices and tools for PHP deployment.
+* [Автоматизуйте свій проект за допомогою Apache Ant][apache_ant_tutorial]
+* [Розгортання PHP-додатків][deploying_php_applications] - платна книга про найкращі практики та інструменти для розгортання PHP.
 
-### Server Provisioning
+### Підготовка сервера
 
-Managing and configuring servers can be a daunting task when faced with many servers. There are tools for dealing with this so you can automate your infrastructure to make sure you have the right servers and that they're configured properly. They often integrate with the larger cloud hosting providers (Amazon Web Services, Heroku, DigitalOcean, etc) for managing instances, which makes scaling an application a lot easier.
+Управління та налаштування серверів може бути складним завданням, якщо стикатися з великою кількістю серверів. Існують інструменти для вирішення цієї проблеми, щоб ви могли автоматизувати свою інфраструктуру, щоб переконатися, що у вас є правильні сервери та що вони правильно налаштовані. Вони часто інтегруються з великими провайдерами хмарного хостингу (Amazon Web Services, Heroku, DigitalOcean тощо) для керування примірниками, що значно полегшує масштабування програми.[Ansible] — це інструмент, який керує вашою інфраструктурою за допомогою файлів YAML. Почати роботу з ним просто, і він може керувати складними та великомасштабними програмами. Існує API для керування хмарними примірниками, і він може керувати ними за допомогою динамічної інвентаризації за допомогою певних інструментів.
 
-[Ansible] is a tool that manages your infrastructure through YAML files. It's simple to get started with and can manage complex and large scale applications. There is an API for managing cloud instances and it can manage them through a dynamic inventory using certain tools.
+[Puppet] — це інструмент, який має власну мову та типи файлів для керування серверами та конфігураціями. Його можна використовувати в налаштуваннях головний/клієнт або в режимі «без головного». У режимі головний/клієнт клієнти опитуватимуть центрального головного(-их) нову конфігурацію через встановлені проміжки часу та оновлюватимуться за потреби. У режимі без майстра ви можете надсилати зміни до своїх вузлів.
 
-[Puppet] is a tool that has its own language and file types for managing servers and configurations. It can be used in a master/client setup or it can be used in a "master-less" mode. In the master/client mode the clients will poll the central master(s) for new configuration on set intervals and update themselves if necessary. In the master-less mode you can push changes to your nodes.
+[Chef] — це потужна система системної інтеграції на основі Ruby, за допомогою якої ви можете створити все серверне середовище або віртуальні коробки. Він добре інтегрується з Amazon Web Services через їхню службу OpsWorks.
 
-[Chef] is a powerful Ruby based system integration framework that you can build your whole server environment or virtual boxes with. It integrates well with Amazon Web Services through their service called OpsWorks.
+#### Подальше читання:
 
-#### Further reading:
+* [Посібник Ansible][an_ansible_tutorial]
+* [Ansible for DevOps][ansible_for_devops] – платна книга про все, що стосується Ansible
+* [Ansible для AWS][ansible_for_aws] - платна книга про інтеграцію Ansible і Amazon Web Services
+* [Серія блогів із трьох частин про розгортання програми LAMP із Chef, Vagrant і EC2][chef_vagrant_and_ec2]
+* [Кулінарна книга Chef, яка встановлює та налаштовує PHP і систему керування пакетами PEAR][Chef_cookbook]
+* [Серія відеоуроків для шеф-кухаря][Chef_tutorial]
 
-* [An Ansible Tutorial][an_ansible_tutorial]
-* [Ansible for DevOps][ansible_for_devops] - paid book on everything Ansible
-* [Ansible for AWS][ansible_for_aws] - paid book on integrating Ansible and Amazon Web Services
-* [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2][chef_vagrant_and_ec2]
-* [Chef Cookbook which installs and configures PHP and the PEAR package management system][Chef_cookbook]
-* [Chef video tutorial series][Chef_tutorial]
+### Постійна інтеграція
 
-### Continuous Integration
+> Безперервна інтеграція – це практика розробки програмного забезпечення, де члени команди часто інтегрують свою роботу,
+> зазвичай кожна особа інтегрується щонайменше щодня, що призводить до кількох інтеграцій на день. Багато команд вважають це
+> підхід значно зменшує проблеми інтеграції та дозволяє команді більше розробляти згуртоване програмне забезпечення
+> швидко.
 
-> Continuous Integration is a software development practice where members of a team integrate their work frequently,
-> usually each person integrates at least daily — leading to multiple integrations per day. Many teams find that this
-> approach leads to significantly reduced integration problems and allows a team to develop cohesive software more
-> rapidly.
+*-- Мартін Фаулер*
 
-*-- Martin Fowler*
+Існують різні способи реалізації постійної інтеграції для PHP. [Travis CI] зробив чудову роботу
+роблячи постійну інтеграцію реальністю навіть для невеликих проектів. Travis CI — це служба постійної інтеграції.
+Його можна інтегрувати з GitHub і пропонує підтримку багатьох мов, включаючи PHP.
+GitHub має постійні робочі процеси інтеграції з [GitHub Actions][github_actions].
 
-There are different ways to implement continuous integration for PHP. [Travis CI] has done a great job of
-making continuous integration a reality even for small projects. Travis CI is a hosted continuous integration service.
-It can be integrated with GitHub and offers support for many languages including PHP.
-GitHub has continuous integration workflows with [GitHub Actions][github_actions].
+#### Подальше читання:
 
-#### Further reading:
-
-* [Continuous Integration with Jenkins][Jenkins]
-* [Continuous Integration with PHPCI][PHPCI]
-* [Continuous Integration with PHP Censor][PHP Censor]
-* [Continuous Integration with Teamcity][Teamcity]
-
+* [Постійна інтеграція з Jenkins][Jenkins]
+* [Постійна інтеграція з PHPCI][PHPCI]
+* [Постійна інтеграція з PHP Censor][PHP Censor]
+* [Постійна інтеграція з Teamcity][Teamcity]
 [buildautomation]: https://wikipedia.org/wiki/Build_automation
 [Phing]: https://www.phing.info/
 [Apache Ant]: https://ant.apache.org/

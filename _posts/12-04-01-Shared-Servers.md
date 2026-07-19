@@ -1,14 +1,14 @@
 ---
-isChild: true
-anchor:  shared_servers
+isChild: правда
+прив'язка: shared_servers
 ---
 
-## Shared Servers {#shared_servers_title}
+## Спільні сервери {#shared_servers_title}
 
-PHP has shared servers to thank for its popularity. It is hard to find a host without PHP installed, but be sure it's
-the latest version. Shared servers allow you and other developers to deploy websites to a single machine. The upside to
-this is that it has become a cheap commodity. The downside is that you never know what kind of a ruckus your
-neighboring tenants are going to create; loading down the server or opening up security holes are the main concerns. If
-your project's budget can afford to avoid shared servers, you should.
+PHP має спільні сервери, щоб подякувати за свою популярність. Важко знайти хост без встановленого PHP, але переконайтеся, що він є
+остання версія. Спільні сервери дозволяють вам та іншим розробникам розгортати веб-сайти на одній машині. Зворотна сторона до
+це те, що він став дешевим товаром. Недоліком є те, що ви ніколи не знаєте, який ваш шум
+сусідні орендарі збираються створити; завантаження сервера або відкриття дірок у безпеці є основними проблемами. Якщо
+бюджет вашого проекту може дозволити уникнути спільних серверів, ви повинні.
 
-Make sure your shared servers are offering the latest versions of PHP.
+Переконайтеся, що ваші спільні сервери пропонують найновіші версії PHP.

@@ -2,61 +2,61 @@
 anchor: code_style_guide
 ---
 
-# Code Style Guide {#code_style_guide_title}
+# Довідник зі стилю коду {#code_style_guide_title}
 
-The PHP community is large and diverse, composed of innumerable libraries, frameworks, and components. It is common for
-PHP developers to choose several of these and combine them into a single project. It is important that PHP code adheres
-(as close as possible) to a common code style to make it easy for developers to mix and match various libraries for
-their projects.
+Спільнота PHP велика й різноманітна, складається з незлічених бібліотек, фреймворків і компонентів. Воно розширене для
+Розробники PHP можна вибрати кілька з них і об’єднати їх в один проект. Важливо, щоб код PHP дотримувався
+(якомога ближче) до загального стилю коду, щоб розробникам було легко змішувати та поєднувати різні бібліотеки
+їхні проекти.
 
-The [Framework Interop Group][fig] has proposed and approved a series of style recommendations. Not all of them relate
-to code-style, but those that do are [PSR-1][psr1], [PSR-12][psr12], [PSR-4][psr4] and [PER Coding Style][per-cs]. These
-recommendations are merely a set of rules that many projects like Drupal, Zend, Symfony, Laravel, CakePHP, phpBB, AWS SDK,
-FuelPHP, Lithium, etc. are adopting. You can use them for your own projects, or continue to use your own
-personal style.
+[Framework Interop Group][рис] запропонувала та схвалила серію рекомендацій щодо стилю. Не всі вони стосуються
+до стилю кодування, але ті, що мають, це [PSR-1][psr1], [PSR-12][psr12], [PSR-4][psr4] і [PER Coding Style][per-cs]. ці
+рекомендації — це лише набір правил, які застосовуються для багатьох проектів, таких як Drupal, Zend, Symfony, Laravel, CakePHP, phpBB, AWS SDK,
+Застосовуються FuelPHP, Lithium тощо. Ви можете використовувати їх для власних проектів або продовжувати використовувати власні
+особистий стиль.
 
-Ideally, you should write PHP code that adheres to a known standard. This could be any combination of PSRs, or one
-of the coding standards made by PEAR or Zend. This means other developers can easily read and work with your code, and
-applications that implement the components can have consistency even when working with lots of third-party code.
+В ідеалі ви повинні написати код PHP, який відповідає відомому стандарту. Це може бути будь-яка комбінація PSR або один
+стандартів кодування PEAR або Zend. Це означає, що інші розробники можуть легко читати ваш код і працювати з ним
+Програми, які реалізують компоненти, можуть мати послідовність навіть при роботі з великою кількістю коду сторонніх розробників.
 
-* [Read about PSR-1][psr1]
-* [Read about PSR-12][psr12]
-* [Read about PSR-4][psr4]
-* [Read about PER Coding Style][per-cs]
-* [Read about PEAR Coding Standards][pear-cs]
-* [Read about Symfony Coding Standards][symfony-cs]
+* [Читати про PSR-1][psr1]
+* [Читати про PSR-12][psr12]
+* [Читати про PSR-4][psr4]
+* [Прочитайте про стиль кодування PER][per-cs]
+* [Прочитайте про стандарти кодування PEAR][pear-cs]
+* [Прочитайте про стандарти кодування Symfony][symfony-cs]
 
-You can use [PHP_CodeSniffer][phpcs] to check code against any one of these recommendations, and plugins for text
-editors like [Sublime Text][st-cs] to be given real-time feedback.
+Ви можете використовувати [PHP_CodeSniffer][phpcs], щоб перевірити код на відповідність будь-якому із цих рекомендацій, а також плагіни для тексту
+такі редактори, як [Sublime Text][st-cs], отримувати відгуки в реальному часі.
 
-You can fix the code layout automatically by using one of the following tools:
+Ви можете автоматично виправити структуру коду за допомогою одного з таких інструментів:
 
-- One is the [PHP Coding Standards Fixer][phpcsfixer] which has a very well tested codebase.
-- Also, the [PHP Code Beautifier and Fixer][phpcbf] tool which is included with PHP_CodeSniffer can be used to adjust your code accordingly.
+- Один з них — [PHP Coding Standards Fixer][phpcsfixer], який має дуже добре протестовану кодову базу.
+- Крім того, інструмент [PHP Code Beautifier and Fixer][phpcbf], який входить до відповідності PHP_CodeSniffer, можна використовувати для відповідного налаштування коду.
 
-And you can run phpcs manually from shell:
+І ви можете запустити phpcs вручну з сайту:
 
-    phpcs -sw --standard=PSR1 file.php
+phpcs -sw --standard=PSR1 file.php
 
-It will show errors and describe how to fix them.
-It can also be helpful to include the `phpcs` command in a git pre-commit hook with the `--filter=GitStaged` CLI argument.
-That way, code which contain violations against the chosen standard cannot enter the repository until those
-violations have been fixed.
+Він покаже помилки та опише, як їх виправити.
+Також можна використовувати команду `phpcs` у гіт-хуку перед фіксацією з аргументом CLI `--filter=GitStaged`.
+Таким чином, код, який містить порушення вибраного стандарту, не може потрапити до сховища, доки вони не будуть
+порушення усунуто.
 
-If you have PHP_CodeSniffer, then you can fix the code layout problems reported by it, automatically, with the
-[PHP Code Beautifier and Fixer][phpcbf].
+Якщо у вас є PHP_CodeSniffer, ви можете автоматично виправити проблеми з компонуванням коду, про які він повідомляє, за допомогою
+[Прикрашання та виправлення коду PHP][phpcbf].
 
-    phpcbf -w --standard=PSR1 file.php
+phpcbf -w --standard=PSR1 file.php
 
-Another option is to use the [PHP Coding Standards Fixer][phpcsfixer].
-It will show what kind of errors the code structure had before it fixed them.
+Іншим варіантом є використання [PHP Coding Standards Fixer][phpcsfixer].
+Він покаже, які помилки були в структурі коду до їх виправлення.
 
-    php-cs-fixer fix -v --rules=@PSR1 file.php
+php-cs-fixer fix -v --rules=@PSR1 file.php
 
-English is preferred for all symbol names and code infrastructure. Comments may be written in any language easily
-readable by all current and future parties who may be working on the codebase.
+Англійська мова є переважною для всіх назв символів та кодової інфраструктури. Коментарі можна легко написати будь-якою мовою
+доступний для читання всіма поточними та майбутніми сторонами, які можуть працювати над кодовою базою.
 
-Finally, a good supplementary resource for writing clean PHP code is [Clean Code PHP][cleancode].
+Нарешті, гарним додатковим ресурсом для написання чистого PHP-коду є [Clean Code PHP][cleancode].
 
 [fig]: https://www.php-fig.org/
 [psr1]: https://www.php-fig.org/psr/psr-1/

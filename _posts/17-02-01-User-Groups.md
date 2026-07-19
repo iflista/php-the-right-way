@@ -1,23 +1,22 @@
 ---
-isChild: true
-anchor:  user_groups
+isChild: правда
+якір: групи користувачів
 ---
 
-## PHP User Groups {#user_groups_title}
+## Групи користувачів PHP {#user_groups_title}
 
-If you live in a larger city, odds are there's a PHP user group nearby. You can easily find your local PUG at
-[PHP.ug][php-ug]. Alternate sources might be [Meetup.com][meetup] or a search for ```php user group near me```
-using your favorite search engine (i.e. [Google][google]). If you live in a smaller town, there may not be a
-local PUG; if that's the case, start one!
+Якщо ви живете у великому місті, швидше за все, поблизу є група користувачів PHP. Ви можете легко знайти свого місцевого МОПСА за адресою
+[PHP.ug][php-ug]. Альтернативними джерелами можуть бути [Meetup.com][meetup] або пошук ```php user group near me```
+за допомогою вашої улюбленої пошукової системи (наприклад, [Google][google]). Якщо ви живете в меншому місті, його може не бути
+місцевий МОПС; якщо це так, почніть один!
 
-Special mention should be made of two global user groups: [NomadPHP] and [PHPWomen]. [NomadPHP] offers twice monthly
-online user group meetings with presentations by some of the top speakers in the PHP community.
-[PHPWomen] is a non-exclusive user group originally targeted towards the women in the PHP world. Membership is open to
-everyone who supports a more diverse community. PHPWomen provide a network for support, mentorship and education, and
-generally promote the creating of a "female friendly" and professional atmosphere.
+Окремо варто відзначити дві глобальні групи користувачів: [NomadPHP] і [PHPWomen]. [NomadPHP] пропонує двічі на місяць
+онлайн-зустрічі груп користувачів із презентаціями деяких найкращих доповідачів спільноти PHP.
+[PHPWomen] — це неексклюзивна група користувачів, спочатку орієнтована на жінок у світі PHP. Членство відкрито для
+кожен, хто підтримує більш різноманітну спільноту. PHPWomen надають мережу підтримки, наставництва та навчання, а також
+загалом сприяти створенню «жіночої» та професійної атмосфери.
 
-[Read about User Groups on the PHP Wiki][php-wiki]
-
+[Прочитайте про групи користувачів у PHP Wiki][php-wiki]
 [google]: https://www.google.com/search?q=php+user+group+near+me
 [meetup]: https://www.meetup.com/find/
 [php-ug]: https://php.ug/

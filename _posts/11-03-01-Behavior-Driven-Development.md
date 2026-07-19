@@ -1,28 +1,27 @@
 ---
-isChild: true
-anchor:  behavior_driven_development
+isChild: правда
+якір: поведінка_керований_розробкою
 ---
 
-## Behavior Driven Development {#behavior_driven_development_title}
+## Розробка, орієнтована на поведінку {#behavior_driven_development_title}
 
-There are two different types of Behavior-Driven Development (BDD): SpecBDD and StoryBDD. SpecBDD focuses on technical
-behavior of code, while StoryBDD focuses on business or feature behaviors or interactions. PHP has frameworks for both
-types of BDD.
+Існує два різних типи розробки, керованої поведінкою (BDD): SpecBDD і StoryBDD. SpecBDD зосереджується на техніці
+поведінка коду, тоді як StoryBDD зосереджується на поведінці чи взаємодії бізнесу чи функцій. PHP має рамки для обох
+види БДД.
 
-With StoryBDD, you write human-readable stories that describe the behavior of your application. These stories can then
-be run as actual tests against your application. The framework used in PHP applications for StoryBDD is [Behat], which
-is inspired by Ruby's [Cucumber] project and implements the Gherkin DSL for describing feature behavior.
+За допомогою StoryBDD ви пишете зрозумілі для історії людини, які описують поведінку вашої програми. Ці історії можуть потім
+виконувати як фактичні тести вашої програми. Фреймворк, який використовується в додатках PHP для StoryBDD, — це [Behat].
+натхненний проект Ruby [Cucumber] і реалізує Gherkin DSL для опису поведінки функцій.
 
-With SpecBDD, you write specifications that describe how your actual code should behave. Instead of testing a function
-or method, you are describing how that function or method should behave. PHP offers the [PHPSpec] framework for this
-purpose. This framework is inspired by the [RSpec project][Rspec] for Ruby.
+За допомогою SpecBDD ви пишете специфікації, які описують, як має поводитися ваш фактичний код. Замість тестування функцій
+або метод, ви описуєте, як ця функція або метод має поводитися. Для цього PHP пропонує структуру [PHPSpec].
+мета. Цей фреймворк натхненний [проектом RSpec][Rspec] для Ruby.
 
-### BDD Links
+### BDD Посилання
 
-* [Behat], the StoryBDD framework for PHP, inspired by Ruby's [Cucumber] project;
-* [PHPSpec], the SpecBDD framework for PHP, inspired by Ruby's [RSpec] project;
-* [Codeception] is a full-stack testing framework that uses BDD principles.
-
+* [Behat], структура StoryBDD для PHP, натхненна проектом Ruby [Cucumber];
+* [PHPSpec], структура SpecBDD для PHP, натхненна проектом Ruby [RSpec];
+* [Codeception] — це платформа для повного тестування, яка використовує принципи BDD.
 
 [Behat]: https://behat.org/
 [Cucumber]: https://cucumber.io/

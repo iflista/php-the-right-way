@@ -1,157 +1,156 @@
 ---
-title:   Working with UTF-8
-isChild: true
-anchor:  php_and_utf8
+назва: Робота з UTF-8
+isChild: правда
+якір: php_and_utf8
 ---
 
-## Working with UTF-8 {#php_and_utf8_title}
+## Робота з UTF-8 {#php_and_utf8_title}
 
-_This section was originally written by [Alex Cabal](https://alexcabal.com/) over at
-[PHP Best Practices](https://phpbestpractices.org/#utf-8) and has been used as the basis for our own UTF-8 advice_.
+_Цей розділ спочатку був написаний [Alex Cabal](https://alexcabal.com/) о
+[Найкращі практики PHP](https://phpbestpractices.org/#utf-8) і було використано як основа для наших власних порад щодо UTF-8_.
 
-### There's no one-liner. Be careful, detailed, and consistent.
+### Немає однострокового. Будьте уважними, детальними та послідовними.
 
-Right now PHP does not support Unicode at a low level. There are ways to ensure that UTF-8 strings are processed OK,
-but it's not easy, and it requires digging in to almost all levels of the web app, from HTML to SQL to PHP. We'll aim
-for a brief, practical summary.
+Зараз PHP не підтримує Unicode на низькому рівні. Є способи переконатися, що рядки UTF-8 обробляються нормально,
+але це нелегко, і вимагає вивчення майже всіх рівнів веб-програм, від HTML до SQL і PHP. Ми будемо цілитися
+для короткого практичного резюме.
 
-### UTF-8 at the PHP level
+### UTF-8 на рівні PHP
 
-The basic string operations, like concatenating two strings and assigning strings to variables, don't need anything
-special for UTF-8. However, most string functions, like `strpos()` and `strlen()`, do need special consideration. These
-functions often have an `mb_*` counterpart: for example, `mb_strpos()` and `mb_strlen()`. These `mb_*` strings are made
-available to you via the [Multibyte String Extension], and are specifically designed to operate on Unicode strings.
+Базові операції над рядками, такі як об’єднання двох рядків і призначення рядків змінним, нічого не потребують
+спеціально для UTF-8. Однак деякі рядки функцій, такі як `strpos()` і `strlen()`, потребують особливої ​​​​уваги. ці
+функції часто мають відповідник `mb_*`: наприклад, `mb_strpos()` і `mb_strlen()`. Ці рядки `mb_*` зроблені
+доступні через [Multibyte String Extension] і спеціально розроблені для роботи з рядками Unicode.
 
-You must use the `mb_*` functions whenever you operate on a Unicode string. For example, if you use `substr()` on a
-UTF-8 string, there's a good chance the result will include some garbled half-characters. The correct function to use
-would be the multibyte counterpart, `mb_substr()`.
+Ви повинні використовувати функції `mb_*` щоразу, якщо працюєте з рядком Unicode. Наприклад, якщо ви використовуєте `substr()` на a
+Рядок UTF-8, є хороша ймовірність, що результат наповнює деякі спотворені напівсимволі. Правильна функція для використання
+буде багатобайтовим аналогом `mb_substr()`.
 
-The hard part is remembering to use the `mb_*` functions at all times. If you forget even just once, your Unicode
-string has a chance of being garbled during further processing.
+Важко пам’ятати, що функції `mb_*` потрібно використовувати завжди. Якщо ви забудете хоча б один раз, ваш Unicode
+рядок може бути спотворений під час подальшої обробки.
 
-Not all string functions have an `mb_*` counterpart. If there isn't one for what you want to do, then you might be out
-of luck.
+Не всі рядкові функції мають відповідник `mb_*`. Якщо немає такого для того, що ви хочете зробити, то ви можете бути поза
+удачі.
 
-You should use the `mb_internal_encoding()` function at the top of every PHP script you write (or at the top of your
-global include script), and the `mb_http_output()` function right after it if your script is outputting to a browser.
-Explicitly defining the encoding of your strings in every script will save you a lot of headaches down the road.
+Ви повинні використовувати функцію `mb_internal_encoding()` у верхній частині кожного сценарію PHP, який ви пишете (або у верхній частині вашої
+global include script) і функція `mb_http_output()` відразу після нього, якщо ваш сценарій виведе в браузер.
+Явне визначення кодування ваших рядків у кожному сценарії позбавить вас від багатьох головних болів у майбутньому.
 
-Additionally, many PHP functions that operate on strings have an optional parameter letting you specify the character
-encoding. You should always explicitly indicate UTF-8 when given the option. For example, `htmlentities()` has an
-option for character encoding, and you should always specify UTF-8 if dealing with such strings. Note that as of PHP 5.4.0, UTF-8 is the default encoding for `htmlentities()` and `htmlspecialchars()`.
+Крім того, багато функцій PHP, які працюють із рядками, мають додатковий параметр, який дозволяє вказати символ
+кодування. Ви завжди повинні явно вказувати UTF-8, коли надається така опція. Наприклад, `htmlentities()` має
+параметр для кодування символів, і ви завжди повинні вказувати UTF-8, якщо маєте справу з такими рядками. Зверніть увагу, що починаючи з PHP 5.4.0, UTF-8 є кодуванням для замовчувань для `htmlentities()` і `htmlspecialchars()`.
 
-Finally, If you are building a distributed application and cannot be certain that the `mbstring` extension will be
-enabled, then consider using the [symfony/polyfill-mbstring] Composer package. This will use `mbstring` if it is available, and
-fall back to non UTF-8 functions if not.
-
+Нарешті, якщо ви створите розподілену програму і не можете бути впевнені, що розширення `mbstring` буде
+увімкнено, тоді розгляньте можливість використання пакета [symfony/polyfill-mbstring] Composer. Цеме використовувати `mbstring`, якщо він доступний, і
+залежить від функцій, відмінних від UTF-8, якщо ні.
 [Multibyte String Extension]: https://www.php.net/book.mbstring
 [symfony/polyfill-mbstring]: https://packagist.org/packages/symfony/polyfill-mbstring
 
-### UTF-8 at the Database level
+### UTF-8 на рівні бази даних
 
-If your PHP script accesses MySQL, there's a chance your strings could be stored as non-UTF-8 strings in the database
-even if you follow all of the precautions above.
+Якщо ваш сценарій PHP отримує доступ до MySQL, існує ймовірність того, що ваші рядки можуть зберігатися в базі даних як рядки, відмінні від UTF-8
+навіть якщо ви дотримуєтесь усіх наведених вище заходів безпеки.
 
-To make sure your strings go from PHP to MySQL as UTF-8, make sure your database and tables are all set to the
-`utf8mb4` character set and collation, and that you use the `utf8mb4` character set in the PDO connection string. See
-example code below. This is _critically important_.
+Щоб переконатися, що ваші рядки переходять із PHP на MySQL як UTF-8, переконайтеся, що ваша база даних і таблиці налаштовані на
+набір символів `utf8mb4` і сортування, а також використання набору символів `utf8mb4` у рядку з’єднання PDO. див
+приклад коду нижче. Це _критично важливо_.
 
-Note that you must use the `utf8mb4` character set for complete UTF-8 support, not the `utf8` character set! See
-Further Reading for why.
+Зауважте, що ви повинні використовувати набір символів `utf8mb4` для повної підтримки UTF-8, а не набір символів `utf8`! див
+Подальше читання, чому.
 
-### UTF-8 at the browser level
+### UTF-8 на рівні браузера
 
-Use the `mb_http_output()` function to ensure that your PHP script outputs UTF-8 strings to your browser.
+Використовуйте функцію `mb_http_output()`, щоб переконатися, що ваш сценарій PHP виводить рядки UTF-8 у ваш браузер.
 
-The browser will then need to be told by the HTTP response that this page should be considered as UTF-8. Today, it is common to set the character set in the HTTP response header like this:
+Відповідь HTTP має повідомити веб-переглядачу, що цю сторінку слід вважати UTF-8. Сьогодні прийнято встановлювати набір символів у заголовку відповіді HTTP таким чином:
 
 {% highlight php %}
 <?php
 header('Content-Type: text/html; charset=UTF-8')
 {% endhighlight %}
 
-The historic approach to doing that was to include the [charset `<meta>` tag](http://htmlpurifier.org/docs/enduser-utf8.html) in your page's `<head>` tag.
+Історичним підходом до цього було додавання [тегу набору символів `<meta>`](http://htmlpurifier.org/docs/enduser-utf8.html) до тегу `<head>` вашої сторінки.
 
 {% highlight php %}
 <?php
-// Tell PHP that we're using UTF-8 strings until the end of the script
+// Повідомте PHP, що ми використовуємо рядки UTF-8 до кінця сценарію
 mb_internal_encoding('UTF-8');
 $utf_set = ini_set('default_charset', 'utf-8');
 if (!$utf_set) {
-    throw new Exception('could not set default_charset to utf-8, please ensure it\'s set on your system!');
+    throw new Exception('не вдалося встановити default_charset на utf-8, переконайтеся, що його встановлено у вашій системі!');
 }
 
-// Tell PHP that we'll be outputting UTF-8 to the browser
+// Повідомте PHP, що ми будемо виводити UTF-8 у браузер
 mb_http_output('UTF-8');
- 
-// Our UTF-8 test string
-$string = 'Êl síla erin lû e-govaned vîn.';
 
-// Transform the string in some way with a multibyte function
-// Note how we cut the string at a non-Ascii character for demonstration purposes
+// Наш тестовий рядок UTF-8
+$string = 'El síla erin lû e-govaned vîn.';
+
+// Певним чином трансформувати рядок за допомогою багатобайтової функції
+// Зверніть увагу на те, як ми скоротили рядок на символі, відмінному від Ascii, для демонстраційних цілей
 $string = mb_substr($string, 0, 15);
 
-// Connect to a database to store the transformed string
-// See the PDO example in this document for more information
-// Note the `charset=utf8mb4` in the Data Source Name (DSN)
-$link = new PDO(
-    'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4',
-    'your-username',
-    'your-password',
-    array(
+// Підключення до бази даних для збереження перетвореного рядка
+// Для отримання додаткової інформації дивіться приклад PDO в цьому документі
+// Зверніть увагу на `charset=utf8mb4` в назві джерела даних (DSN)
+$link = новий PDO(
+    'mysql:host=ваше ім'я хоста;dbname=ваша база даних;charset=utf8mb4',
+    'ваше ім'я користувача',
+    'ваш-пароль',
+    масив(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_PERSISTENT => false
     )
 );
 
-// Store our transformed string as UTF-8 in our database
-// Your DB and tables are in the utf8mb4 character set and collation, right?
-$handle = $link->prepare('insert into ElvishSentences (Id, Body, Priority) values (default, :body, :priority)');
+// Зберігаємо наш перетворений рядок як UTF-8 у нашій базі даних
+// Ваша БД і таблиці мають набір символів і сортування utf8mb4, вірно?
+$handle = $link->prepare('вставити в ElvishSentences (Id, Body, Priority) значення (за замовчуванням, :body, :priority)');
 $handle->bindParam(':body', $string, PDO::PARAM_STR);
-$priority = 45;
-$handle->bindParam(':priority', $priority, PDO::PARAM_INT); // explicitly tell pdo to expect an int
+$пріоритет = 45;
+$handle->bindParam(':priority', $priority, PDO::PARAM_INT); // явно вказуємо pdo очікувати int
 $handle->execute();
 
-// Retrieve the string we just stored to prove it was stored correctly
-$handle = $link->prepare('select * from ElvishSentences where Id = :id');
+// Отримати рядок, який ми щойно зберегли, щоб підтвердити, що він був збережений правильно
+$handle = $link->prepare('вибрати * з ElvishSentences, де Id = :id');
 $id = 7;
 $handle->bindParam(':id', $id, PDO::PARAM_INT);
 $handle->execute();
 
-// Store the result into an object that we'll output later in our HTML
-// This object won't kill your memory because it fetches the data Just-In-Time to
-$result = $handle->fetchAll(\PDO::FETCH_OBJ);
+// Зберігаємо результат в об’єкт, який ми виведемо пізніше в нашому HTML
+// Цей об’єкт не вб’є вашу пам’ять, оскільки він своєчасно отримує дані
+$результат = $handle->fetchAll(\PDO::FETCH_OBJ);
 
-// An example wrapper to allow you to escape data to html
-function escape_to_html($dirty){
+// Приклад оболонки, яка дозволяє вам передавати дані в html
+функція escape_to_html($dirty){
     echo htmlspecialchars($dirty, ENT_QUOTES, 'UTF-8');
 }
 
-header('Content-Type: text/html; charset=UTF-8'); // Unnecessary if your default_charset is set to utf-8 already
+header('Content-Type: text/html; charset=UTF-8'); // Немає потреби, якщо для вашого default_charset уже встановлено значення utf-8
 ?><!doctype html>
 <html>
-    <head>
+    <голова>
         <meta charset="UTF-8">
-        <title>UTF-8 test page</title>
+        <title>Тестова сторінка UTF-8</title>
     </head>
-    <body>
+    <тіло>
         <?php
         foreach($result as $row){
-            escape_to_html($row->Body);  // This should correctly output our transformed UTF-8 string to the browser
+            escape_to_html($row->Body);  // Це має правильно вивести наш трансформований рядок UTF-8 у браузер
         }
         ?>
     </body>
 </html>
 {% endhighlight %}
 
-### Further reading
+### Подальше читання
 
 * [PHP Manual: String Operations](https://www.php.net/language.operators.string)
 * [PHP Manual: String Functions](https://www.php.net/ref.strings)
     * [`strpos()`](https://www.php.net/function.strpos)
     * [`strlen()`](https://www.php.net/function.strlen)
     * [`substr()`](https://www.php.net/function.substr)
-* [PHP Manual: Multibyte String Functions](https://www.php.net/ref.mbstring)
+* [Посібник PHP: Функції багатобайтових рядків](https://www.php.net/ref.mbstring)
     * [`mb_strpos()`](https://www.php.net/function.mb-strpos)
     * [`mb_strlen()`](https://www.php.net/function.mb-strlen)
     * [`mb_substr()`](https://www.php.net/function.mb-substr)
@@ -159,8 +158,8 @@ header('Content-Type: text/html; charset=UTF-8'); // Unnecessary if your default
     * [`mb_http_output()`](https://www.php.net/function.mb-http-output)
     * [`htmlentities()`](https://www.php.net/function.htmlentities)
     * [`htmlspecialchars()`](https://www.php.net/function.htmlspecialchars)
-* [Stack Overflow: What factors make PHP Unicode-incompatible?](https://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
-* [Stack Overflow: Best practices in PHP and MySQL with international strings](https://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
-* [How to support full Unicode in MySQL databases](https://mathiasbynens.be/notes/mysql-utf8mb4)
-* [Bringing Unicode to PHP with Portable UTF-8](https://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
-* [Stack Overflow: DOMDocument loadHTML does not encode UTF-8 correctly](https://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly)
+* [Переповнення стека: які фактори роблять PHP Unicode несумісним?](https://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
+* [Переповнення стека: найкращі практики PHP і MySQL із міжнародними рядками](https://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
+* [Як підтримувати повний Юнікод у базах даних MySQL](https://mathiasbynens.be/notes/mysql-utf8mb4)
+* [Перенесення Unicode в PHP за допомогою Portable UTF-8](https://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
+* [Переповнення стека: DOMDocument loadHTML неправильно кодує UTF-8](https://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly)

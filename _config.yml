@@ -1,4 +1,5 @@
-baseurl: /
+url: "https://iflista.github.io"
+baseurl: "/php-the-right-way"
 highlighter: rouge
 markdown: kramdown
 permalink: date
@@ -22,7 +23,7 @@ defaults:
             path: /images/og-image.png
             width: 1024
             height: 640
-            alt: "PHP: The Right Way"
+            alt: "PHP: Вірний шлях"
 
 # Excludes should be appended to the default
 # https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml#L37-L55
@@ -47,7 +48,7 @@ exclude:
 
 future: true
 
-title: "PHP: The Right Way"
-tagline: Reference for PHP best practices
-description: An easy-to-read, quick reference for PHP best practices, accepted coding standards, and links to authoritative PHP tutorials around the Web
+title: "PHP: Вірний шлях"
+tagline: Довідник з найкращих практик PHP
+description: Зручний довідник із найкращих практик PHP, визнаних стандартів кодування та посилань на авторитетні навчальні матеріали
 logo: /images/og-image.png

@@ -1,21 +1,21 @@
 ---
-isChild: true
-anchor:  templating_benefits
+isChild: правда
+прив’язка: переваги шаблонів
 ---
 
-## Benefits {#templating_benefits_title}
+## Переваги {#templating_benefits_title}
 
-The main benefit to using templates is the clear separation they create between the presentation logic and the rest of
-your application. Templates have the sole responsibility of displaying formatted content. They are not responsible for
-data lookup, persistence or other more complex tasks. This leads to cleaner, more readable code which is especially
-helpful in a team environment where developers work on the server-side code (controllers, models) and designers work on
-the client-side code (markup).
+Основна перевага використання шаблонів полягає в тому, що вони створюють чіткий розподіл між логікою презентації та рештою
+ваша заявка. Шаблони несуть виключну відповідальність за відображення форматованого вмісту. Вони не відповідають за
+пошук даних, збереження або інші складніші завдання. Це веде до більш чистого та читабельного коду, що особливо важливо
+корисно в командному середовищі, де розробники працюють над кодом на стороні сервера (контролери, моделі), а дизайнери працюють над
+клієнтський код (розмітка).
 
-Templates also improve the organization of presentation code. Templates are typically placed in a "views" folder, each
-defined within a single file. This approach encourages code reuse where larger blocks of code are broken into smaller,
-reusable pieces, often called partials. For example, your site header and footer can each be defined as templates,
-which are then included before and after each page template.
+Шаблони також покращують організацію коду презентації. Кожен шаблон постійно розміщується в папці "views".
+визначені в одному файлі. Цей підхід заохочує повторне використання коду, якщо більші блоки коду розбиваються на менші,
+шматки багаторазового використання, які часто називають частковими. Наприклад, верхній і нижній колонтитул вашого сайту можна використовувати як шаблони,
+які потім включаються перед і після кожного шаблону сторінки.
 
-Finally, depending on the library you use, templates can offer more security by automatically escaping user-generated
-content. Some libraries even offer sand-boxing, where template designers are only given access to white-listed
-variables and functions.
+Нарешті, залежно від бібліотеки, яку ви використовуєте, шаблони можуть запропонувати більший захист, автоматично виходячи з створеного користувачем
+вміст. Деякі бібліотеки навіть пропонують пісочницю, де дизайнери шаблонів мають доступ лише до білого списку
+змінні та функції.

@@ -1,11 +1,11 @@
 ---
-title:  Templating
-anchor: templating
+назва: Шаблони
+якір: створення шаблонів
 ---
 
-# Templating {#templating_title}
+# Шаблонізація {#templating_title}
 
-Templates provide a convenient way of separating your controller and domain logic from your presentation logic.
-Templates typically contain the HTML of your application, but may also be used for other formats, such as XML.
-Templates are often referred to as "views", which make up **part of** the second component of the
-[model–view–controller](/pages/Design-Patterns.html#model-view-controller) (MVC) software architecture pattern.
+Шаблони забезпечують зручний спосіб відокремлення контролера та логіки домену від логіки презентації.
+Шаблони традиційно відрізняються від HTML вашої програми, але також можуть використовуватися для інших форматів, наприклад XML.
+Шаблони часто називають «представленнями», які складають **частину** другого компонента
+[model–view–controller]({{ site.baseurl }}/pages/Design-Patterns.html#model-view-controller) (MVC) шаблон архітектури програмного забезпечення.

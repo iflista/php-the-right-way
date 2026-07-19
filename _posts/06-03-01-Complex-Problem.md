@@ -1,105 +1,103 @@
 ---
-isChild: true
-anchor:  complex_problem
+isChild: правда
+якір: складна_проблема
 ---
 
-## Complex Problem {#complex_problem_title}
+## Складне завдання {#complex_problem_title}
 
-If you have ever read about Dependency Injection then you have probably seen the terms *"Inversion of Control"* or
-*"Dependency Inversion Principle"*. These are the complex problems that Dependency Injection solves.
+Якщо ви коли-небудь читали про впровадження захворювань, то, напевно, бачили терміни *«Інверсія контролю»* або
+*"Принцип інверсії залежностей"*. Це складні проблеми, які вирішує Dependency Injection.
 
-### Inversion of Control
+### Інверсія керування
 
-Inversion of Control is as it says, "inverting the control" of a system by keeping organizational control entirely
-separate from our objects. In terms of Dependency Injection, this means loosening our dependencies by controlling and
-instantiating them elsewhere in the system.
+Інверсія контролю – це, як там сказано, «інвертування контролю» системи шляхом повного збереження організаційного контролю
+окремо від наших об’єктів. З точки зору впровадження залежностей, це означає послаблення наших залежностей шляхом контролю та
+створюючи їх в іншому місці системи.
 
-For years, PHP frameworks have been achieving Inversion of Control, however, the question became, which part of control
-are we inverting, and where to? For example, MVC frameworks would generally provide a super object or base controller
-that other controllers must extend to gain access to its dependencies. This **is** Inversion of Control, however,
-instead of loosening dependencies, this method simply moved them.
+Протягом багатьох років фреймворки PHP досягли інверсії керування, однак постало питання, яка частина контролю
+ми інвертуємо і куди? Наприклад, фреймворки MVC фактично надають супероб’єкт або базовий контролер
+що інші контролери повинні розширити, щоб отримати доступ до його залежностей. Однак це **є** інверсія контролю,
+замість того, щоб послабити відносини, цей метод просто перемістив їх.
 
-Dependency Injection allows us to more elegantly solve this problem by only injecting the dependencies we need, when we
-need them, without the need for any hard coded dependencies at all.
+Впровадження залежностей дозволяє нам більш елегантно вирішити цю проблему, вставляючи лише потрібні нам залежності, коли ми
+вони потрібні, без жодних жорстко закодованих залежностей взагалі.
 
 ### S.O.L.I.D.
 
-#### Single Responsibility Principle
+#### Принцип єдиної відповідальності
 
-The Single Responsibility Principle is about actors and high-level architecture. It states that “A class should have
-only one reason to change.” This means that every class should _only_ have responsibility over a single part of the
-functionality provided by the software. The largest benefit of this approach is that it enables improved code
-_reusability_. By designing our class to do just one thing, we can use (or re-use) it in any other program without
-changing it.
+Принцип єдиної відповідальності стосується акторів і архітектури високого рівня. У ньому сказано, що «клас повинен мати
+лише одна причина змінитися». Це означає, що кожен клас повинен _лише_ відповідати за одну частину
+функціональні можливості, які надає програмне забезпечення. Найбільша перевага цього підходу полягає в тому, що він дозволяє покращити код
+_повторне використання_. Спроектувавши наш клас для виконання лише однієї речі, ми можемо використовувати (або повторно використовувати) його в будь-якій іншій програмі без цього
+змінюючи його.
 
-#### Open/Closed Principle
+#### Принцип відкритості/закритості
 
-The Open/Closed Principle is about class design and feature extensions. It states that “Software entities (classes,
-modules, functions, etc.) should be open for extension, but closed for modification.” This means that we should design
-our modules, classes and functions in a way that when a new functionality is needed, we should not modify our existing
-code but rather write new code that will be used by existing code. Practically speaking, this means that we should write
-classes that implement and adhere to _interfaces_, then type-hint against those interfaces instead of specific classes.
+Принцип відкритості/закритості стосується дизайну класу та розширення функцій. У ньому зазначено, що «програмні сутності (класи,
+модулі, функції тощо) мають бути відкритими для розширення, але закритими для модифікації». Це означає, що ми повинні проектувати
+наші модулі, класи та функції таким чином, що коли потрібна нова функціональність, ми не повинні змінювати існуючу
+коду, а замість того, щоб написати новий код, який використовуватиметься існуючим кодом. Практично це означає, що ми повинні писати
+класи, які реалізують і дотримуються _інтерфейсів_, потім введіть підказку проти цих інтерфейсів замість конкретних класів.
 
-The largest benefit of this approach is that we can very easily extend our code with support for something new without
-having to modify existing code, meaning that we can reduce QA time, and the risk for negative impact to the application
-is substantially reduced. We can deploy new code, faster, and with more confidence.
+Найбільшою перевагою цього підходу є те, що ми можемо дуже легко розширити наш код підтримкою чогось нового без нього
+необхідно змінити існуючий код, що означає, що ми можемо скоротити час перевірки якості та ризик негативного впливу на програму
+суттєво зменшується. Ми можемо розгорнути новий код швидше та з більшою впевненістю.
 
-#### Liskov Substitution Principle
+#### Принцип підстановки Ліскова
 
-The Liskov Substitution Principle is about subtyping and inheritance. It states that “Child classes should never break
-the parent class’ type definitions.” Or, in Robert C. Martin’s words, “Subtypes must be substitutable for their base
-types.”
+Принцип заміни Ліскова стосується підтипу та успадкування. У ній зазначено, що «Дитячі заняття ніколи не повинні перериватися
+визначення типу батьківського класу». Або, за словами Роберта С. Мартіна, «Підтипи повинні бути замінними на свою базу
+типи».
 
-For example, if we have a `FileInterface` interface which defines an `embed()` method, and we have `Audio` and `Video`
-classes which both implement the `FileInterface` interface, then we can expect that the usage of the `embed()` method will always
-do the thing that we intend. If we later create a `PDF` class or a `Gist` class which implement the `FileInterface`
-interface, we will already know and understand what the `embed()` method will do. The largest benefit of this approach
-is that we have the ability to build flexible and easily-configurable programs, because when we change one object of a
-type (e.g., `FileInterface`) to another we don't need to change anything else in our program.
+Наприклад, якщо у нас є інтерфейс `FileInterface`, який використовує метод `embed()`, і ми маємо `Audio` і `Video`
+класів, які зловживають реалізацією інтерфейсу `FileInterface`, то ми можемо очікувати, що використання методу `embed()` завжди
+зробити те, що ми маємо намір. Якщо пізніше ми створимо клас `PDF` або клас `Gist`, які реалізують `FileInterface`
+інтерфейсу, ми вже будемо знати та розуміти, що робитиме метод `embed()`. Найбільша перевага цього підходу
+існує в тому, що ми маємо можливість створювати гнучки та легко налаштовані програми, після чого ми змінюємо один об’єкт
+тип (наприклад, `FileInterface`) на інший, нам не потрібно нічого змінювати в нашій програмі.
 
-#### Interface Segregation Principle
+#### Принцип поділу інтерфейсуПринцип відокремлення інтерфейсу (ISP) застосовується зв’язок _бізнес-логіка з клієнтами_. Там є, що «Немає клієнта
+має бути зобов’язаний залежати від методів, які він не використовує». Це означає, що замість єдиного монолітного інтерфейсу
+які повинні реалізувати відповідні класи, замість цього ми повинні надати набір менших, специфічних для концепції інтерфейсів
+що відповідний клас реалізує один або більше з.
 
-The Interface Segregation Principle (ISP) is about _business-logic-to-clients_ communication. It states that “No client
-should be forced to depend on methods it does not use.” This means that instead of having a single monolithic interface
-that all conforming classes need to implement, we should instead provide a set of smaller, concept-specific interfaces
-that a conforming class implements one or more of.
+Наприклад, клас `Car` або `Bus` буде цікавим у методі `steeringWheel()`, але `Motorcycle` або `Tricycle`
+клас не буде. І навпаки, клас `Motorcycle` або `Tricycle` буде цікавий у методі `handlebars()`, але
+Клас `Car` або `Bus` не буде. Немає необхідності, щоб усі ці типи транспортних засобів підтримували обидва
+`steeringWheel()`, а також `handlebars()`, тому ми повинні розбити вихідний інтерфейс.
 
-For example, a `Car` or `Bus` class would be interested in a `steeringWheel()` method, but a `Motorcycle` or `Tricycle`
-class would not. Conversely, a `Motorcycle` or `Tricycle` class would be interested in a `handlebars()` method, but a
-`Car` or `Bus` class would not. There is no need to have all of these types of vehicles implement support for both
-`steeringWheel()` as well as `handlebars()`, so we should break-apart the source interface.
+#### Принцип інверсії залежностей
 
-#### Dependency Inversion Principle
-
-The Dependency Inversion Principle is about removing hard-links between discrete classes so that new functionality can
-be leveraged by passing a different class. It states that one should *"Depend on Abstractions. Do not depend on
-concretions."*. Put simply, this means our dependencies should be interfaces/contracts or abstract classes rather than
-concrete implementations. We can easily refactor the above example to follow this principle.
+Принцип інверсії залежностей стосується усунення жорстких зв’язків між окремими класами, щоб нові функції могли
+використовувати, пройшовши інший клас. У ньому сказано, що слід *«Залежити від абстракцій. Не залежати від
+конкременти».*. Простіше кажучи, це означає, що наші залежності повинні бути інтерфейсами/контрактами або абстрактними класами, а не
+конкретні реалізації. Ми можемо легко змінити наведений вище приклад, щоб слідувати цьому принципу.
 
 {% highlight php %}
 <?php
-namespace Database;
+простір імен База даних;
 
-class Database
+клас База даних
 {
-    public function __construct(protected AdapterInterface $adapter)
+    публічна функція __construct(protected AdapterInterface $adapter)
     {
     }
 }
 
-interface AdapterInterface {}
+інтерфейс AdapterInterface {}
 
-class MysqlAdapter implements AdapterInterface {}
+клас MysqlAdapter реалізує AdapterInterface {}
 {% endhighlight %}
 
-There are several benefits to the `Database` class now depending on an interface rather than a concretion.
+Існує кілька переваг класу `Database`, які тепер залежать від інтерфейсу, а не конкреції.
 
-Consider that we are working in a team and the adapter is being worked on by a colleague. In our first example, we
-would have to wait for said colleague to finish the adapter before we could properly mock it for our unit tests. Now
-that the dependency is an interface/contract we can happily mock that interface knowing that our colleague will build
-the adapter based on that contract.
+Вважайте, що ми працюємо в команді, а над адаптером працює колега. У нашому першому прикладі ми
+довелося б зачекати, поки згаданий колега закінчить адаптер, перш ніж ми зможемо належним чином познущатися над ним для наших модульних тестів. Зараз
+що залежність – це інтерфейс/контракт, ми можемо радісно висміювати цей інтерфейс, знаючи, що наш колега створить
+адаптер на основі цього договору.
 
-An even bigger benefit to this method is that our code is now much more scalable. If a year down the line we decide
-that we want to migrate to a different type of database, we can write an adapter that implements the original interface
-and injects that instead, no more refactoring would be required as we can ensure that the adapter follows the contract
-set by the interface.
+Ще більшою перевагою цього методу є те, що наш код тепер набагато більш масштабований. Якщо через рік ми вирішимо
+що ми хочемо перейти до іншого типу бази даних, ми можемо написати адаптер, який реалізує оригінальний інтерфейс
+і вводить, що натомість більше не буде потрібно рефакторинг, оскільки ми можемо гарантувати, що адаптер дотримується контракту
+встановлюється інтерфейсом.

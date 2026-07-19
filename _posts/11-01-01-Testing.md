@@ -1,13 +1,13 @@
 ---
-anchor: testing
+якір: тестування
 ---
 
-# Testing {#testing_title}
+# Тестування {#testing_title}
 
-Writing automated tests for your PHP code is considered a best practice and can lead to well-built applications.
-Automated tests are a great tool for making sure your application does not break when you are making changes or adding
-new functionality and should not be ignored.
+Написання автоматизованих тестів для вашого PHP-коду є найкращою практичною та може призвести до створення добре створених програм.
+Автоматичні тести є чудовим інструментом для того, щоб переконатися, що ваша програма не ламається під час внесення змін або додавання.
+нові функції, і не слід ігнорувати.
 
-There are several different types of testing tools (or frameworks) available for PHP, which use different approaches -
-all of which are trying to avoid manual testing and the need for large Quality Assurance teams, just to make sure
-recent changes didn't break existing functionality.
+Існує кілька різних типів інструментів тестування (або фреймворків), доступних для PHP, які вибирають різні підходи -
+всі вони намагаються уникнути ручного тестування та потреби у великих групах забезпечення якості, щоб просто переконатися
+останні зміни не порушили наявні функції.

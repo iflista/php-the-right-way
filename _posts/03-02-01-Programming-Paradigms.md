@@ -1,54 +1,53 @@
 ---
-isChild: true
-anchor:  programming_paradigms
+isChild: правда
+якір: парадигми програмування
 ---
 
-## Programming Paradigms {#programming_paradigms_title}
+## Парадигми програмування {#programming_paradigms_title}
 
-PHP is a flexible, dynamic language that supports a variety of programming techniques. It has evolved dramatically over
-the years, notably adding a solid object-oriented model in PHP 5.0 (2004), anonymous functions and namespaces in
-PHP 5.3 (2009), and traits in PHP 5.4 (2012).
+PHP — це гнучка динамічна мова, яка підтримує різні техніки програмування. Воно різко еволюціонувало
+років, зокрема, додавши надійну об’єктно-орієнтовану модель у PHP 5.0 (2004), анонімні функції та простори імен у
+PHP 5.3 (2009) і особливості в PHP 5.4 (2012).
 
-### Object-oriented Programming
+### Об'єктно-орієнтоване програмування
 
-PHP has a very complete set of object-oriented programming features including support for classes, abstract classes,
-interfaces, inheritance, constructors, cloning, exceptions, and more.
+PHP має дуже повний набір функцій об’єктно-орієнтованого програмування, включаючи підтримку класів, абстрактних класів,
+інтерфейси, успадкування, конструктори, клонування, інші тощо.
 
-* [Read about Object-oriented PHP][oop]
-* [Read about Traits][traits]
+* [Прочитайте про об’єктно-орієнтований PHP][oop]
+* [Читати про риси][риси]
 
-### Functional Programming
+### Функціональне програмування
 
-PHP supports first-class functions, meaning that a function can be assigned to a variable. Both user-defined and
-built-in functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to
-other functions (a feature called _Higher-order Functions_) and functions can return other functions.
+PHP підтримує функцію першого класу, яку функцію можна призначити змінною. Як визначені користувачем, так і
+на складові функції можна посилатися за допомогою змінної та виявляти їх динамічно. Функції можна передавати як аргументи
+інші функції (функція під назвою _Функції вищого порядку_) і функції можуть повертати інші функції.
 
-Recursion, a feature that allows a function to call itself, is supported by the language, but most PHP code
-is focused on iteration.
+Рекурсія, функція, яка дозволяє функції виключати саму себе, підтримуватися мовою, але більшою мірою коду PHP
+орієнтована на ітерацію.
 
-New anonymous functions (with support for closures) are present since PHP 5.3 (2009).
+Нові анонімні функції (з підтримкою закриття) присутні з PHP 5.3 (2009).
 
-PHP 5.4 added the ability to bind closures to an object's scope and also improved support for callables such that they
-can be used interchangeably with anonymous functions in almost all cases.
+У PHP 5.4 додано можливість прив’язувати замикання до області видимості об’єкта, а також покращено підтримку викликів, щоб вони
+можна використовувати як взаємозамінні з анонімними функціями майже у всіх випадках.
 
-* Continue reading on [Functional Programming in PHP](/pages/Functional-Programming.html)
-* [Read about Anonymous Functions][anonymous-functions]
-* [Read about the Closure class][closure-class]
-* [More details in the Closures RFC][closures-rfc]
-* [Read about Callables][callables]
-* [Read about dynamically invoking functions with `call_user_func_array()`][call-user-func-array]
+* Продовжуйте читати [Функціональне програмування на PHP]({{ site.baseurl }}/pages/Functional-Programming.html)
+* [Читати про анонімні функції][анонімні функції]
+* [Читати про клас Closure][closure-class]
+* [Докладніше в Closures RFC][closures-rfc]
+* [Читати про Callables][callables]
+* [Прочитайте про динамічний виклик функцій за допомогою `call_user_func_array()`][call-user-func-array]
 
-### Meta Programming
+### Метапрограмування
 
-PHP supports various forms of meta-programming through mechanisms like the Reflection API and Magic Methods. There are
-many Magic Methods available like `__get()`, `__set()`, `__clone()`, `__toString()`, `__invoke()`, etc. that allow
-developers to hook into class behavior. Ruby developers often say that PHP is lacking `method_missing`, but it is
-available as `__call()` and `__callStatic()`.
+PHP підтримує різні форми метапрограмування за допомогою таких механізмів, як Reflection API і Magic Methods. Є
+доступних магічних методів, таких як `__get()`, `__set()`, `__clone()`, `__toString()`, `__invoke()` тощо, які вважаються
+розробникам підключитися до поведінки класу. Розробники Ruby часто кажуть, що PHP не має `method_missing`, але це так
+доступні як `__call()` і `__callStatic()`.
 
-* [Read about Magic Methods][magic-methods]
-* [Read about Reflection][reflection]
-* [Read about Overloading][overloading]
-
+* [Читати про магічні методи][магічні методи]
+* [Читати про Reflection][reflection]
+* [Читати про перезавантаження][перезавантаження]
 
 [oop]: https://www.php.net/language.oop5
 [traits]: https://www.php.net/language.oop5.traits

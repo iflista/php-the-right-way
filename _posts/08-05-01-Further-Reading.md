@@ -1,29 +1,29 @@
 ---
-isChild: true
-anchor:  templating_further_reading
+isChild: правда
+якір: шаблон_подальше_читання
 ---
 
-## Further Reading {#templating_further_reading_title}
+## Подальше читання {#templating_further_reading_title}
 
-### Articles & Tutorials
+### Статті та посібники
 
-* [Templating Engines in PHP](http://fabien.potencier.org/templating-engines-in-php.html)
-* [An Introduction to Views & Templating in CodeIgniter](https://code.tutsplus.com/tutorials/an-introduction-to-views-templating-in-codeigniter--net-25648)
-* [Getting Started With PHP Templating](https://www.smashingmagazine.com/2011/10/getting-started-with-php-templating/)
-* [Roll Your Own Templating System in PHP](https://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596)
-* [Master Pages](https://laracasts.com/series/laravel-from-scratch/episodes/7)
-* [Working With Templates in Symfony 2](https://code.tutsplus.com/tutorials/working-with-templates-in-symfony-2--cms-21172)
-* [Writing Safer Templates](https://github.com/box/brainy/wiki/Writing-Safe-Templates)
+* [Двигуни шаблонів у PHP](http://fabien.potencier.org/templating-engines-in-php.html)
+* [Вступ до представлення і шаблонів у CodeIgniter](https://code.tutsplus.com/tutorials/an-introduction-to-views-templating-in-codeigniter--net-25648)
+* [Початок роботи з шаблонами PHP](https://www.smashingmagazine.com/2011/10/getting-started-with-php-templating/)
+* [Розгорніть свою власну систему шаблонів у PHP](https://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596)
+* [Головні сторінки](https://laracasts.com/series/laravel-from-scratch/episodes/7)
+* [Робота з шаблонами в Symfony 2](https://code.tutsplus.com/tutorials/working-with-templates-in-symfony-2--cms-21172)
+* [Написання безпечних шаблонів](https://github.com/box/brainy/wiki/Writing-Safe-Templates)
 
-### Libraries
+### Бібліотеки
 
-* [Aura.View](https://github.com/auraphp/Aura.View) *(native)*
-* [Blade](https://laravel.com/docs/blade) *(compiled, framework specific)*
-* [Brainy](https://github.com/box/brainy) *(compiled)*
-* [Latte](https://github.com/nette/latte) *(compiled)*
-* [Mustache](https://github.com/bobthecow/mustache.php) *(compiled)*
-* [PHPTAL](https://phptal.org/) *(compiled)*
-* [Plates](https://platesphp.com/) *(native)*
-* [Smarty](https://www.smarty.net/) *(compiled)*
-* [Twig](https://twig.symfony.com/) *(compiled)*
-* [laminas-view](https://docs.laminas.dev/laminas-view/) *(native, framework specific)*
+* [Aura.View](https://github.com/auraphp/Aura.View) *(рідний)*
+* [Блейд](https://laravel.com/docs/blade) *(скомпільований, спеціальний фреймворк)*
+* [Розумний](https://github.com/box/brainy) *(зібрано)*
+* [Латте](https://github.com/nette/latte) *(зібрано)*
+* [Вуса](https://github.com/bobthecow/mustache.php) *(зібрано)*
+* [PHPTAL](https://phptal.org/) *(зібрано)*
+* [Пластири](https://platesphp.com/) *(рідний)*
+* [Smarty](https://www.smarty.net/) *(зібрано)*
+* [Гілочка](https://twig.symfony.com/) *(зібрано)*
+* [перегляд laminas](https://docs.laminas.dev/laminas-view/) *(рідний, специфічний для фреймворку)*

@@ -1,26 +1,25 @@
 ---
-isChild: true
-anchor:  windows_setup
+isChild: правда
+якір: windows_setup
 ---
 
-## Windows Setup {#windows_setup_title}
+## Налаштування Windows {#windows_setup_title}
 
-You can download the binaries from [the php.net download page][php-downloads]. After the extraction of PHP, it is 
-recommended to set the [PATH][windows-path] to the root of your PHP folder (where php.exe is located) so you can execute
-PHP from anywhere.
+Ви можете завантажити двійкові файли зі [сторінки завантаження php.net][php-завантаження]. Після вилучення PHP це так
+рекомендовано встановити [PATH][шлях до windows] у кореневу папку PHP (де знаходиться php.exe), щоб можна було виконувати
+PHP з будь-якого місця.
 
-For learning and local development, you can use the [built-in webserver](/#builtin_web_server_title) with PHP 5.4+ so
-you don't need to worry about configuring it. If you would like an "all-in-one" which includes a full-blown webserver
-and MySQL too, then tools such as the [EasyPHP][easyphp], [OpenServer][openserver] or [WampServer][wamp] will help get a 
-Windows development environment up and running fast. That said, these tools will be a little different from 
-production so be careful of environment differences if you are working on Windows and deploying to Linux.
+Для навчання та локального розвитку ви можете використовувати [вбудований веб-сервер]({{ site.baseurl }}/#builtin_web_server_title) із PHP 5.4+, тому
+вам не потрібно турбуватися про його налаштування. Якщо ви потрібен «все-в-одному», який включає повноцінний веб-сервер
+і MySQL також, тоді такі інструменти, як [EasyPHP][easyphp], [OpenServer][openserver] або [WampServer][wamp] отримати результат
+Середовище розробки Windows працює швидко. Проте ці інструменти будуть дещо відрізнятися від
+виробництво, тому будьте обережні з відмінностями середовища, якщо ви працюєте в Windows і розгортаєтеся в Linux.
 
-Generally running your application on different environment in development and production can lead to strange bugs 
-popping up when you go live. If you are developing on Windows and deploying to Linux (or anything non-Windows) then you
-should consider using a [Virtual Machine](/#virtualization_title) or [Windows Subsystem for Linux (WSL)][wsl].
+Як правило, запуск вашої програми в різних середовищах розробки та виробництва може призвести до дивних помилок
+з’являється, коли ви йдете в прямому ефірі. Якщо ви розгортаєте в Windows і розгортаєте в Linux (або будь-якому іншому, що не є Windows), тоді ви
+варто відшкодувати можливість використання [віртуальної машини]({{ site.baseurl }}/#virtualization_title) або [підсистеми Windows для Linux (WSL)][wsl].
 
-Chris Tankersley has a very helpful blog post on what tools he uses to do [PHP development using Windows][windows-tools].
-
+Кріс Танкерслі має дуже корисну публікацію в блозі про те, які інструменти він використовує для [розробки PHP за допомогою Windows][windows-tools].
 [easyphp]: https://www.easyphp.org/
 [openserver]: https://ospanel.io/en/
 [php-downloads]: https://www.php.net/downloads.php?os=windows

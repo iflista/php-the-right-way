@@ -1,26 +1,26 @@
 ---
-title: PHP PaaS Providers
-isChild: true
-anchor:  php_paas_providers
+назва: PHP PaaS Providers
+isChild: правда
+якір: php_paas_providers
 ---
 
-## PHP PaaS Providers {#php_paas_providers_title}
+## Постачальники PHP PaaS {#php_paas_providers_title}
 
 * [Amezmo](https://www.amezmo.com)
 * [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
-* [Bref Cloud](https://bref.sh/cloud)
-* [Clever Cloud](https://clever-cloud.com)
+* [Коротка хмара](https://bref.sh/cloud)
+* [Розумна хмара](https://clever-cloud.com)
 * [Cloudways](https://www.cloudways.com/)
-* [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)
+* [Платформа додатків DigitalOcean](https://www.digitalocean.com/products/app-platform)
 * [Divio](https://www.divio.com/)
 * [Engine Yard Cloud](https://www.engineyard.com/)
 * [fortrabbit](https://www.fortrabbit.com/)
 * [Google App Engine](https://cloud.google.com/appengine/docs/php/)
-* [Heroku](https://devcenter.heroku.com/categories/php-support)
+* [Героку](https://devcenter.heroku.com/categories/php-support)
 * [IBM Cloud](https://cloud.ibm.com/docs/openwhisk?topic=openwhisk-prep#prep_php)
-* [Lumen](https://www.lumen.com/)
+* [Люмен](https://www.lumen.com/)
 * [Microsoft Azure](https://azure.microsoft.com/)
-* [Pivotal Web Services](https://network.pivotal.io/)
+* [Основні веб-служби](https://network.pivotal.io/)
 * [Platform.sh](https://platform.sh/)
 * [Red Hat OpenShift](https://www.openshift.com/)
 * [Virtuozzo](https://www.virtuozzo.com/application-platform-partners/)

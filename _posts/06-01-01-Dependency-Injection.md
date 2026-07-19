@@ -1,15 +1,15 @@
 ---
-title:  Dependency Injection
-anchor: dependency_injection
+назва: Ін'єкція залежності
+якір: dependency_injection
 ---
 
-# Dependency Injection {#dependency_injection_title}
+# Впровадження залежностей {#dependency_injection_title}
 
-From [Wikipedia](https://wikipedia.org/wiki/Dependency_injection):
+З [Вікіпедії](https://wikipedia.org/wiki/Dependency_injection):
 
-> Dependency injection is a software design pattern that allows the removal of hard-coded dependencies and makes it
-> possible to change them, whether at run-time or compile-time.
+> Ін’єкція залежностей — це шаблон розробки програмного забезпечення, який дозволяє видалити жорстко закодовані залежності та робить
+> можна змінити їх під час виконання чи під час компіляції.
 
-This quote makes the concept sound much more complicated than it actually is. Dependency Injection is providing a
-component with its dependencies either through constructor injection, method calls or the setting of properties. It is
-that simple.
+Ця цитата робить концепцію досить складною, ніж вона є насправді. Ін'єкція залежностей забезпечує a
+компонент із його залежностями впровадження через конструктора, виклики методів або налаштування влади. Це так
+так просто.

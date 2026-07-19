@@ -1,52 +1,51 @@
 ---
-isChild: true
-anchor:  basic_concept
+isChild: правда
+якір: базова_концепція
 ---
 
-## Basic Concept {#basic_concept_title}
+## Основна концепція {#basic_concept_title}
 
-We can demonstrate the concept with a simple, yet naive example.
+Ми можемо продемонструвати концепцію простим, але наївним прикладом.
 
-Here we have a `Database` class that requires an adapter to speak to the database. We instantiate the adapter in the
-constructor and create a hard dependency. This makes testing difficult and means the `Database` class is very tightly
-coupled to the adapter.
-
-{% highlight php %}
-<?php
-namespace Database;
-
-class Database
-{
-    protected $adapter;
-
-    public function __construct()
-    {
-        $this->adapter = new MySqlAdapter;
-    }
-}
-
-class MysqlAdapter {}
-{% endhighlight %}
-
-This code can be refactored to use Dependency Injection and therefore loosen the dependency.
-Here, we inject the dependency in a constructor and use the [constructor property promotion][php-constructor-promotion] so it is available as a property across the class:
+Тут ми маємо клас `Database`, який потрібен адаптер для спілкування з базою даних. Ми створюємо екземпляр адаптера в
+конструктор і створити жорстку залежність. Це ускладнює тестування та означає, що клас `Database` дуже високий
+підключений до адаптера.
 
 {% highlight php %}
 <?php
-namespace Database;
+простір імен База даних;
 
-class Database
+клас База даних
 {
-    public function __construct(protected MySqlAdapter $adapter)
+    захищений $адаптер;
+
+публічна функція __construct()
+    {
+        $this->adapter = новий MySqlAdapter;
+    }
+}
+
+клас MysqlAdapter {}
+{% endhighlight %}
+
+Цей код можна переробити для використання Dependency Injection і таким чином послабити залежність.
+Тут ми вставляємо залежність у конструктор і використовуємо [promotion властивості конструктора][php-constructor-promotion], щоб він був доступний як владність у всьому класі:
+
+{% highlight php %}
+<?php
+простір імен База даних;
+
+клас База даних
+{
+    публічна функція __construct(protected MySqlAdapter $adapter)
     {
     }
 }
 
-class MysqlAdapter {}
+клас MysqlAdapter {}
 {% endhighlight %}
 
-Now we are giving the `Database` class its dependency rather than creating it itself. We could even create a method
-that would accept an argument of the dependency and set it that way, or if the `$adapter` property was `public` we
-could set it directly.
-
+Тепер ми надаємо класу `Database` його залежність, а не створюємо його самого. Ми навіть могли б створити метод
+який би прийняв аргумент відносно та встановив його таким чином, або якщо владність `$adapter` була `public`, ми
+можна встановити разом.
 [php-constructor-promotion]: https://www.php.net/manual/en/language.oop5.decon.php#language.oop5.decon.constructor.promotion

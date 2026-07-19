@@ -1,211 +1,207 @@
 ---
-layout: page
-title:  Design Patterns
-sitemap: true
+макет: стор
+назва: Патерни проектування
+мапа сайту: правда
 ---
 
-# Design Patterns
+# Шаблони проектування
 
-There are numerous ways to structure the code and project for your web application, and you can put as much or as little thought as you like into architecting. But it is usually a good idea to follow common patterns because it will
-make your code easier to manage and easier for others to understand.
+Є багато способів структурувати код і проект для вашої веб-програми, і ви можете приділяти багато або мало уваги розробці архітектури. Але зазвичай доцільно дотримуватися загальних шаблонів, тому що це буде
+зробіть свій код легшим для керування та зрозумілим для інших.
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
-* [Collection of implementation examples](https://designpatternsphp.readthedocs.io/en/latest/)
+* [Архітектурний шаблон у Вікіпедії](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [Шаблон розробки програмного забезпечення у Вікіпедії](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [Колекція прикладів впровадження](https://designpatternsphp.readthedocs.io/en/latest/)
 
-## Factory
+## Фабрика
 
-One of the most commonly used design patterns is the factory pattern. In this pattern, a class simply creates the
-object you want to use. Consider the following example of the factory pattern:
+Одним із найбільш часто використовуваних шаблонів проектування є заводський шаблон. У цьому шаблоні клас просто створює
+об’єкт, який ви хочете використовувати. Розглянемо наступний приклад фабричного зразка:
 
 {% highlight php %}
 <?php
-class Automobile
+клас Автомоб
 {
-    private $vehicleMake;
-    private $vehicleModel;
+    приватний $vehicleMake;
+    приватна $vehicleModel;
 
-    public function __construct($make, $model)
+    публічна функція __construct($make, $model)
     {
         $this->vehicleMake = $make;
         $this->vehicleModel = $model;
     }
 
-    public function getMakeAndModel()
+    публічна функція getMakeAndModel()
     {
-        return $this->vehicleMake . ' ' . $this->vehicleModel;
+        повернути $this->vehicleMake. ' '. $this->vehicleModel;
     }
 }
 
-class AutomobileFactory
+клас AutomobileFactory
 {
-    public static function create($make, $model)
+    публічна статична функція create($make, $model)
     {
-        return new Automobile($make, $model);
+        повернути новий автомобіль ($make, $model);
     }
 }
 
-// have the factory create the Automobile object
+// створити об'єкт Automobile на заводі
 $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 
-print_r($veyron->getMakeAndModel()); // outputs "Bugatti Veyron"
+print_r($veyron->getMakeAndModel()); // виводить "Bugatti Veyron"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way; the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile class.
-The second possible benefit is that, if creating the object is a complicated job, you can do all of the work in the
-factory instead of repeating it every time you want to create a new instance.
+Цей код використовує фабрику для створення об’єкта Automobile. Існує дві можливі переваги створення вашого коду
+спосіб; перший полягає в тому, що якщо пізніше вам знадобиться змінити, перейменувати або замінити клас автомобіля, ви можете це зробити, і ви
+потрібно лише змінити код на заводі, а не кожне місце у вашому проекті, де використовується клас Automobile.
+Друга можлива перевага полягає в тому, що якщо створення об’єкта є складною роботою, ви можете виконати всю роботу в
+factory замість повторення кожного разу, коли ви хочете створити новий екземпляр.
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+Використання фабричного зразка не завжди є необхідним (або розумним). Приклад коду, використаний тут, настільки простий, що фабрика
+це просто додало б непотрібної складності. Однак якщо ви робите досить великий або складний проект, ви можете заощадити
+себе багато проблем на дорозі, використовуючи фабрики.
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+* [Заводський шаблон у Вікіпедії](https://en.wikipedia.org/wiki/Factory_pattern)
 
-## Singleton
+## Синглтон
 
-When designing web applications, it often makes sense conceptually and architecturally to allow access to one and only
-one instance of a particular class. The singleton pattern enables us to do this.
+При розробці веб-додатків часто концептуально та архітектурно має сенс дозволити доступ лише одному
+один екземпляр певного класу. Шаблон Singleton дозволяє нам це зробити.
 
-**TODO: NEED NEW SINGLETON CODE EXAMPLE**
+**ЗАВДАННЯ: ПОТРІБЕН НОВИЙ ПРИКЛАД ОДНОГО КОДУ**
 
-The code above implements the singleton pattern using a [*static* variable](https://www.php.net/language.variables.scope#language.variables.scope.static) and the static creation method `getInstance()`.
-Note the following:
-
-* The constructor [`__construct()`](https://www.php.net/language.oop5.decon#object.construct) is declared as protected to
-prevent creating a new instance outside of the class via the `new` operator.
-* The magic method [`__clone()`](https://www.php.net/language.oop5.cloning#object.clone) is declared as private to prevent
-cloning of an instance of the class via the [`clone`](https://www.php.net/language.oop5.cloning) operator.
-* The magic method [`__wakeup()`](https://www.php.net/language.oop5.magic#object.wakeup) is declared as private to prevent
-unserializing of an instance of the class via the global function [`unserialize()`](https://www.php.net/function.unserialize)
+Наведений вище код реалізує шаблон одного елемента за допомогою [*статичної* змінної](https://www.php.net/language.variables.scope#language.variables.scope.static) і статичного методу створення `getInstance()`.
+Зверніть увагу на наступне:* Конструктор [`__construct()`](https://www.php.net/language.oop5.decon#object.construct) оголошено як захищений для
+запобігти створенню нового екземпляра за межами класу за допомогою оператора `new`.
+* Магічний метод [`__clone()`](https://www.php.net/language.oop5.cloning#object.clone) оголошено приватним, щоб запобігти
+клонування екземпляра класу за допомогою оператора [`clone`](https://www.php.net/language.oop5.cloning).
+* Магічний метод [`__wakeup()`](https://www.php.net/language.oop5.magic#object.wakeup) оголошено як приватний, щоб запобігти
+десеріалізація екземпляра класу через глобальну функцію [`unserialize()`](https://www.php.net/function.unserialize)
 .
-* A new instance is created via [late static binding](https://www.php.net/language.oop5.late-static-bindings) in the static
-creation method `getInstance()` with the keyword `static`. This allows the subclassing of the class `Singleton` in the
-example.
+* Новий екземпляр створюється через [пізнє статичне зв’язування](https://www.php.net/language.oop5.late-static-bindings) у статиці
+метод створення `getInstance()` з ключовим словом `static`. Це дозволяє створювати підкласи класу `Singleton` у
+приклад.
 
-The singleton pattern is useful when we need to make sure we only have a single instance of a class for the entire
-request lifecycle in a web application. This typically occurs when we have global objects (such as a Configuration
-class) or a shared resource (such as an event queue).
+Шаблон Singleton корисний, коли нам потрібно переконатися, що у нас є лише один екземпляр класу для всього
+життєвий цикл запиту у веб-додатку. Зазвичай це відбувається, коли у нас є глобальні об’єкти (такі як Configuration
+клас) або спільний ресурс (наприклад, чергу подій).
 
-You should be wary when using the singleton pattern, as by its very nature it introduces global state into your
-application, reducing testability. In most cases, dependency injection can (and should) be used in place of a singleton
-class. Using dependency injection means that we do not introduce unnecessary coupling into the design of our
-application, as the object using the shared or global resource requires no knowledge of a concretely defined class.
+Ви повинні бути обережними, використовуючи шаблон одного елемента, оскільки за своєю природою він вводить у ваш глобальний стан
+застосування, що знижує тестоздатність. У більшості випадків ін’єкцію залежностей можна (і потрібно) використовувати замість синглтона
+клас. Використання ін’єкції залежностей означає, що ми не вводимо непотрібного зв’язку в дизайн нашого
+додаток, оскільки об’єкт, що використовує спільний або глобальний ресурс, не потребує знання конкретно визначеного класу.
 
-* [Singleton pattern on Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
+* [Шаблон Singleton у Вікіпедії](https://en.wikipedia.org/wiki/Singleton_pattern)
 
-## Strategy
+## Стратегія
 
-With the strategy pattern you encapsulate specific families of algorithms allowing the client class responsible for
-instantiating a particular algorithm to have no knowledge of the actual implementation. There are several variations on
-the strategy pattern, the simplest of which is outlined below:
+За допомогою шаблону стратегії ви інкапсулюєте конкретні сімейства алгоритмів, що дозволяє класу клієнта відповідати за
+створити екземпляр певного алгоритму, щоб не знати про фактичну реалізацію. Є кілька варіацій
+шаблон стратегії, найпростіший з яких наведено нижче:
 
-This first code snippet outlines a family of algorithms; you may want a serialized array, some JSON or maybe just an
-array of data:
+Цей перший фрагмент коду описує сімейство алгоритмів; вам може знадобитися серіалізований масив, трохи JSON або, можливо, просто
+масив даних:
 
 {% highlight php %}
 <?php
 
-interface OutputInterface
+інтерфейс OutputInterface
 {
-    public function load();
+    публічна функція load();
 }
 
-class SerializedArrayOutput implements OutputInterface
+клас SerializedArrayOutput реалізує OutputInterface
 {
-    public function load()
+    публічна функція load()
     {
         return serialize($arrayOfData);
     }
 }
 
-class JsonStringOutput implements OutputInterface
+клас JsonStringOutput реалізує OutputInterface
 {
-    public function load()
+    публічна функція load()
     {
-        return json_encode($arrayOfData);
+        повернути json_encode($arrayOfData);
     }
 }
 
-class ArrayOutput implements OutputInterface
+клас ArrayOutput реалізує OutputInterface
 {
-    public function load()
+    публічна функція load()
     {
-        return $arrayOfData;
+        повернути $arrayOfData;
     }
 }
 {% endhighlight %}
 
-By encapsulating the above algorithms you are making it nice and clear in your code that other developers can easily
-add new output types without affecting the client code.
+Інкапсулюючи наведені вище алгоритми, ви робите його гарним і зрозумілим у своєму коді, щоб інші розробники могли легко
+додати нові типи виводу, не впливаючи на код клієнта.
 
-You will see how each concrete 'output' class implements an OutputInterface - this serves two purposes, primarily it
-provides a simple contract which must be obeyed by any new concrete implementations. Secondly by implementing a common
-interface you will see in the next section that you can now utilise [Type Hinting](https://www.php.net/language.oop5.typehinting) to ensure that the client which is utilising these behaviours is of the correct type,
-in this case 'OutputInterface'.
+Ви побачите, як кожен конкретний клас «виводу» реалізує OutputInterface - це служить двом цілям, перш за все це
+надає простий договір, якому повинні підкорятися будь-які нові конкретні реалізації. По-друге, запровадивши заг
+інтерфейс, який ви побачите в наступному розділі, що тепер ви можете використовувати [Підказ типу](https://www.php.net/language.oop5.typehinting), щоб переконатися, що клієнт, який використовує ці поведінки, має правильний тип,
+у цьому випадку "OutputInterface".
 
-The next snippet of code outlines how a calling client class might use one of these algorithms and even better set the
-behaviour required at runtime:
+Наступний фрагмент коду описує, як клас клієнта, що викликає, може використовувати один із цих алгоритмів і навіть краще встановити
+поведінка, необхідна під час виконання:
 
 {% highlight php %}
 <?php
-class SomeClient
+клас SomeClient
 {
-    private $output;
+    приватний $вихід;
 
-    public function setOutput(OutputInterface $outputType)
+    публічна функція setOutput(OutputInterface $outputType)
     {
         $this->output = $outputType;
     }
 
-    public function loadOutput()
+    публічна функція loadOutput()
     {
-        return $this->output->load();
+        повернути $this->output->load();
     }
 }
-{% endhighlight %}
-
-The calling client class above has a private property which must be set at runtime and be of type 'OutputInterface'.
-Once this property is set a call to loadOutput() will call the load() method in the concrete class of the output type
-that has been set.
+{% endhighlight %}Викликаючий вище клас клієнта має приватну властивість, яка має бути встановлена ​​під час виконання та мати тип "OutputInterface".
+Після встановлення цієї властивості виклик loadOutput() викликає метод load() у конкретному класі типу виводу
+що було встановлено.
 
 {% highlight php %}
 <?php
-$client = new SomeClient();
+$client = новий SomeClient();
 
-// Want an array?
-$client->setOutput(new ArrayOutput());
+// Хочете масив?
+$client->setOutput(новий ArrayOutput());
 $data = $client->loadOutput();
 
-// Want some JSON?
-$client->setOutput(new JsonStringOutput());
+// Хочете JSON?
+$клієнт->setOutput(новий JsonStringOutput());
 $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [Strategy pattern on Wikipedia](https://en.wikipedia.org/wiki/Strategy_pattern)
+* [Шаблон стратегії у Вікіпедії](https://en.wikipedia.org/wiki/Strategy_pattern)
 
-## Front Controller
+## Передній контролер
 
-The front controller pattern is where you have a single entrance point for your web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+Шаблон переднього контролера – це місце, де у вас є єдина точка входу для вашої веб-програми (наприклад, index.php), яка
+обробляє всі запити. Цей код відповідає за завантаження всіх залежностей, обробку запиту та
+відправка відповіді браузеру. Шаблон переднього контролера може бути корисним, оскільки він сприяє модульному коду
+і дає вам центральне місце для підключення коду, який слід запускати для кожного запиту (наприклад, очищення введення).
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [Шаблон переднього контролера у Вікіпедії](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
 ## Model-View-Controller
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM let you break up code into logical objects
-that serve very specific purposes. Models serve as a data access layer where data is fetched and returned in formats
-usable throughout your application. Controllers handle the request, process the data returned from models and load
-views to send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the
-web browser.
+Шаблон модель-подання-контролер (MVC) і його родичі HMVC і MVVM дозволяють розбити код на логічні об’єкти
+які служать дуже конкретним цілям. Моделі служать рівнем доступу до даних, де дані витягуються та повертаються у форматах
+придатний для використання у вашій програмі. Контролери обробляють запити, обробляють дані, отримані від моделей, і завантажують
+переглядів, щоб надіслати у відповідь. А представлення — це шаблони відображення (розмітка, xml тощо), які надсилаються у відповідь на
+веб-браузер.
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC є найпоширенішим архітектурним шаблоном, який використовується в популярних [фреймворках PHP](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
 
-Learn more about MVC and its relatives:
+Дізнайтеся більше про MVC та його родичі:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)

@@ -1,90 +1,90 @@
 ---
-layout: page
-title: Website Banners
-description: "Spread the word! Use these banner to let new PHP programmers know about PHP: The Right Way"
-sitemap: true
+макет: стор
+назва: Банери сайту
+опис: "Поширюйте інформацію! Використовуйте цей банер, щоб розповісти новим PHP-програмістам про PHP: правильний шлях"
+мапа сайту: правда
 ---
 
-# Web Banners
+# Веб-банери
 
-Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers where to find good information.
+Поширюйте інформацію за допомогою банерів _PHP: The Right Way_! Покажіть новим розробникам PHP, де знайти корисну інформацію.
 
-## Button 1 (120x90)
+## Кнопка 1 (120x90)
 
-<p><img src="/images/banners/btn1-120x90.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/btn1-120x90.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/btn1-120x90.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/btn1-120x90.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}
 
-## Button 2 (120x60)
+## Кнопка 2 (120x60)
 
-<p><img src="/images/banners/btn2-120x60.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/btn2-120x60.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/btn2-120x60.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/btn2-120x60.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}
 
-## Leaderboard (728x90)
+## Лідерборд (728x90)
 
-<p><img src="/images/banners/leaderboard-728x90.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/leaderboard-728x90.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/leaderboard-728x90.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/leaderboard-728x90.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}
 
-## Large Rectangle (386x280)
+## Великий прямокутник (386x280)
 
-<p><img src="/images/banners/lg-rect-386x280.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/lg-rect-386x280.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/lg-rect-386x280.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/lg-rect-386x280.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}
 
-## Medium Rectangle (300x250)
+## Середній прямокутник (300x250)
 
-<p><img src="/images/banners/med-rect-300x250.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/med-rect-300x250.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/med-rect-300x250.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/med-rect-300x250.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}
 
-## Rectangle (180x150)
+## Прямокутник (180x150)
 
-<p><img src="/images/banners/rect-180x150.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/rect-180x150.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/rect-180x150.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/rect-180x150.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}
 
-## Square Button (125x125)
+## квадратна кнопка (125x125)
 
-<p><img src="/images/banners/sq-btn-125x125.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/sq-btn-125x125.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/sq-btn-125x125.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/sq-btn-125x125.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}
 
-## Vertical Rectangle (240x400)
+## Вертикальний прямокутник (240x400)
 
-<p><img src="/images/banners/vert-rect-240x400.png" alt="PHP: The Right Way"/></p>
+<p><img src="/images/banners/vert-rect-240x400.png" alt="PHP: правильний шлях"/></p>
 
 {% highlight html %}
 <a href="https://www.phptherightway.com">
-    <img src="https://www.phptherightway.com/images/banners/vert-rect-240x400.png" alt="PHP: The Right Way"/>
+    <img src="https://www.phptherightway.com/images/banners/vert-rect-240x400.png" alt="PHP: правильний шлях"/>
 </a>
 {% endhighlight %}

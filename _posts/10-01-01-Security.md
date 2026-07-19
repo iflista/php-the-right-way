@@ -1,8 +1,8 @@
 ---
-anchor: security
+якір: безпека
 ---
 
-# Security {#security_title}
+# Безпека {#security_title}
 
-The best resource I've found on PHP security is [The 2018 Guide to Building Secure PHP Software](https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software) by
-[Paragon Initiative](https://paragonie.com/).
+Найкращий ресурс із безпеки PHP, який я знайшов, — це [Посібник зі створення безпечного програмного забезпечення PHP за 2018 рік] (https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software)
+[Ініціатива Paragon] (https://paragonie.com/).

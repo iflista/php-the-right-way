@@ -1,23 +1,22 @@
 ---
-isChild: true
-anchor:  complementary_testing_tools
+isChild: правда
+прив’язка: complementary_testing_tools
 ---
 
-## Complementary Testing Tools {#complementary_testing_tools_title}
+## Додаткові інструменти тестування {#complementary_testing_tools_title}
 
-Besides individual testing and behavior driven frameworks, there are also a number of generic frameworks and helper
-libraries useful for any preferred approach taken.
+Окрім індивідуальних фреймворків тестування та поведінки, існує також низка загальних фреймворків і допоміжних засобів
+бібліотеки, корисні для будь-якого обраного підходу.
 
-### Tool Links
+### Посилання на інструменти
 
-* [Selenium] is a browser automation tool which can be [integrated with PHPUnit]
-* [Mockery] is a Mock Object Framework which can be integrated with [PHPUnit] or [PHPSpec]
-* [Prophecy] is a highly opinionated yet very powerful and flexible PHP object mocking framework. It's integrated with
-[PHPSpec] and can be used with [PHPUnit].
-* [php-mock] is a library to help to mock PHP native functions.
-* [Infection] is a PHP implementation of [Mutation Testing] to help to measure the effectiveness of your tests.
-* [PHPUnit Polyfills] is a library that allows for creating PHPUnit cross-version compatible tests when a test suite needs to run against a range of PHPUnit versions.
-
+* [Selenium] — це інструмент автоматизації браузера, який можна [інтегрувати з PHPUnit]
+* [Mockery] — це модель імітаційного об’єкта, яку можна інтегрувати з [PHPUnit] або [PHPSpec]
+* [Prophecy] — це дуже самовпевнений, але дуже потужний і ефективний фреймворк PHP для знущання над об’єктами. Це інтегровано з
+[PHPSpec] і можна використовувати з [PHPUnit].
+* [php-mock] — це бібліотека, яка разом імітує рідні функції PHP.
+* [Infection] — це PHP-реалізація [Mutation Testing], яка допоможе виміряти ефективність ваших тестів.
+* [PHPUnit Polyfills] — це бібліотека, яка дозволяє створювати міжверсійні сумісні тести PHPUnit, коли набір тестів потрібно запускати з функціональною версією PHPUnit.
 
 [Selenium]: https://www.selenium.dev/
 [integrated with PHPUnit]: https://github.com/giorgiosironi/phpunit-selenium/

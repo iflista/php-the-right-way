@@ -1,58 +1,57 @@
 ---
-isChild: true
-anchor:  command_line_interface
+isChild: правда
+прив’язка: інтерфейс_командного_рядка
 ---
 
-## Command Line Interface {#command_line_interface_title}
+## Інтерфейс командного рядка {#command_line_interface_title}
 
-PHP was created to write web applications, but is also useful for scripting command line interface (CLI) programs.
-Command line PHP programs can help automate common tasks like testing, deployment, and application administration.
+PHP був створений для створення веб-додатків, але також корисний для створення сценаріїв програмного інтерфейсу командного рядка (CLI).
+Програми командного рядка PHP можуть допомогти автоматизувати типові завдання, такі як тестування, розгортання та адміністрування додатків.
 
-CLI PHP programs are powerful because you can use your app's code directly without having to create and secure a web
-GUI for it. Just be sure **not** to put your CLI PHP scripts in your public web root!
+Програми CLI PHP є потужними, тому ви можете використовувати свою програму одночасно без необхідності створювати та захищати Інтернет
+GUI для нього. Просто переконайтеся, що **не** розміщуєте ваші сценарії CLI PHP у загальнодоступному веб-корені!
 
-Try running PHP from your command line:
+Спробуйте запустити PHP з командного рядка:
 
 {% highlight console %}
 > php -i
 {% endhighlight %}
 
-The `-i` option will print your PHP configuration just like the [`phpinfo()`][phpinfo] function.
+Опція `-i` друкує вашу конфігурацію PHP так само, як функція [`phpinfo()`][phpinfo].
 
-The `-a` option provides an interactive shell, similar to ruby's IRB or python's interactive shell. There are a number
-of other useful [command line options][cli-options], too.
+Параметр `-a` забезпечує інтерактивне насіння, подібне до інтерактивного вірусу Ruby IRB або Python. Є ряд
+інших корисних [параметрів командного рядка][cli-options] також.
 
-Let's write a simple "Hello, $name" CLI program. To try it out, create a file named `hello.php`, as below.
+Давайте напишемо просту програму CLI "Hello, $name". Щоб спробувати, створіть файл під назвою `hello.php`, як показано нижче.
 
 {% highlight php %}
 <?php
 if ($argc !== 2) {
-    echo "Usage: php hello.php <name>" . PHP_EOL;
-    exit(1);
+    echo "Використання: php hello.php <ім'я>" . PHP_EOL;
+    вихід (1);
 }
 $name = $argv[1];
-echo "Hello, $name" . PHP_EOL;
+echo "Привіт, $name" . PHP_EOL;
 {% endhighlight %}
 
-PHP sets up two special variables based on the arguments your script is run with. [`$argc`][argc] is an integer
-variable containing the argument *count* and [`$argv`][argv] is an array variable containing each argument's *value*.
-The first argument is always the name of your PHP script file, in this case `hello.php`.
+PHP встановлює дві спеціальні зміни на основі аргументів, з якими виконується ваш сценарій. [`$argc`][argc] є цілим числом
+змінна, що містить аргумент *count*, а [`$argv`][argv] — це змінний масив, що містить *значення* кожного аргументу.
+Першим аргументом завжди є ім’я вашого файлу сценарію PHP, у цьому випадку `hello.php`.
 
-The `exit()` expression is used with a non-zero number to let the shell know that the command failed. Commonly used
-exit codes can be found [here][exit-codes].
+Вираз `exit()` використовується з ненульовим числом, щоб повідомити людині, що команда не виконана. загальні використання
+коди виходу можна знайти [here][коди виходу].
 
-To run our script, above, from the command line:
+Щоб запустити наш сценарій, наведений вище, з командного рядка:
 
 {% highlight console %}
-> php hello.php
-Usage: php hello.php <name>
+> php привіт.php
+Використання: php hello.php <ім'я>
 > php hello.php world
-Hello, world
+Привіт, світе
 {% endhighlight %}
 
 
- * [Learn about running PHP from the command line][php-cli]
-
+* [Дізнайтеся про запуск PHP із командного рядка][php-cli]
 [phpinfo]: https://www.php.net/function.phpinfo
 [cli-options]: https://www.php.net/features.commandline.options
 [argc]: https://www.php.net/reserved.variables.argc

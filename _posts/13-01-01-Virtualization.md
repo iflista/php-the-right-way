@@ -1,14 +1,14 @@
 ---
-anchor: virtualization
+якір: віртуалізація
 ---
 
-# Virtualization {#virtualization_title}
+# Віртуалізація {#virtualization_title}
 
-Running your application on different environments in development and production can lead to strange bugs popping up
-when you go live. It's also tricky to keep different development environments up to date with the same version for all
-libraries used when working with a team of developers.
+Запуск вашої програми в різних середовищах під час розробки та виробництва може призвести до появи дивних помилок
+коли ви йдете в прямому ефірі. Також складно підтримувати різні середовища розробки в актуальному стані з однаковою версією для всіх
+бібліотеки, які використовуються при роботі з командою розробників.
 
-If you are developing on Windows and deploying to Linux (or anything non-Windows) or are developing in a team, you
-should consider using a virtual machine. This sounds tricky, but besides the widely known virtualization environments
-like VMware or VirtualBox, there are additional tools that may help you setting up a virtual environment in a few easy
-steps.
+Якщо ви розробляєте в Windows і розгортаєте в Linux (або будь-якому іншому, що не є Windows) або розробляєте в команді, ви
+варто розглянути можливість використання віртуальної машини. Це звучить складно, але крім широко відомих середовищ віртуалізації
+наприклад VMware або VirtualBox, є додаткові інструменти, які можуть допомогти вам налаштувати віртуальне середовище в декілька простих завдань
+кроки.

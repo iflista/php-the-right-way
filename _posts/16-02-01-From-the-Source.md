@@ -1,10 +1,10 @@
 ---
-title:   From the Source
-isChild: true
-anchor:  from_the_source
+назва: З джерела
+isChild: правда
+якір: from_the_source
 ---
 
-## From the Source {#from_the_source_title}
+## З джерела {#from_the_source_title}
 
-* [PHP Website](https://www.php.net/)
-* [PHP Documentation](https://www.php.net/docs.php)
+* [Веб-сайт PHP](https://www.php.net/)
+* [Документація PHP](https://www.php.net/docs.php)

@@ -1,14 +1,13 @@
 ---
-isChild: true
-anchor:  elephpants
+isChild: правда
+якір: слони
 ---
 
 ## ElePHPants {#elephpants_title}
 
-[ElePHPant][elephpant] is that beautiful mascot of the PHP project with an elephant in its design. It was originally designed for the PHP project in 1998 by [Vincent Pontier][vincent-pontier] - spiritual father of thousands of elePHPants around the world - and ten years later adorable plush elephant toys came to birth as well. Now elePHPants are present at many PHP conferences and with many PHP developers at their computers for fun and inspiration.
+[ElePHPant][elephpant] — це чудовий талісман проекту PHP із зображенням слона. Спочатку він був розроблений для проекту PHP у 1998 році [Вінсентом Понт’є][vincent-pontier] – духовним батьком тисяч elePHPants у всьому світі – і через десять років також з’явилися чарівні плюшеві іграшки-слони. Тепер elePHPants присутні на багатьох PHP-конференціях і разом із багатьма PHP-розробниками за комп’ютерами для розваги та натхнення.
 
-[Interview with Vincent Pontier][vincent-pontier-interview]
-
+[Інтерв’ю з Вінсентом Понт’є][інтерв’ю-вінсента-понтьє]
 
 [elephpant]: https://www.php.net/elephpant.php
 [vincent-pontier-interview]: https://7php.com/elephpant/
